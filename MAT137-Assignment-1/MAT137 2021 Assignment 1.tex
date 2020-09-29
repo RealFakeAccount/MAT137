@@ -121,24 +121,24 @@
 		\\
 		\emph{Proof:}
 		$$
-		    \M{Tor}{Walt}=\{x \in \R \; : \; Walt(x) < Tor(x) \}
+		    \M{Walt}{Tor}=\{x \in \R \; : \; Walt(x) < Tor(x) \}
 		$$
 		$$
-		    \M{Walt}{Tor}=\{x \in \R \; : \; Tor(x) < Walt(x) \}
+		    \M{Tor}{Walt}=\{x \in \R \; : \; Tor(x) < Walt(x) \}
 		$$
-		\vv
 
-		Let $x, y \in \R$. WTS $\forall x \in \M{Walt}{Tor}, \; \exists y \in \M{Tor}{Walt} \mbox{ such that } x < y$\\
+		Let $x, y \in \R$. WTS $\forall x \in \M{Tor}{Walt}, \; \exists y \in \M{Walt}{Tor} \mbox{ such that } x < y$\\
 		\vv
+		
 		By definition, 
 		$$ 
-			\M{Walt}{Tor} = \{x \in \R : \; - 2\sin(x) < \sin(x) \} = x \in \forall s \in \Z, \; (2s\pi, \; (2s + 1)\pi)
+			\M{Tor}{Walt} = \{x \in \R : \; - 2\sin(x) < \sin(x) \} = x \in \forall s \in \Z, \; (2s\pi, \; (2s + 1)\pi)
 		$$
 		$$ 
-			\M{Tor}{Walt} = \{y \in \R : \; sin(y) < - 2\sin(y) \} = x \in \forall t \in \Z, \; ((2t - 1)\pi, \; 2t\pi)
+			\M{Walt}{Tor} = \{y \in \R : \; sin(y) < - 2\sin(y) \} = x \in \forall t \in \Z, \; ((2t - 1)\pi, \; 2t\pi)
 		$$
 
-		We can see that $\M{Tor}{Walt}=\M{Walt}{Tor} + \{2\pi\}$
+		We can see that $\M{Walt}{Tor}=\M{Tor}{Walt} + \{2\pi\}$
 
 		So we can assume $s = k, \; t = k + 2\pi$.\\
 
@@ -162,6 +162,15 @@
 		\\
 		\\
 		\emph{Proof:}
+		\\
+		WTS $\forall x \in \M{f}{g}$ and $y \in \M{g}{f}$, we have $x > y$ \\
+		\vv
+		Because $f(x) = 3 \mbox{ and } g(x) = x$, \\
+		we can get $\M{f}{g} = (3, +\infty), \M{g}{f} = (-\infty, 3)$.\\
+		Let $x \in \M{f}{g}, \; y \in \M{g}{f}$, \\
+		$x > 3 > y \quad \quad \blacksquare $
+		\\
+		
 		\vv
 		\newpage
 		
