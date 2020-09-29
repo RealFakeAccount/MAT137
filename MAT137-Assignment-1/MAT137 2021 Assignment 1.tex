@@ -1,0 +1,162 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ifthen}
+\usepackage{geometry}
+\noprintanswers
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+
+\addtolength{\textheight}{3cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textwidth}{3cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\setlength\parindent{0pt}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+\newcommand{\vv}{\vspace{.2cm}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\pagestyle{empty}
+
+%============================================
+%137 COLOUR PALETTE
+%============================================
+
+\definecolor{137cp1}{RGB}{13, 33, 161}
+\definecolor{137cp2}{RGB}{51, 161, 253}
+\definecolor{137cp3}{RGB}{255, 67, 101}
+\definecolor{137cp4}{RGB}{232, 144, 5}
+
+
+%============================================
+%HYPERLINKS
+%============================================
+
+\usepackage{hyperref}
+\hypersetup{colorlinks}
+\hypersetup{urlcolor=137cp3, linkcolor=137cp1}
+
+
+%============================================
+%Special definitions for this document only
+%============================================
+
+\newcommand{\M}[2]{\Omega^{\, #2}_{\, #1}}
+
+\DeclareMathOperator{\Walt}{Walt}
+\DeclareMathOperator{\Tor}{Tor}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+{\large
+	\begin{center}
+		{\bf MAT 137Y: Calculus with proofs}\\
+		{\bf Assignment 1} \\
+		{\bf Due on Thursday, October 1 by 11:59pm via Crowdmark}
+	\end{center}
+}
+
+\vv
+
+\begin{quotation}
+{\bf Instructions:}
+	\begin{itemize}
+		\item	 You will need to submit your solutions electronically via Crowdmark.   \href{https://www.math.toronto.edu/~alfonso/137/PS/137_CM.html}{See MAT137 Crowdmark help page for instructions}.  Make sure you understand how to submit and that you try the system ahead of time.  If you leave it for the last minute and you run into technical problems, you will be late.  There are no extensions for any reason.
+		\item You may submit individually or as a team of two students.  See the link above for more details.
+		\item  You will need to submit your answer to each question separately.
+		\item  This problem set is about the introduction to logic, sets, notation, quantifiers, conditionals, definitions, and proofs (Unit 1).
+	\end{itemize}
+\end{quotation}
+\vv
+
+\begin{enumerate}
+
+\setcounter{enumi}{-1}
+
+\item Read \href{https://www.math.toronto.edu/~alfonso/137/PS/137_2021_collaboration.pdf}{``Notes on collaboration"} on the course website.
+
+	Write out the following sentence and sign below it, to certify that you have read it.
+	
+	\begin{quote}
+		``I have read and understood the notes on collaboration for this course, as explained in the course website."
+	\end{quote}
+
+\vv
+
+\item  \label{likes}  In this problem, assume all functions have domain $\R$.  I will define a new concept.  For every pair of functions $f$ and $g$, we define the set
+	$$
+		\M{f}{g} = \{x \in \R \; : \; f(x) < g(x) \}
+	$$ 
+	We say that the function $f$ \emph{loves} the function $g$ when
+	$$
+		\forall x \in \M{f}{g}, \; \exists y \in \M{g}{f} \mbox{ such that } x < y
+	$$
+
+	\begin{enumerate}
+		\item  Consider the functions $\Walt$ and $\Tor$ defined by
+			$$
+				\Walt(x) = \sin x, \quad \quad \Tor(x) = - 2\sin x.
+			$$
+		Prove that \emph{Tor} loves \emph{Walt}.
+		
+		\vv
+		\emph{Suggestion:}  Before doing anything else, find out what the sets $\M{\Walt}{\Tor}$ and $\M{\Tor}{\Walt}$ are.\\
+		\\
+		\emph{Proof:}
+		$$
+		    \M{Tor}{Walt}=\{x \in \R \; : \; Walt(x) < Tor(x) \}
+		$$
+		$$
+		    \M{Walt}{Tor}=\{x \in \R \; : \; Tor(x) < Walt(x) \}
+		$$
+		
+		\vv
+		\item  Let \DS{f(x) = 3} and let \DS{g(x) = x}.  Prove that $f$ doesn't love $g$.
+		\vv
+		\item  Which functions $f$ satisfy that $f$ loves $f$? 
+	\end{enumerate}
+\vv
+
+\item We continue with the assumptions, notation and definitions as in Question \ref{likes}.
+	
+	Given a function $f$ and any $t \in \R$, we define a new function, called $f_t$, via the equation
+	$$
+		f_t(x) = f(x) + t.
+	$$
+	Determine whether each of the following claims is true or false.  If true, prove it directly.  If false, prove it with a counterexample.
+	\begin{enumerate}
+		\item  Let $f$, $g$, and $h$ be functions. 
+				IF $f$ loves $g$ and $g$ loves $h$,
+				THEN $f$ loves $h$.
+			
+			\vv
+			\emph{Suggestion:}  It may be helpful to think of functions in terms of graphs instead of in terms of their equations at first.
+			\vv
+			
+		\item 
+				For every function $f$ there exists a function $g$ such that, for every $t \in \R$, $g$ loves $f_t$.
+	\end{enumerate}
+
+\vv
+
+\item Prove by induction that for every positive integer $n$, the number \DS{5^{2n}+11} is a multiple of 12.
+
+\end{enumerate}
+\end{document}
+
+
