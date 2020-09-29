@@ -220,31 +220,51 @@
 \emph{Proof:}
 	\begin{enumerate}
         \item[1)]Base Case $(n=1)$
-
-            WTS:\qquad $12\mid5^2+11$
-
-        \[
-            5^2+11=36\qquad\qquad\qquad
+            WTS
+            $$
+                12\mid5^2+11
+            $$
+        We can get,
+        $$
+            5^2+11=36
+        $$
+        $$
             12\mid36
-        \]
+        $$
         \item[2)] Induction Step
 
             Let $n\geq1$.\\
-            Assume:\qquad $12\mid5^2n+11$\\
-	        WTS:\qquad $12\mid5^{2n+1}+11$
-	   \[
-	        12\mid12\times2\times5^{2n}\qquad
-	        12\mid5^{2n}+11+24\times5^{2n}\qquad
-	        12\mid(24+1)\times5^{2n}+11\qquad
-	    \]
-	    \[
-	        12\mid25\times5^{2n}+11\qquad
-	        12\mid5^{2}\times5^{2n}+11\qquad
-	        12\mid5^{2n+2}+11\qquad
-        \]
-	    \[
-	        12\mid5^{2(n+1)}+11\quad\blacksquare
-	    \]
+            So we can assume,
+            $$
+                12\mid5^{2n}+11
+            $$
+	        WTS:
+	        $$
+	            12\mid5^{2(n+1)}+11
+	        $$
+    	    We know that,
+	        $$
+	            12\mid12\times2\times5^{2n}
+	        $$
+	        We can get,
+	        $$
+	            12\mid5^{2n}+11+24\times5^{2n}
+	        $$
+	        $$
+	            12\mid(24+1)\times5^{2n}+11
+	        $$
+	        $$
+	            12\mid25\times5^{2n}+11
+	        $$
+	        $$
+	            12\mid5^{2}\times5^{2n}+11
+	        $$
+	        $$
+	            12\mid5^{2n+2}+11
+	        $$
+	        $$
+	            12\mid5^{2(n+1)}+11\quad\blacksquare
+	        $$
     \end{enumerate}		
 \end{enumerate}
 \end{document}
