@@ -132,29 +132,29 @@
 		
 		By definition, 
 		$$ 
-			\M{Tor}{Walt} = \{x \in \R : \; - 2\sin(x) < \sin(x) \} = x \in \forall s \in \Z, \; (2s\pi, \; (2s + 1)\pi)
+			\M{Tor}{Walt} = \{x \in \R : \; - 2\sin(x) < \sin(x) \} = \{s \in \Z : \; 2s\pi < x < (2s + 1)\pi\}
 		$$
 		$$ 
-			\M{Walt}{Tor} = \{y \in \R : \; sin(y) < - 2\sin(y) \} = x \in \forall t \in \Z, \; ((2t - 1)\pi, \; 2t\pi)
+			\M{Walt}{Tor} = \{y \in \R : \; sin(y) < - 2\sin(y) \} = \{t \in \Z: \; ((2t - 1)\pi < y < 2t\pi)\}
 		$$
 
 		We can see that $\M{Walt}{Tor}=\M{Tor}{Walt} + \{2\pi\}$
 
-		So we can assume $s = k, \; t = k + 2\pi$.\\
+		So we can assume $\exists k \in \Z, \; s = k, \; t = k + 2\pi$.\\
 
 		We have 
 		$$
-			x \in \; (2k\pi, \; (2k + 1)\pi)
+			x \in \{k \in \Z : \; 2k\pi < x < \; (2k + 1)\pi\}
 		$$
 		$$
-			y \in \; ((2k + 1)\pi, \; (2k + 2)\pi)
+			y \in \{k \in \Z : \; (2k + 1)\pi < y < (2k + 2)\pi\}
 		$$
 		We can get
 		$$
-		x < (x + \pi) \in (2k\pi + \pi, (2k + 1)\pi + \pi) = ((2k + 1)\pi, (2k + 2)\pi)
+		x < (x + \pi) \in \{k \in \Z : \; 2k\pi + \pi < x < (2k + 1)\pi + \pi\}\\ = \{k \in \Z : \; (2k + 1)\pi < x < (2k + 2)\pi\}
 		$$
 		$$
-		\exists y \in ((2k + 1)\pi, (2k + 2) \pi) \; S.T \; y=x + \pi > x \quad \quad \blacksquare
+		\exists y \in \{k \in \Z : \; (2k + 1)\pi < y < (2k + 2)\pi\} \; S.T \; y=x + \pi > x \quad \quad \blacksquare
 		$$
 
 		\newpage
@@ -163,7 +163,7 @@
 		\\
 		\emph{Proof:}
 		\\
-		WTS $\exist x \in \M{f}{g}$ and $\forall y \in \M{g}{f}$, we have $x \geq y$ \\
+		WTS $\exists x \in \M{f}{g}$ and $\forall y \in \M{g}{f}$, we have $x \geq y$ \\
 		\vv
 		Because $f(x) = 3 \mbox{ and } g(x) = x$, \\
 		we can get $\M{f}{g} = (3, +\infty), \M{g}{f} = (-\infty, 3)$.\\
