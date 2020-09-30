@@ -212,16 +212,17 @@
 		$$
 		    f\ loves\ g\ and\ g\ loves\ h\implies f\ loves\ h
 		$$
-		This is FALSE. To show it, we need to prove,
+		This is FALSE. To show it, we need to prove its negation is true:
 		$$
+			\exists f, g, h, \mbox{ S.T. }
 		    f\ loves\ g\ and\ g\ loves\ h\ AND\ f\ doesn't\ love\ h
 		$$
 		Take $f=\sin{x}$, $g=\frac{1}{2}$, $h=\sin{x}+\frac{1}{2}$. By definition to prove $f\ loves\ g$,
 		$$
-		    \M{g}{h} = \{x \in \R : \; \sin(x) < \frac{1}{2} \} = \{s \in \Z : (\frac{5}{6}+2s)\pi < x < (\frac{13}{6}+2s)\pi\}
+		    \M{f}{g} = \{x \in \R : \; \sin(x) < \frac{1}{2} \} = \{s \in \Z : (\frac{5}{6}+2s)\pi < x < (\frac{13}{6}+2s)\pi\}
 		$$
 		$$
-		    \M{f}{g} = \{y \in \R : \; \frac{1}{2} < \sin(x) \} = \{t \in \Z : (\frac{13}{6}+2t)\pi < y < (\frac{17}{6}+2t)\pi\}
+		    \M{g}{f} = \{y \in \R : \; \frac{1}{2} < \sin(x) \} = \{t \in \Z : (\frac{13}{6}+2t)\pi < y < (\frac{17}{6}+2t)\pi\}
 		$$
 		$\exists k \in \Z$, so we can assume $s = k, \; t = k$.\\
 		We have 
