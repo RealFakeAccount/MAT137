@@ -265,7 +265,18 @@
 		\\
 		\\
 		\emph{Proof:}
-		
+		WTS $\forall f, \exists g \mbox{ S.T. } \forall t \in \R, g \mbox{ loves } f_t$\\
+		Let $g(x) = f(x) + tan(x)$\\
+		Using the definition of love, $g \mbox{ loves } f_t$ then becomes:
+		$$
+			\forall x \in \{\forall x \in \R | tan(x) < t\},\\
+			\exists y \in \{\forall y \in \R| t < tan(y)\} S.T. \; x < y
+		$$
+
+		We know that if $x \in \R$ the range of $tan(x) = (-\infty, +\infty) $ or do not exist\\
+		So $\forall x \in \{\forall x \in \R | tan(x) < t\}, $, \\
+		we can always find a $y \in \R \mbox{ S.T } tan(y) = t - tan(x) + t > t \mbox{ and } y > x$.\quad $\blacksquare$
+
 	\end{enumerate}
 
 \vv
