@@ -208,6 +208,55 @@
 		\\
 		\\
 		\emph{Proof:}
+		We need to prove,
+		$$
+		    f\ loves\ g\ and\ g\ loves\ h\implies f\ loves\ h
+		$$
+		This is FALSE. To show it, we need to prove,
+		$$
+		    f\ loves\ g\ and\ g\ loves\ h\ AND\ f\ doesn't\ love\ h
+		$$
+		Take $f=\sin{x}$, $g=\frac{1}{2}$, $h=\sin{x}+\frac{1}{2}$. By definition to prove $f\ loves\ g$,
+		$$
+		    \M{g}{h} = \{x \in \R : \; \sin(x) < \frac{1}{2} \} = \{s \in \Z : (\frac{5}{6}+2s)\pi < x < (\frac{13}{6}+2s)\pi\}
+		$$
+		$$
+		    \M{f}{g} = \{y \in \R : \; \frac{1}{2} < \sin(x) \} = \{t \in \Z : (\frac{13}{6}+2t)\pi < y < (\frac{17}{6}+2t)\pi\}
+		$$
+		$\exists k \in \Z$, so we can assume $s = k, \; t = k$.\\
+		We have 
+		$$
+			x \in \{k \in \Z : (\frac{5}{6}+2k)\pi < x < (\frac{13}{6}+2k)\pi\}
+		$$
+		$$
+			y \in \{k \in \Z : (\frac{13}{6}+2k)\pi < y < (\frac{17}{6}+2k)\pi\}
+		$$
+		So, $\forall x\ \exists y\ S.T\ x < y$\\
+		To prove $g\ loves\ h$,
+		$$ 
+			\M{g}{h} = \{x \in \R : \; \frac{1}{2} < \sin(x)+\frac{1}{2} \} = \{s \in \Z : \; 2s\pi < x < (2s + 1)\pi\}
+		$$
+		$$ 
+			\M{h}{g} = \{y \in \R : \; \sin(y)+\frac{1}{2} < \frac{1}{2} \} = \{t \in \Z : \; (2s + 1)\pi < y < (2s + 2)\pi\}
+		$$
+		$\exists k \in \Z$, so we can assume $s = k, \; t = k$.\\
+		We have 
+		$$
+			x \in \{k \in \Z : \; 2k\pi < x < (2k + 1)\pi\}
+		$$
+		$$
+			y \in \{k \in \Z : \; (2k + 1)\pi < y < (2k + 2)\pi\}
+		$$
+		So, $\forall x\ \exists y\ S.T.\ x < y$\\
+		To prove $f\ doesn't\ love\ h$,
+		$$ 
+			\M{f}{h} = \{x \in \R : \sin(x) < \sin(x)+\frac{1}{2} \} = \{x \in \R\}
+		$$
+		$$ 
+			\M{h}{f} = \{y \in \R : \sin(y)+\frac{1}{2} < \sin(y) \} = \emptyset
+		$$
+		Because $ \exists x \in \R, \forall y \in \emptyset \; S.T. \; x \geq y $ is always true.\\
+		The negation of statement is True. The statement is False $\quad \blacksquare$
 		
 		\newpage	
 		\item 
