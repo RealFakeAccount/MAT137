@@ -132,10 +132,10 @@
 		
 		By definition, 
 		$$ 
-			\M{Tor}{Walt} = \{x \in \R : \; - 2\sin(x) < \sin(x) \} = \{s \in \Z : \; 2s\pi < x < (2s + 1)\pi\}
+			\M{Tor}{Walt} = \{x \in \R : \; - 2\sin(x) < \sin(x) \} = \{x \in \R : \; 2s\pi < x < (2s + 1)\pi\ for\ some\ s\in\Z\}
 		$$
 		$$ 
-			\M{Walt}{Tor} = \{y \in \R : \; sin(y) < - 2\sin(y) \} = \{t \in \Z: \; ((2t - 1)\pi < y < 2t\pi)\}
+			\M{Walt}{Tor} = \{y \in \R : \; sin(y) < - 2\sin(y) \} = \{y \in \R: \; (2t - 1)\pi < y < 2t\pi\ for\ some\ s\in\Z\}
 		$$
 
 		We can see that $\M{Walt}{Tor}=\M{Tor}{Walt} + \{2\pi\}$
@@ -144,17 +144,17 @@
 
 		We have 
 		$$
-			x \in \{k \in \Z : \; 2k\pi < x < \; (2k + 1)\pi\}
+			x \in \{X \in \R : \; 2k\pi < x < \; (2k + 1)\pi\ for\ some\ k\in\Z\}
 		$$
 		$$
-			y \in \{k \in \Z : \; (2k + 1)\pi < y < (2k + 2)\pi\}
+			y \in \{y \in \R : \; (2k + 1)\pi < y < (2k + 2)\pi\ for\ some\ k\in\Z\}
 		$$
 		We can get
 		$$
-		x < (x + \pi) \in \{k \in \Z : \; 2k\pi + \pi < x < (2k + 1)\pi + \pi\}\\ = \{k \in \Z : \; (2k + 1)\pi < x < (2k + 2)\pi\}
+		x < (x + \pi) \in \{x \in \R : \; 2k\pi + \pi < x < (2k + 1)\pi + \pi\ for\ some\ k\in\Z\}\\ = \{X \in \R : \; (2k + 1)\pi < x < (2k + 2)\pi\ for\ some\ k\in\Z\}
 		$$
 		$$
-		\exists y \in \{k \in \Z : \; (2k + 1)\pi < y < (2k + 2)\pi\} \; S.T \; y=x + \pi > x \quad \quad \blacksquare
+		\exists y \in \{y \in \R : \; (2k + 1)\pi < y < (2k + 2)\pi\ for\ some\ k\in\Z\} \; S.T. \; y=x + \pi > x \quad \quad \blacksquare
 		$$
 
 		\newpage
@@ -166,9 +166,9 @@
 		WTS $\exists x \in \M{f}{g}$ and $\forall y \in \M{g}{f}$, we have $x \geq y$ \\
 		\vv
 		Because $f(x) = 3 \mbox{ and } g(x) = x$, \\
-		we can get $\M{f}{g} = (3, +\infty), \M{g}{f} = (-\infty, 3)$.\\
-		Let $x=5 \in \M{f}{g}, \; y \in \M{g}{f}$, \\
-		$x > 3 > y \quad \quad \blacksquare $
+		we can get $\M{f}{g} = \{x \in \R : \;  x > 3 \}, \ \M{g}{f} = \{y \in \R : \;  y < 3 \}$.\\
+		Take $x=5 \in \M{f}{g}= \{x \in \R : \;  x > 3 \}$, Let$\ y \in \M{g}{f} = \{y \in \R : \;  y < 3 \}$, \\
+		$x = 5 > 3 > y \quad \quad \blacksquare $
 		\\
 		
 		\vv
@@ -180,7 +180,7 @@
 		\emph{Proof:}
 		\\
 		\\
-		We want to find a function $f$, S.T $\forall x \in \M{f}{f}, \exists y \in \M{f}{f} \; S.T. \; x < y$\\
+		We want to find a function $f$, S.T. $\forall x \in \M{f}{f}, \exists y \in \M{f}{f} \; S.T. \; x < y$\\
 		By definition, $\M{f}{f}=\{ x \in \R: \; f(x) < f(x)\} = \emptyset$\\
 		\\
 		Because $\forall x \in \emptyset, \; \exists y \in \emptyset \; S.T. \; x < y$ is always true,
@@ -219,34 +219,34 @@
 		$$
 		Take $f=\sin{x}$, $g=\frac{1}{2}$, $h=\sin{x}+\frac{1}{2}$. By definition to prove $f\ loves\ g$,
 		$$
-		    \M{f}{g} = \{x \in \R : \; \sin(x) < \frac{1}{2} \} = \{s \in \Z : (\frac{5}{6}+2s)\pi < x < (\frac{13}{6}+2s)\pi\}
+		    \M{f}{g} = \{x \in \R : \; \sin(x) < \frac{1}{2} \} = \{x \in \R : (\frac{5}{6}+2s)\pi < x < (\frac{13}{6}+2s)\pi\ for\ some\ s\in\Z\}
 		$$
 		$$
-		    \M{g}{f} = \{y \in \R : \; \frac{1}{2} < \sin(x) \} = \{t \in \Z : (\frac{13}{6}+2t)\pi < y < (\frac{17}{6}+2t)\pi\}
+		    \M{g}{f} = \{y \in \R : \; \frac{1}{2} < \sin(x) \} = \{y \in \Z : (\frac{13}{6}+2t)\pi < y < (\frac{17}{6}+2t)\pi\ for\ some\ t\in\Z\}
 		$$
 		$\exists k \in \Z$, so we can assume $s = k, \; t = k$.\\
 		We have 
 		$$
-			x \in \{k \in \Z : (\frac{5}{6}+2k)\pi < x < (\frac{13}{6}+2k)\pi\}
+			x \in \{x \in \R : (\frac{5}{6}+2k)\pi < x < (\frac{13}{6}+2k)\pi\ for\ some\ k\in\Z\}
 		$$
 		$$
-			y \in \{k \in \Z : (\frac{13}{6}+2k)\pi < y < (\frac{17}{6}+2k)\pi\}
+			y \in \{y \in \R : (\frac{13}{6}+2k)\pi < y < (\frac{17}{6}+2k)\pi\ for\ some\ k\in\Z\}
 		$$
 		So, $\forall x\ \exists y\ S.T\ x < y$\\
 		To prove $g\ loves\ h$,
 		$$ 
-			\M{g}{h} = \{x \in \R : \; \frac{1}{2} < \sin(x)+\frac{1}{2} \} = \{s \in \Z : \; 2s\pi < x < (2s + 1)\pi\}
+			\M{g}{h} = \{x \in \R : \; \frac{1}{2} < \sin(x)+\frac{1}{2} \} = \{x \in \R : \; 2s\pi < x < (2s + 1)\pi\ for\ some\ s\in\Z\}
 		$$
 		$$ 
-			\M{h}{g} = \{y \in \R : \; \sin(y)+\frac{1}{2} < \frac{1}{2} \} = \{t \in \Z : \; (2s + 1)\pi < y < (2s + 2)\pi\}
+			\M{h}{g} = \{y \in \R : \; \sin(y)+\frac{1}{2} < \frac{1}{2} \} = \{y \in \R : \; (2s + 1)\pi < y < (2s + 2)\pi\ for\ some\ t\in\Z\}
 		$$
 		$\exists k \in \Z$, so we can assume $s = k, \; t = k$.\\
 		We have 
 		$$
-			x \in \{k \in \Z : \; 2k\pi < x < (2k + 1)\pi\}
+			x \in \{x \in \R : \; 2k\pi < x < (2k + 1)\pi\ for\ some\ k\in\Z\}
 		$$
 		$$
-			y \in \{k \in \Z : \; (2k + 1)\pi < y < (2k + 2)\pi\}
+			y \in \{y \in \R : \; (2k + 1)\pi < y < (2k + 2)\pi\ for\ some\ k\in\Z\}
 		$$
 		So, $\forall x\ \exists y\ S.T.\ x < y$\\
 		To prove $f\ doesn't\ love\ h$,
@@ -256,7 +256,7 @@
 		$$ 
 			\M{h}{f} = \{y \in \R : \sin(y)+\frac{1}{2} < \sin(y) \} = \emptyset
 		$$
-		Because $ \exists x \in \R, \forall y \in \emptyset \; S.T. \; x \geq y $ is always true.\\
+		Because $ \exists x \in \R, \forall y \in \emptyset \; S.T. \; x \geq y $ is always True.\\
 		The negation of statement is True. The statement is False $\quad \blacksquare$
 		
 		\newpage	
@@ -269,13 +269,13 @@
 		Let $g(x) = f(x) + tan(x)$\\
 		Using the definition of love, $g \mbox{ loves } f_t$ then becomes:
 		$$
-			\forall x \in \{\forall x \in \R | tan(x) < t\},\\
-			\exists y \in \{\forall y \in \R| t < tan(y)\} S.T. \; x < y
+			\forall x \in \{x \in \R : tan(x) < t\ for\ some\ t\in\R\},\\
+			\exists y \in \{y \in \R : t < tan(y)\ for\ some\ t\in\R\}\ S.T. \; x < y
 		$$
 
 		We know that if $x \in \R$ the range of $tan(x) = (-\infty, +\infty) $ or do not exist\\
-		So $\forall x \in \{\forall x \in \R | tan(x) < t\}, $, \\
-		we can always find a $y \in \R \mbox{ S.T } tan(y) = t - tan(x) + t > t \mbox{ and } y > x$.\quad $\blacksquare$
+		So $\forall x \in \{x \in \R : tan(x) < t\ for\ some\ t\in\R\}, $ \\
+		we can always find a $y \in \R \mbox{ S.T. } tan(y) = t - tan(x) + t > t \mbox{ and } y > x$.\quad $\blacksquare$
 
 	\end{enumerate}
 
