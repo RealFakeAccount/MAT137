@@ -116,7 +116,7 @@ Assume that \DS{\lim_{x \to a} f(x)} does not exist, and that \DS{\lim_{x \to a}
 
 \item Prove that \DS{\lim_{x \to 2} x^3 = 8}.  Write a proof directly from the definition of limit, without using any of the limit laws or other theorems.
 \\
-	\emph{Claim:} $\forall \epsilon > 0, \delta < 0$ S.T. $0<\vert{x-2}\vert<\delta\implies\vert{x^3-8}\vert<\epsilon $
+	\emph{Claim:} \DS{\lim_{x \to 2} x^3 = 8}. This can be written as: $\forall \epsilon > 0, \delta > 0$ \mbox{s.t.} $0<\vert{x-2}\vert<\delta\implies\vert{x^3-8}\vert<\epsilon $
 	\\
 	\emph{Proof:}\\
 	Let $\epsilon>0.$
@@ -126,7 +126,6 @@ Assume that \DS{\lim_{x \to a} f(x)} does not exist, and that \DS{\lim_{x \to a}
 	    \vert{x-2}\vert<\frac{\epsilon}{19}\qquad{and}\qquad\vert{x-2}\vert<1
 	$$
 	Hence $$1<x<3,\quad 2<x+1<4,$$
-	Since $$x+1>2>0,\quad (x+1)^2>0$$
 	So $$2^2=4<(x+1)^2=x^2+2x+1<4^2=16,\quad 7<x^2+2x+4<19.$$
 	Thus $$\vert{x^3-8}\vert=\vert{x-2}\vert\vert{x^2+2x+4}\vert<\frac{\epsilon}{19}19=\epsilon$$
 	We have proven: $\vert{x^3-8}\vert<\epsilon,$ as needed. $\quad \quad \blacksquare$
