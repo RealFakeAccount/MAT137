@@ -135,17 +135,19 @@ WTS that \DS{\lim_{x \to a} f(x)} does not exist.
 This can be written as: $\forall L \in \R, \exists \epsilon > 0, \mbox{ s.t } \forall \delta > 0, \exists x \in \R,
  0 < |x - a| < \delta \mbox{ and } |f(x) - L| \geq \epsilon$
 
-Let $L \in \R$. Take $\epsilon = 1$. Let $x \in (a - \delta, a + \delta)$ so that $0 < |x - a| < \delta$\\
+Let $L \in \R$. Take $\epsilon = 1$. Let $\delta \in \R$\\
 At least one of the following must be true:
 
 \begin{itemize}
 	\item Case A: $3 \notin (L - \epsilon, L + \epsilon).$ \\ 
-	I can choose any $x \in (a, a + \delta)$. From definition we know that $f(x) = 3$
+	I can choose any $x \in (a, a + \delta)$, satisfying $0 < |x - a| < \delta$. 
+	From definition we know that $f(x) = 3$
 \end{itemize}
 
 \begin{itemize}
 	\item Case B: $-3 \notin (L - \epsilon, L + \epsilon).$ \\ 
-	I can choose any $x \in (a - \delta, a )$. From definition we know that $f(x) = -3$
+	I can choose any $x \in (a - \delta, a )$, satisfying $0 < |x - a| < \delta$. 
+	From definition we know that $f(x) = -3$
 \end{itemize}
 
 Either way, it satisfies $x \in (a - \delta, a + \delta)$ and $|f(x) - L| \geq \epsilon$. \\
@@ -166,17 +168,19 @@ WTS that \DS{\lim_{x \to a} g(x)} does not exist.
 This can be written as: $\forall L \in \R, \exists \epsilon > 0, \mbox{ s.t } \forall \delta > 0, \exists x \in \R,
  0 < |x - a| < \delta \mbox{ and } |g(x) - L| \geq \epsilon$
 
-Let $L \in \R$. Take $\epsilon = 1$. Let $x \in (a - \delta, a + \delta)$ so that $0 < |x - a| < \delta$\\
+Let $L \in \R$. Take $\epsilon = 1$. Let $\delta \in \R$. \\
 At least one of the following must be true:
 
 \begin{itemize}
 	\item Case A: $-3 \notin (L - \epsilon, L + \epsilon).$ \\ 
-	I can choose any $x \in (a, a + \delta)$. From definition we know that $g(x) = -3$
+	I can choose any $x \in (a, a + \delta)$, satisfying $0 < |x - a| < \delta$. 
+	From definition we know that $g(x) = -3$
 \end{itemize}
 
 \begin{itemize}
 	\item Case B: $3 \notin (L - \epsilon, L + \epsilon).$ \\ 
-	I can choose any $x \in (a - \delta, a )$. From definition we know that $g(x) = 3$
+	I can choose any $x \in (a - \delta, a )$, satisfying $0 < |x - a| < \delta$. 
+	From definition we know that $g(x) = 3$
 \end{itemize}
 
 Either way, it satisfies $x \in (a - \delta, a + \delta)$ and $|g(x) - L| \geq \epsilon$. \\
@@ -198,7 +202,7 @@ WTS that \DS{\lim_{x \to a} h(x)} $= 0$. This can be written as: $\forall \epsil
  0 < |x - a| < \delta \implies |h(x)| < \epsilon$
  
 Let $\epsilon > 0.$ I take $\delta = \epsilon$. Let $X \in \R$. Assume that $0 < |x - a| < \delta$. \\
-Then, $|h(x)| = 0 < \delta = \epsilon.$
+Then, $|h(x)| = 0 < \delta = \epsilon \implies h(x) < \epsilon$
 I have proven that $h(x) < \epsilon$, as needed.
 
 
@@ -233,17 +237,19 @@ WTS that \DS{\lim_{x \to a} h(x)} does not exist.
 This can be written as: $\forall L \in \R, \exists \epsilon > 0, \mbox{ s.t } \forall \delta > 0, \exists x \in \R,
  0 < |x - a| < \delta \mbox{ and } |h(x) - L| \geq \epsilon$
 
-Let $L \in \R$. Take $\epsilon = 1$. Let $x \in (a - \delta, a + \delta)$ so that $0 < |x - a| < \delta$\\
+Let $L \in \R$. Take $\epsilon = 1$. Let $\delta \in \R$.\\
 At least one of the following must be true:
 
 \begin{itemize}
 	\item Case A: $6 \notin (L - \epsilon, L + \epsilon).$ \\ 
-	I can choose any $x \in (a, a + \delta)$. From definition we know that $h(x) = 6$
+	I can choose any $x \in (a, a + \delta)$, satisfying $0 < |x - a| < \delta$. 
+	From definition we know that $h(x) = 6$
 \end{itemize}
 
 \begin{itemize}
 	\item Case B: $-6 \notin (L - \epsilon, L + \epsilon).$ \\ 
-	I can choose any $x \in (a - \delta, a )$. From definition we know that $h(x) = -6$
+	I can choose any $x \in (a - \delta, a )$, satisfying $0 < |x - a| < \delta$. 
+	From definition we know that $h(x) = -6$
 \end{itemize}
 
 Either way, it satisfies $x \in (a - \delta, a + \delta)$ and $|h(x) - L| \geq \epsilon$. \\
