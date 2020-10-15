@@ -312,6 +312,46 @@ we can't conclude whether \DS{\lim_{x \to a}\left[f(x) + g(x) \right]} exists or
 	\end{center}
 Write a proof directly from the definition of limit, without using any of the limit laws or other theorems.
 
+
+	
+	\vv
+	
+	\emph{Definition:}\\
+	\DS{\lim_{x \to \infty} f(x)=\infty}. This can be written as: $\forall M \in \R, \exists K\in \R, \mbox{ s.t. } x > K \implies f(x) > M$
+	\\
+	\DS{\lim_{x \to \infty} g(x)} exists. This can be written as: $\exists L\in \R, \mbox{ s.t. } \forall \epsilon >0, \exists M\in \R, \mbox{ s.t. } x > M \implies \vert{g(x)-L}\vert < \epsilon$
+	\\
+	Since $h=f+g$,
+	\DS{\lim_{x \to \infty} h(x)=\infty}. This can be written as: $\forall M \in \R, \exists K\in \R, \mbox{ s.t. } x > K \implies h(x) > M$
+	\\
+	\emph{Proof:}\\
+    	Let $M\in\R.$ Assume \DS{\lim_{x \to \infty} g(x)=L}$\in\R.$ Let $\epsilon>0.$
+    	\\
+    	I use $M-L+\epsilon$ in the definition of \DS{\lim_{x \to \infty} f(x)=\infty}. Since $M-L+\epsilon\in\R$, we can get:
+
+    	\vv
+
+    	$\exists K_1\in \R, \mbox{ s.t. } x > K_1 \implies f(x) > M-L+\epsilon \implies f(x)-M+L-\epsilon > 0$
+
+    	\vv
+
+    	I use the same $\epsilon$ in the definition of \DS{\lim_{x \to \infty} g(x)} exists, we have:
+
+    	\vv
+
+    	$\exists L\in \R, \mbox{ s.t. } \forall \epsilon >0, \exists M_1\in \R, \mbox{ s.t. } x > M_1 \implies \vert{g(x)-L}\vert< \epsilon \implies L-\epsilon<g(x) \implies g(x)-L+\epsilon>0$
+
+    	\vv
+
+    	Take $K=$max$\{K_1, M_1\}.$\\
+    	Let $x\in\R.$ Assume $x>K$. This implies:\\
+    	$x>K_1.$ Thus $f(x)-M+L-\epsilon>0$\\
+    	$x>M_1.$ Thus $g(x)-L+\epsilon>0$\\
+    	Then $h(x)-M=[f(x)-M+L-\epsilon]+[g(x)-L+\epsilon]>0.$
+	So $h(x) > M.$
+    	\\
+    	We have proven: $h(x) > M$ as needed. $\quad \quad \blacksquare$
+
 \end{enumerate}
 \end{document}
 
