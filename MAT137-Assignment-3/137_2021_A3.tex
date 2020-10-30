@@ -1,0 +1,159 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ifthen}
+\usepackage{geometry}
+\noprintanswers
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+
+\usepackage{framed}
+
+\addtolength{\textheight}{3cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textwidth}{3cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\setlength\parindent{0pt}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+\newcommand{\vv}{\vspace{.4cm}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\pagestyle{empty}
+
+
+%============================================
+%137 COLOUR PALETTE
+%============================================
+
+\definecolor{137cp1}{RGB}{13, 33, 161}
+\definecolor{137cp2}{RGB}{51, 161, 253}
+\definecolor{137cp3}{RGB}{255, 67, 101}
+\definecolor{137cp4}{RGB}{232, 144, 5}
+
+
+%============================================
+%HYPERLINKS
+%============================================
+
+\usepackage{hyperref}
+\hypersetup{colorlinks}
+\hypersetup{urlcolor=137cp3, linkcolor=137cp1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+{\large
+	\begin{center}
+		{\bf MAT 137Y: Calculus with proofs}\\
+		{\bf Assignment 3} \\
+		{\bf Due on Thursday, November 5 by 11:59pm via Crowdmark}
+	\end{center}
+}
+
+\vv
+
+\begin{quotation}
+{\bf Instructions:}
+	\begin{itemize}
+		\item	 You will need to submit your solutions electronically via Crowdmark.   \href{https://www.math.toronto.edu/~alfonso/137/PS/137_CM.html}{See MAT137 Crowdmark help page for instructions}.  Make sure you understand how to submit and that you try the system ahead of time.  If you leave it for the last minute and you run into technical problems, you will be late.  There are no extensions for any reason.
+		\item You may submit individually or as a team of two students.  See the link above for more details.
+		\item  You will need to submit your answer to each question separately.
+		\item  This problem set is about derivatives (Unit 3).
+	\end{itemize}
+\end{quotation}
+\vv
+
+\begin{enumerate}
+
+\item The function $g$ has domain $\R$ and is continuous.  Below is the graph of its derivative $g'$.  Sketch the graph of $g$.
+
+	\begin{center}
+		\includegraphics[scale=.5]{A3G1}
+	\end{center}
+
+	\emph{Note:} There could be more than one correct answer.
+
+\end{enumerate}
+
+%%%
+\newpage
+
+\begin{framed}
+{\bf Important!}  We always want you to justify all your answers.  This time, for Q\ref{qu:quotient} and Q\ref{qu:power}, we want you to be particularly careful.  The proofs in those questions contain calculations.   When you are taking those steps, justify everything you do.  Explain explicitly anything you do that is not merely a straightforward algebraic manipulation.  If you are using a hypotheses, say so explicitly.  If you are invoking a theorem, a property, or a previously proven claim, say so explicitly (and make sure you know you are allowed to use it).  We want you to be very conscious of everything you are using and everything you are assuming.
+\end{framed}
+
+\begin{enumerate}[resume]
+
+\vv
+
+\item  \label{qu:quotient} 
+Let $a \in \R$.  Let $f$ be a function.  Assume $f$ is differentiable at $a$. 
+
+Assume $f$ is never $0$.  Let $g$ be the function defined by the equation \DS{g(x) = \frac{1}{f(x)}}.
+
+Prove that $g$ is differentiable at $a$ and that \DS{g'(a) =  \frac{-f'(a)}{f(a)^2}}. 
+
+Write a proof directly from the definition of derivative, without using any of the differentiation rules.
+
+\vv
+
+\item \label{qu:power}  The power rule says that, for every $c \in \R$:
+	$$
+		\frac{d}{dx} \left[ x^c \right]  \; = \; c x^{c-1}
+	$$
+In this problem, we will restrict ourselves only to the domain $x>0$.
+
+In Video 3.7 you learned a proof for a particular case: when $c$ is a positive integer.  You will later (Video 4.10) learn a proof that works for all $c \in \R$ using logarithms, but there are other simple proofs, without using logarithms, that extend to $c \in \Q$.  That is the goal of this problem.
+	
+You may assume the power rule when $c$ is a positive integer, as well as other results you learned in Unit 3, including the Chain Rule.
+	\begin{enumerate}
+		\item  Prove the power rule when $c$ is a positive rational.
+		
+		\emph{Suggestion:}  Assume $c=p/q$ for some positive integers $p$ and $q$.    Define the function $f(x)=x^{p/q}$.  Then this function satisfies
+			$$
+				f(x)^q = x^p.
+			$$
+			Use implicit differentiation.
+		
+		\item  Prove the power rule when $c$ is a negative rational.
+		
+		\emph{Suggestion:} Look at what you have done so far in this assignment.
+	\end{enumerate}
+
+\vv
+%%%
+\newpage
+
+\item   The function $h$ satisfies the following equation:
+	$$ \forall x \in \R, \quad h(xh(x)) = \left[ h(x)\right]^3. $$
+In addition, we know:
+	\begin{itemize}
+		\item The domain of $h$ is $\R$.
+		\item $h$ is twice differentiable (meaning that $h$ is differentiable, and $h'$ is also differentiable).
+		\item $h(1)=1$.
+		\item The graph of $h$ does not have a horizontal tangent line at the point with $x$-coordinate $1$.
+	\end{itemize}
+	
+	Calculate \DS{h''(1)}.
+	
+	\emph{Hint:} Use implicit differentiation.
+
+
+\end{enumerate}
+\end{document}
+
+
