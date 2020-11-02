@@ -111,29 +111,6 @@ Write a proof directly from the definition of derivative, without using any of t
 
 \vv
 
-WTS $g$ is differentiable at $a$.
-
-That's equivalent to $\lim_{x \to a} \frac{g(x) - g(a)}{x - a} \quad exists$.
-
-From definition, we know that $f$ is differentiable at $a$.
-
-That's equivalent to $\lim_{x \to a} \frac{f(x) - f(a)}{x - a}$.
-
-Since $\forall a \in \R, f(a) \neq 0 \implies f(x) * f(a) \neq 0$ and $g(x) = \frac{1}{f(x)}$
-
-we can write:
-
-\begin{align*}
-	\lim_{x \to a} -\frac{f(x) - f(a)}{x - a} * \frac{1}{f(x) * f(a)} &\quad exists \\
-	\lim_{x \to a} \frac{\frac{f(a) - f(x)}{f(x)f(a)}}{x - a} &\quad exists \\
-	\lim_{x \to a} \frac{\frac{1}{f(x)} - \frac{1}{f(a)}}{x - a} &\quad exists \\
-	\lim_{x \to a} \frac{g(x) - g(a)}{x - a} &\quad exists
-\end{align*}
-
-We have shown that $g$ is differentiable at $a$.
-
-\newpage
-
 \item \label{qu:power}  The power rule says that, for every $c \in \R$:
 	$$
 		\frac{d}{dx} \left[ x^c \right]  \; = \; c x^{c-1}
