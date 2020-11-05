@@ -136,6 +136,32 @@ Prove that $g$ is differentiable at $a$ and that \DS{g'(a) =  \frac{-f'(a)}{f(a)
 Write a proof directly from the definition of derivative, without using any of the differentiation rules.
 
 \vv
+\emph{Proof: }\\
+To consider whether $g$ is differentiable at $a$. We need to consider $\lim_{x \to a} \frac{g(x) - g(a)}{x - a}$.
+Since $f$ is never 0, $f(a)\neq0$. Assume \DS{g(x) = \frac{1}{f(x)}}.
+Note that:
+
+\begin{align*}
+	\lim_{x \to a} \frac{g(x) - g(a)}{x - a}
+	&=\lim_{x \to a} \frac{\frac{1}{f(x)} - \frac{1}{f(a)}}{x - a}\\
+	&=\lim_{x \to a} \frac{\frac{f(a) - f(x)}{f(x)f(a)}}{x - a}\qquad (Common\ Denominator)\\
+	&=\lim_{x \to a} [(-\frac{1}{f(x)f(a)})\cdot\frac{f(x) - f(a)}{x - a}]\\
+\end{align*}
+
+\circled{1}Since $f$ is differentiable at a, it is continuous at $a$. Since $f$ is never 0, $f(a)\neq0$. Hence, $\lim_{x \to a}f(x)=f(a)$, giving us $\lim_{x \to a} -\frac{1}{f(x)f(a)}=-\frac{1}{f(a)\cdot f(a)}=-\frac{1}{f(a)^2}$\\
+\circled{2}Since $f$ is differentiable at a, we know that $\lim_{x \to a} \frac{f(x) - f(a)}{x - a}=f'(a)$.\\
+Using \circled{1}, \circled{2}, and a limit law our previous computation give,
+
+\begin{align*}
+	\lim_{x \to a} \frac{g(x) - g(a)}{x - a}
+	&=\lim_{x \to a} [(-\frac{1}{f(x)f(a)})\cdot\frac{f(x) - f(a)}{x - a}]\\
+	&=\lim_{x \to a} (-\frac{1}{f(x)f(a)})\cdot \lim_{x \to a}\frac{f(x) - f(a)}{x - a}\qquad (Limit\ Laws)\\
+	&=-\frac{1}{f(a)^2}\cdot f'(a)\qquad (Using\ \circled{1},\  \circled{2})\\
+	&=\frac{-f'(a)}{f(a)^2}
+\end{align*}
+We have shown $g$ is differentiable at $a$ and $g'(a)=\frac{-f'(a)}{f(a)^2}.$ $\quad \blacksquare$
+
+\newpage
 
 \item \label{qu:power}  The power rule says that, for every $c \in \R$:
 	$$
