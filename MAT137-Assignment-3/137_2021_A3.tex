@@ -11,6 +11,9 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt, 
+        minimum height=12pt] (char) {#1};}}
 
 \usepackage{framed}
 
@@ -186,11 +189,71 @@ You may assume the power rule when $c$ is a positive integer, as well as other r
 				f(x)^q = x^p.
 			$$
 			Use implicit differentiation.
-		
+
+		\vv
+
+			
+		\emph{Proof: }
+
+		Take $p, q \in \Z^+$. Assume $c=p/q$. Define the function $f(x)=x^{p/q}$.  Then this function satisfies
+		$$
+			f(x)^q = x^p. 
+		$$
+
+		Since $x > 0$, we have $qf(x)^{q - 1} \neq 0 \quad \circled{1}$ and $f(x)=x^{p/q} \neq 0 \quad \circled{2}$.
+
+		We can write:
+
+		\begin{align*}
+			& \frac{d}{dx}[f(x)^q] = \frac{d}{dx}[f(x)^q] \quad \mbox{(using implicit differentiation)} \\
+			& (qf(x)^{q-1} )f'(x) = px^{p-1}  \quad \mbox{(using chain rule and power rule for positive integer)} \\
+			& f'(x) = \frac{px^{p-1}}{qf(x)^{q-1}} \quad \mbox{(use } \circled{1} \mbox{)} \\
+			& f'(x) = \frac{px^{p-1}}{q(x^{\frac{p}{q}})^{q-1}} \quad \mbox{(take } f(x)=x^{p/q} \mbox{ and \circled{2})} \\
+			& f'(x) = \frac{p}{q} \cdot \frac{x^{p - 1}}{x^{p - \frac{p}{q}}} \\
+			& \frac{d}{dx}[x^\frac{p}{q}] = \frac{p}{q} \cdot x^{\frac{p}{q} - 1} \quad \mbox{(using implicit differentiation)} \\
+			& \frac{d}{dx}[x^c] = c x^{c-1} \quad \mbox{(take $c=p/q$)}
+		\end{align*}
+
+		I have proven the power rule holds true when $c$ is a positive rational, as needed. $\quad \quad \blacksquare$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\newpage
+
 		\item  Prove the power rule when $c$ is a negative rational.
-		
+
 		\emph{Suggestion:} Look at what you have done so far in this assignment.
+
+		\vv
+
+		\emph{proof:}
+		Using all definition from part a, besides:
+
+		Take $p, q \in \Z^+$. Assume $c=-p/q$. Define the function $g(x)=x^{-p/q}$.
+
+		Since $x > 0$, we have $g(x)=x^{-p/q} \neq 0$.
+
+		We can write $g(x)$ as:
+
+		$$
+			g(x) = x^{\frac{-p}{q}} = \frac{1}{x^\frac{p}{q}} = \frac{1}{f(x)} \quad \mbox{(using $\circled{2}$)}
+		$$
+
+		from question 1, we knows that when $f$ is never $0$ and \DS{g(x) = \frac{1}{f(x)}}, \DS{g'(x) =  \frac{-f'(x)}{f(x)^2}}
+
+		so $g'(x)$ can be written as:
+
+		\begin{align*}
+			\frac{d}{dx}[x^\frac{-p}{q}] &= \frac{-\frac{p}{q}x^{\frac{p}{q} - 1}}{(x^{\frac{p}{q}})^2} \quad \mbox{(using implicit differentiation)}\\
+			\frac{d}{dx}[x^\frac{-p}{q}] &= \frac{-p}{q}x^{-\frac{p}{q} - 1}\\
+			\frac{d}{dx}[x^c] &= c x^{c-1} \quad \mbox{(take $c=-p/q$)}\\
+		\end{align*}
+
+		I have proven the power rule holds true when $c$ is a negative rational, as needed. $\quad \quad \blacksquare$
+	
+	
 	\end{enumerate}
+
+
 
 \vv
 %%%
