@@ -32,6 +32,13 @@
 \pagestyle{empty}
 
 
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt, 
+        minimum height=12pt] (char) {#1};}}
+
+
 %============================================
 %137 COLOUR PALETTE
 %============================================
