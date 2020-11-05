@@ -154,50 +154,77 @@ In addition, we know:
 	\vv
 	\\
 	
-	\emph{Proof:}\\
-	Let $x\in\R.$
-	LHS=$h(xh(x))$, RHS=$[h(x)]^3$\\
-	Assume the domain of $h$ is $\R$.
-	Assume $h(1)=1.$\\
-	Assume $h$ is twice differentiable, then $h$ is continuous on $\R$ and $h'$ is continuous on $\R$.\\
-	\DS{LHS'}=$h'(xh(x))(xh(x))'$\qquad(Chain Rule)\\
-	\DS{LHS'}=$h'(xh(x))(x'h(x)+xh'(x))$\qquad(Product Rule)\\
-	\DS{LHS'}=$h'(xh(x))(h(x)+xh'(x))$\qquad(Power Rule) as (1)\\
-	\DS{RHS'}=$3[h(x)]^2h'(x)$\qquad(Power and Chain Rule) as (2)\\
-	Since $LHS=RHS$, we can imply $LHS'=RHS'$\\
-	Evaluating (1) and (2), when $x=1$. \\
-	Then,\DS{LHS'}=$h'(1h(1))(h(1)+1h'(1))=h'(1\cdot1)(1+h'(1))=h'(1)(1+h'(1))$\qquad Since($h(1)=1$)\\
-	Then,\DS{RHS'}=$3(1)^2h'(1)=3h'(1)$\qquad Since($h(1)=1$)\\
+	\emph{Proof:}
+
+	Let $x\in\R$.
+
+	LHS=$h(xh(x))$, RHS=$[h(x)]^3$
+
+	Assume the domain of $h$ is $\R$, $h(1)=1$, $h$ is twice differentiable, then $h$ is continuous on $\R$ and $h'$ is continuous on $\R$.
+
+	\DS{LHS'}=$h'(xh(x))(xh(x))'$\qquad(Chain Rule)
+
+	\DS{LHS'}=$h'(xh(x))(x'h(x)+xh'(x))$\qquad(Product Rule)
+
+	\DS{LHS'}=$h'(xh(x))(h(x)+xh'(x))$\qquad(Power Rule) as (1)
+
+	\DS{RHS'}=$3[h(x)]^2h'(x)$\qquad(Power and Chain Rule) as (2)
+
+	Since $LHS=RHS$, we can imply $LHS'=RHS'$
+
+	Evaluating (1) and (2), when $x=1$. 
+
+	Then,\DS{LHS'}=$h'(1h(1))(h(1)+1h'(1))=h'(1\cdot1)(1+h'(1))=h'(1)(1+h'(1))$\qquad Since($h(1)=1$)
+
+	Then,\DS{RHS'}=$3(1)^2h'(1)=3h'(1)$\qquad Since($h(1)=1$)
+
 	Suppose $h'(1)=L.$
+
 	Thus,
 	\begin{align*}
-	    h'(1)(1+h'(1))=3h'(1)\\
-	    L(1+L)=3L\\
-	    L^2-2L=0\\
+	    h'(1)(1+h'(1))&=3h'(1) \\
+	    L(1+L)&=3L \\
+	    L^2-2L&=0 \\
 	\end{align*}
-	This implies $L=0$ or $L=2.$\\
+
+
+	This implies $L=0$ or $L=2.$
+
 	Since graph of $h$ does not have a horizontal tangent line at the point with x-coordinate 1, this implies $h(1)\neq0$.
-	So, $h(1)\neq0\implies h(1)=L=2$\\
-	\DS{LHS''}=\DS{(LHS')'}=$(h'(xh(x))(h(x)+xh'(x)))'$\qquad(From (1))\\
-	\DS{LHS''}=$h''(xh(x))(xh(x))'(h(x)+xh'(x))+h'(xh(x))(h(x)+xh'(x))'$\qquad(Product and Chain Rule)\\
-	\DS{LHS''}=$h''(xh(x))(h(x)+xh'(x))(h(x)+xh'(x))+h'(xh(x))(h(x)+xh'(x))'$\qquad(Product and Power Rule)\\
-	\DS{LHS''}=$h''(xh(x))(h(x)+xh'(x))(h(x)+xh'(x))+h'(xh(x))(h'(x)+h'(x)+xh''(x))$\qquad(Sum, Product and Power Rule)\\
-	\DS{LHS''}=$h''(xh(x))(h(x)+xh'(x))(h(x)+xh'(x))+h'(xh(x))(2h'(x)+xh''(x))$\qquad as (3)\\
-	\DS{RHS''}=\DS{(RHS')'}=$(3[h(x)]^2h'(x))'$\qquad(From (2))\\
-	\DS{RHS''}=$3(2h(x)h'(x)h'(x)+[h(x)]^2h''(x))$\qquad(Product and Chain Rule)\\
-	\DS{RHS''}=$3[h(x)]^2h''(x)+6h(x)[h'(x)]^2$\qquad as (4)\\
-	Since $LHS'=RHS'$, we can imply $LHS''=RHS''$\\
-	Evaluating (3) and (4), when $x=1$.Then $h(x)=1$ and $h'(x)=2$. \\
+	So, $h(1)\neq 0 \implies h(1)=L=2$\\
+
+	\begin{align*}
+		& LHS''=(LHS')'= (h'(xh(x))(h(x)+xh'(x)))' \qquad (From (1)) \\
+		& LHS''= h''(xh(x))(xh(x))'(h(x)+xh'(x))+h'(xh(x))(h(x)+xh'(x))' \qquad  \mbox{(Product and Chain Rule)} \\
+		& LHS''= h''(xh(x))(h(x)+xh'(x))(h(x)+xh'(x))+h'(xh(x))(h(x)+xh'(x))' \\
+		& \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad  \mbox{  (Product and Power Rule)}  \\
+		& LHS''= h''(xh(x))(h(x)+xh'(x))(h(x)+xh'(x))+h'(xh(x))(h'(x)+h'(x)+xh''(x)) \\
+		& \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \mbox{(Sum, Product and Power Rule)} \\
+		& LHS''= h''(xh(x))(h(x)+xh'(x))(h(x)+xh'(x))+h'(xh(x))(2h'(x)+xh''(x)) \qquad  \mbox{as (3)} \\
+		& RHS''= (RHS')'= (3[h(x)]^2h'(x))' \qquad \mbox{(From (2))} \\
+		& RHS''= 3(2h(x)h'(x)h'(x)+[h(x)]^2h''(x)) \qquad \mbox{(Product and Chain Rule)} \\
+		& RHS''= 3[h(x)]^2h''(x)+6h(x)[h'(x)]^2 \qquad  \mbox{as (4)} \\
+	\end{align*}
+
+	Since $LHS'=RHS'$, we can imply $LHS''=RHS''$
+
+	Evaluating (3) and (4), when $x=1$.Then $h(x)=1$ and $h'(x)=2$. 
+
 	Then, \DS{LHS''}=$h''(1\cdot1)(1+1\cdot2)(1+1\cdot2)+h'(1\cdot1)(2\cdot2+1\cdot h''(1))=9h''(1)+2(4+h''(1))=9h''(1)+8+2h''(1)=11h''(1)+8$\\
+	
 	Then, \DS{RHS''}=$3[1]^2h''(1)+6\cdot1[2]^2=3h''(1)+24$\\
+	
 	Suppose $h''(1)=M.$
+	
 	Thus,
 	\begin{align*}
-	    11h''(1)+8=3h''(1)+24\\
-	    11M+8=3M+24\\
-	    8M=16\\
+	    11h''(1)+8 &= 3h''(1)+24 \\
+	    11M+8 &= 3M+24 \\
+	    8M &= 16 \\
 	\end{align*}
-	This implies $M=2.$\\
+
+	This implies $M=2.$
+
 	We have calculated $h''(1)=M=2$ as needed. $\quad \quad \blacksquare$
 
 
