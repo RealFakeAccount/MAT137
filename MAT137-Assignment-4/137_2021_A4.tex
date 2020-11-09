@@ -1,0 +1,178 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ifthen}
+\usepackage{geometry}
+\noprintanswers
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+
+\usepackage{framed}
+
+\addtolength{\textheight}{6cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textwidth}{3cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\setlength\parindent{0pt}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+\newcommand{\vv}{\vspace{.1cm}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\pagestyle{empty}
+
+
+%============================================
+%137 COLOUR PALETTE
+%============================================
+
+\definecolor{137cp1}{RGB}{13, 33, 161}
+\definecolor{137cp2}{RGB}{51, 161, 253}
+\definecolor{137cp3}{RGB}{255, 67, 101}
+\definecolor{137cp4}{RGB}{232, 144, 5}
+
+
+%============================================
+%HYPERLINKS
+%============================================
+
+\usepackage{hyperref}
+\hypersetup{colorlinks}
+\hypersetup{urlcolor=137cp3, linkcolor=137cp1}
+
+%============================================
+%Commands used only for this file
+%============================================
+
+\DeclareMathOperator{\arccot}{arccot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+{\large
+	\begin{center}
+		{\bf MAT 137Y: Calculus with proofs}\\
+		{\bf Assignment 4} \\
+		{\bf Due on Thursday, November 26 by 11:59pm via Crowdmark}
+	\end{center}
+}
+
+\vv
+
+\begin{quotation}
+{\bf Instructions:}
+	\begin{itemize}
+		\item	 You will need to submit your solutions electronically via Crowdmark.   \href{https://www.math.toronto.edu/~alfonso/137/PS/137_CM.html}{See MAT137 Crowdmark help page for instructions}.  Make sure you understand how to submit and that you try the system ahead of time.  If you leave it for the last minute and you run into technical problems, you will be late.  There are no extensions for any reason.
+		\item You may submit individually or as a team of two students.  See the link above for more details.
+		\item  You will need to submit your answer to each question separately.
+		\item  This problem set is about Unit 4.
+	\end{itemize}
+\end{quotation}
+\vv
+
+\begin{enumerate}
+
+\item In this problem, we will only work with functions with domain $\mathbb{R}$ and codomain $\R$.   Therefore, if we say that two functions $f$ and $g$ are equal ($f=g$), it means that 
+	$$
+		\forall x \in \R, \; f(x)  = g(x) .
+	$$
+We need a new definition.  We say that a function $f$ is \emph{faithful} when
+	\begin{equation*}
+		``\mbox{For every two functions } g \mbox{ and } h, \quad f \circ g = f \circ h \implies g = h."
+	\end{equation*}
+	\begin{enumerate}
+		\item  Prove that if a function is one-to-one, then it is faithful.
+		\item  Prove that if a function is NOT one-to-one, then it is NOT faithful.
+	\end{enumerate}
+
+\vv
+
+\item   Given two functions $f$ and $g$, we say that $g$ is a \emph{quasi-inverse} of $f$ when
+	\begin{quote}
+	``There exists a non-empty, open interval $I$ contained in the domain of $f$, such that the restriction of $f$ to $I$ is one-to-one, and $g$ is the inverse of that restriction."
+	\end{quote}
+For example, $\arctan$ is a quasi-inverse of $\tan$.
+
+Construct a function $f$ that satisfies all the following properties at once:
+	\begin{enumerate}
+		\item  The domain of $f$ is $\R$.
+		\item  $f$ is differentiable.
+		\item  \label{long} For every $c>0$ there exists a quasi-inverse $g$ of $f$ such that $g$ is differentiable at $0$ and and $0 < g'(0) < c$.
+	\end{enumerate}
+
+We want an explicit equation for $f$ and a graph (feel free to use Desmos, for example).  Once you have the function, you may use the graph to help justify why it satisfies property (c), rather than proving it entirely algebraically.  Use your judgement to decide how much of an explanation you need.
+
+\vv
+
+\item  In the videos we discussed how to define the number $e$, how to define exponentials and logarithms, and how to obtain formulas for their derivatives.      In this problem you are going to get the same formulas in a different way.
+
+We will assume that exponentials and logarithms are well-defined and continuous, and we will assume the common properties of exponentials and logarithms.   However, we assume we still do not know anything about their derivatives -- that is the point of this problem!
+
+For this problem we will define the number $e$ as this limit\footnote{If you learned a definition of the number $e$ in high-school, it was probably this one.}
+	\begin{equation}  \label{eq:e}
+		e = \lim_{x \to 0} \left( 1 + x \right)^{1/x}.
+	\end{equation}
+We should first prove that this limit exists, but we are going to skip that part.  Let's just assume the limit exists and therefore this is a valid way to define the number $e$.
+  Other than that, during this problem, make a particular effort to explain what you are doing: specifically mention any property, result, or identity that you use in any step.
+
+	\begin{enumerate}
+		\item  Prove that \DS{\lim_{x \to 0} \frac{\ln (1+x)}{x} = 1}.
+		
+			\emph{Hint:}  Use Equation \eqref{eq:e} and a result from Video 2.16.
+
+		\item  Consider the function $L(x) = \ln x$.  Prove that $L$ is differentiable everywhere on its domain, and find a formula for its derivative.
+			
+			\emph{Hint:}  Use the definition of derivative as a limit.  While any of the two ``versions" works, we recommend you use the version ``as $h \to 0$".  Then use the properties of logarithms.
+
+		\item  Consider the function \DS{E(x) = e^x}.  Using the fact that $E$ and $L$ are inverses of each other, and now that you have a formula for $L'$, obtain a formula for $E'$.
+		
+			\emph{Note:}  This is similar to what you learned in the videos, but in the videos we used a formula for $E'$ to obtain a formula for $L'$.
+	\end{enumerate}
+
+\vv
+
+\item  We define $\arccot$ as the inverse function of the restriction of $\cot$ to \DS{(0, \pi)}.
+	\begin{enumerate}
+		\item \emph{[Do not submit]}  Sketch a graph of $\cot$ and convince yourself that this is the most reasonable choice to define $\arccot$.
+		\item   Obtain and prove a formula for \DS{\frac{d}{dx} \arccot x}.
+		
+			\emph{Hint:}  Imitate the proof in Video 4.13.
+
+		\item The following ``theorem" is not quite true as stated:
+		
+			\begin{quotation}
+			{\bf Flawed ``Theorem":}   \DS{ \arccot x \; = \; \arctan \frac{1}{x} }
+			
+			{\bf Fake ``Proof":}   \vspace{-.5cm}
+				\begin{align*}
+					\theta \; =& \; \arccot x \\
+					 \cot \theta \; =& \;  x \\
+					 \tan \theta \; = \; \frac{1}{\cot \theta} \; =& \; \frac{1}{x} \\
+					 \theta  \; =& \;  \arctan \frac{1}{x}  
+				\end{align*}
+				\ \hfill $\square$
+			\end{quotation}
+
+	Explain the problem with the statement of the theorem and the errors in the proof.  Then fix them: correct the statement, and write a correct proof.
+	\end{enumerate}
+
+
+\end{enumerate}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
