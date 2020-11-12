@@ -94,6 +94,29 @@ We need a new definition.  We say that a function $f$ is \emph{faithful} when
 	\end{equation*}
 	\begin{enumerate}
 		\item  Prove that if a function is one-to-one, then it is faithful.
+		
+{
+	\vv
+
+	\emph{Proof:}
+
+	\vv
+
+	Let's define functions $g$ and $h$ with domain $\R$ and codomain $\R$. Let's define function $f$ as a one to one function.
+
+	\emph{WTS:} Because $\forall x_1, x_2 \in \R, f(x_1) = f(x_2) \implies x_1 = x_2$, we can imply that $f \circ g = g \circ h \implies g(x) = h(x)$.
+
+	Since we have $\forall x_1, x_2 \in \R, f(x_1) = f(x_2) \implies x_1 = x_2$,
+	we get:
+
+	$$
+		\forall g(x_1), h(x_2) \in \R, f(g(x_1)) = f(h(x_2)) \implies g(x_1) = h(x_2)
+	$$
+
+	Because $f=g$ means that $\forall x \in \R, f(x) = g(x)$, we can rewrite above as:
+
+}
+		
 		\item  Prove that if a function is NOT one-to-one, then it is NOT faithful.
 	\end{enumerate}
 
