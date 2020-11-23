@@ -94,7 +94,51 @@ We need a new definition.  We say that a function $f$ is \emph{faithful} when
 	\end{equation*}
 	\begin{enumerate}
 		\item  Prove that if a function is one-to-one, then it is faithful.
+		
+{
+	\vv
+
+	\emph{Proof:}
+
+	\vv
+
+	Let's define functions $g$ and $h$ with domain $\R$ and codomain $\R$. Let's define function $f$ as a one to one function.
+
+	\emph{WTS:} $\mbox{For every two functions } g \mbox{ and } h, \quad f \circ g = f \circ h \implies g = h.$
+
+
+	Assume that $f \circ g = f \circ h$, 
+	we can imply that $\forall x \in \R, f(g(x)) = f(h(x)) $.
+
+	Because $f(x)$ is a one-to-one function, we can write that $\forall x_1, x_2 \in \R, f(x_1) = f(x_2) \implies x_1 = x_2$.
+
+
+	Combining these two, we get:
+	$\forall x \in \R, f(g(x)) = f(h(x)) \implies g(x) = h(x)$, which is what we want to show. $\qquad \blacksquare$
+}
+		
 		\item  Prove that if a function is NOT one-to-one, then it is NOT faithful.
+{
+	\vv
+
+	\emph{Proof:}
+
+	\vv
+
+	Let's define functions $g$ and $h$ with domain $\R$ and codomain $\R$. Let's define function $f$ as an NOT one to one function.
+
+	\emph{WTS:} $\mbox{There exist two functions } g \mbox{ and } h, \quad f \circ g = f \circ h \land g \neq h$
+
+	Because $f(x)$ is not a one-to-one function, we can write that $\exists x_1, x_2 \in \R, f(x_1) = f(x_2) \land x_1 \neq x_2$.
+	Take such $x_1, x_2 \in \R$ that satisfy $x_1 \neq x_2, f(x_1) = f(x_2)$.
+
+
+	Since $g$ and $h$ are functions with domain $\R$ and codomain $\R$, $\exists g, h, S.T. \quad \forall x \in \R, g(x) = x_1 \mbox{ and } h(x) = x_2$.
+	Take such $g$ and $h$. Then, $g \neq h$ because $\exists x \in \R, g(x) \neq h(x)$ and $\forall x \in \R, f(g(x)) = f(h(x))$.
+
+
+	Combining, we can get $\exists g, h, \forall x \in \R, f(g(x)) = f(h(x)) \land g \neq h$, which is what we want to show. $\qquad \blacksquare$ 
+}
 	\end{enumerate}
 
 \vv
