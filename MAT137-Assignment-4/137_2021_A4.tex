@@ -193,7 +193,36 @@ We should first prove that this limit exists, but we are going to skip that part
 		\item   Obtain and prove a formula for \DS{\frac{d}{dx} \arccot x}.
 		
 			\emph{Hint:}  Imitate the proof in Video 4.13.
-
+		
+		\vv
+		
+		\emph{Proof:}
+		
+		\vv
+		
+		We set the domain of $\cot x$ as $x\in(0,\pi).$ Then domain of $\arctan x$ is $x\in(-\infty,\infty).$ Since $\cot x$ and $\arccot x$ are inverse functions, we can get $\cot(\arccot x)=x.$
+		
+		We set the formula $\theta=\arccot{x}$. The range of $\theta \mbox{ is } (0, \pi)$. We can also get $\cot\theta=x$.
+		
+		Then we find the derivative of $\cot x$ is
+		\begin{align*}
+		    \frac{d}{dx}[\cot x]&=\frac{d}{dx}[\frac{\cos x}{\sin x}]\\
+		    &=\frac{(\cos x)'\cdot\sin x-(\sin x)'\cdot\cos x}{(\sin x)^2}\quad(\mbox{Quotient Rule})\\
+		    &=-\frac{(\sin x)^2+(\cos x)^2}{(\sin x)^2}\quad((\cos x)'=-\sin x \land (\sin x)'=\cos x)\\
+		    &=-\frac{1}{(\sin x)^2}\quad((\sin x)^2+(\cos x)^2=1)\\
+		    &=-\csc^2 x
+		\end{align*}
+		By implicit differentiation of $\cot(\arccot x)=x,$
+		\begin{align*}
+		    \frac{d}{dx}[\cot(\arccot x)]&=\frac{d}{dx}[x]\\
+		    [\cot(\arccot x)]'\cdot (\arccot x)'&=1\quad(\mbox{Chain Rule})\\
+		    [\cot(\theta)]'\cdot (\arccot x)'&=1\quad(\theta=\arccot{x})\\
+		    -\csc^2\theta\cdot(\arccot x)'&=1\quad(\frac{d}{dx}[\cot x]=-\csc^2 x)\\
+		    -(1+x^2)\cdot(\arccot x)'&=1\quad(\csc^2\theta=\frac{\sin^2\theta+\cos^2\theta}{\sin^2\theta}=1+\cot^2\theta=1+x^2)(\cot\theta=\frac{\cos\theta}{\sin\theta}=x)\\
+		    (\arccot x)'&=-\frac{1}{1+x^2}
+		\end{align*}
+		We have proven $\frac{d}{dx} \arccot x=-\frac{1}{1+x^2}$ as needed. $\quad\blacksquare$
+		
 		\item The following ``theorem" is not quite true as stated:
 		
 			\begin{quotation}
@@ -210,6 +239,63 @@ We should first prove that this limit exists, but we are going to skip that part
 			\end{quotation}
 
 	Explain the problem with the statement of the theorem and the errors in the proof.  Then fix them: correct the statement, and write a correct proof.
+	
+	\vv
+	
+	\emph{Problem:}
+	
+	\vv
+	
+	This Flawed 'Theorem' didn't give any domain of $x$, in this theorem we can clearly see $\frac{1}{x}$, so $x$ cannot be 0. So the writer needs to discuss this theorem by cases. In the proof, it also didn't have any domain of $x$ or any range of $\theta.$ So we need to have cases discussion in the proof.
+	
+	\vv
+	
+	\emph{Theorem:}
+	
+	\vv
+	
+	\begin{cases}
+	    $x\in(-\infty, 0),&\arccot x=\pi+\arctan\frac{1}{x}$\\
+	    $x=0,&\arctan\frac{1}{x} \mbox{ is not defined}$\\
+	    $x\in(0, \infty),&\arccot x=\arctan\frac{1}{x}$\\
+	\end{cases}
+	
+	\vv
+	
+	\emph{Proof:}
+	
+	\vv
+	
+	Case 1: When $x\in(-\infty, 0)$, assume $\theta=\arctan x \land \theta \in(\frac{\pi}{2},\pi).$ Since $\arccot x$ and $\cot x$ are inverse functions,
+	\begin{align*}
+	    \cot\theta&=x\\
+	    \cot(\theta-\pi)&=x\quad(\cot x\mbox{ has period of }\pi)\\
+	    \tan(\theta-\pi)=\frac{1}{\cot(\theta-\pi)}&=\frac{1}{x}\quad(\cot\theta=x\land x\neq0)\\
+	    \arctan(\tan(\theta-\pi))&=\arctan(\frac{1}{x})\\
+	    \theta-\pi&=\arctan(\frac{1}{x})\quad(\mbox{Inverse Function})\\
+	    \theta&=\pi+\arctan(\frac{1}{x})\quad(\arctan(\frac{1}{x})\in(-\frac{\pi}{2},0))\\
+	    \arctan x&=\pi+\arctan(\frac{1}{x})\quad(\arctan x=\theta)
+	\end{align*}
+	We add $\pi$ to $\arctan(\frac{1}{x})$ since we need to have the same domain for $\theta$.\\
+	
+	Case 2: When $x=0,\arctan\frac{1}{x} \mbox{ is not defined since 0 can not be denominator.}$\\
+	
+	Case 3: When $x\in(0, \infty)$, assume $\theta=\arctan x \land \theta \in(0, \frac{\pi}{2}).$ Since $\arccot x$ and $\cot x$ are inverse functions,
+	\begin{align*}
+	    \cot\theta&=x\\
+	    \tan\theta=\frac{1}{\cot\theta}&=\frac{1}{x}\quad(\cot\theta=x\land x\neq0)\\
+	    \arctan(\tan\theta)&=\arctan(\frac{1}{x})\\
+	    \theta&=\arctan(\frac{1}{x})\quad(\mbox{Inverse Function} \land \arctan(\frac{1}{x})\in (0, \frac{\pi}{2}))\\
+	    \arctan x&=\arctan(\frac{1}{x})\quad(\arctan x=\theta)
+	\end{align*}
+	We have proven:
+	\begin{cases}
+	    $x\in(-\infty, 0),&\arccot x=\pi+\arctan\frac{1}{x}$\\
+	    $x=0,&\arctan\frac{1}{x} \mbox{ is not defined}$\\
+	    $x\in(0, \infty),&\arccot x=\arctan\frac{1}{x}$\\
+	\end{cases}
+	\qquad as needed. $\quad\blacksquare$
+
 	\end{enumerate}
 
 
