@@ -175,14 +175,74 @@ We should first prove that this limit exists, but we are going to skip that part
 		\item  Prove that \DS{\lim_{x \to 0} \frac{\ln (1+x)}{x} = 1}.
 		
 			\emph{Hint:}  Use Equation \eqref{eq:e} and a result from Video 2.16.
-
+		\vv
+		
+        \emph{Proof:}
+        
+        \vv
+        
+        Since we assume that exponentials and logarithms are well-defined and continuous. We suppose function $g=\ln(x)$, then $g$ is continuous at $e$.
+        
+        Since we assume $\lim_{x \to 0} \left( 1 + x \right)^{1/x}$ exists and define it as the number $e$, by using Theorem 3 in Video 2.16,
+        
+        $$
+            \lim_{x \to a}f(x)=L \land {g\ \mbox{is continuous at}\ L} \implies \lim_{x \to a}g[f(x)]=g(L)
+        $$
+        
+        We suppose $f(x)=\left( 1 + x \right)^{1/x}$, $a=0$ and $L=e$, then we can get,
+        
+        $$
+            \lim_{x \to 0} g[\left( 1 + x \right)^{1/x}]=g(e)=\ln(e)=1
+        $$
+        
+        We also know that,
+        
+        $$
+            \lim_{x \to 0} g[\left( 1 + x \right)^{1/x}]=\lim_{x \to 0} \ln[\left( 1 + x \right)^{1/x}]=\lim_{x \to 0} [\frac{1}{x}\cdot\ln(1 + x)]=\lim_{x \to 0}\frac{\ln (1+x)}{x}
+        $$
+        
+        We have proven that \DS{\lim_{x \to 0} \frac{\ln (1+x)}{x} = 1} as needed. $\qquad \blacksquare$
 		\item  Consider the function $L(x) = \ln x$.  Prove that $L$ is differentiable everywhere on its domain, and find a formula for its derivative.
 			
 			\emph{Hint:}  Use the definition of derivative as a limit.  While any of the two ``versions" works, we recommend you use the version ``as $h \to 0$".  Then use the properties of logarithms.
-
+		\vv
+		
+		\emph{Proof:}
+		
+		\vv
+		
+		First we need to state the domain of $L(x)=\ln(x)$ is $x\in(0,\infty).$
+		To investigate the differentiability of $L(x)$, we consider \DS{\lim_{h \to 0} \frac{L(x+h)-L(x)}{h}.} Assume $L(x)=\ln(x).$ Note that:
+		\begin{align*}
+		    \lim_{h \to 0} \frac{L(x+h)-L(x)}{h}&=\lim_{h \to 0} \frac{\ln(x+h)-\ln(x)}{h}\\
+		    &=\lim_{h \to 0} \frac{\ln(\frac{x+h}{x})}{h}\quad(x\neq0 \land \ln(a)-\ln(b)=\ln(\frac{a}{b}))\\
+		    &=\lim_{h \to 0} \frac{\ln(1+\frac{h}{x})}{h}\\
+		    &=\lim_{h \to 0}[ \frac{\ln(1+\frac{h}{x})}{\frac{h}{x}}\cdot\frac{1}{x}]\quad(x\neq0)\\
+		    &=\lim_{m \to 0}[ \frac{\ln(1+m)}{m}\cdot\frac{1}{x}]\quad(\mbox{set } m=\frac{h}{x})\\
+		    &=\lim_{m \to 0} \frac{\ln(1+m)}{m}\cdot\lim_{m \to 0}\frac{1}{x}\quad(\mbox{Limit Laws})\\
+		    &=1\cdot\lim_{m \to 0}\frac{1}{x}\quad(\lim_{x \to 0} \frac{\ln (1+x)}{x} = 1 \mbox{ from Q3a})\\
+		    &=\frac{1}{x}
+		\end{align*}
+		Since $\frac{1}{x}$ always exists given $x\in(0,\infty)$, we have shown $L$ is differentiable everywhere on its domain $x>0$, and find a formula $\frac{1}{x}$ for its derivative.$\quad\blacksquare$
+		
 		\item  Consider the function \DS{E(x) = e^x}.  Using the fact that $E$ and $L$ are inverses of each other, and now that you have a formula for $L'$, obtain a formula for $E'$.
 		
 			\emph{Note:}  This is similar to what you learned in the videos, but in the videos we used a formula for $E'$ to obtain a formula for $L'$.
+	    \vv
+	    
+	    \emph{Proof:}
+	    
+	    \vv
+	    
+	    Since $E$ and $L$ are inverses of each other, we can get $L(E(x))=x.$ The domain of $E(x)$ is $x\in\R.$ The domain of $L(x)$ is $x > 0.$ Assume $E(x)=e^x>0,\mbox{ then } E(x)\neq0 \land E(x)\mbox{ is in the domain of } L(x).$
+	    
+	    By implicit differentiation of $L(E(x))=x$, 
+	    \begin{align*}
+	        L'(E(x))\cdot E'(x)&=1\quad(\mbox{Chain Rule})\\
+	        \frac{1}{E(x)}\cdot E'(x)&=1\quad(E(x)\neq0 \land L'(x)=\frac{1}{x}\mbox{ from Q3b})\\
+	        E'(x)&=E(x)=e^x
+	    \end{align*}
+	    We have proven $E'(x)=e^x$ as needed. $\quad\blacksquare$
 	\end{enumerate}
 
 \vv
