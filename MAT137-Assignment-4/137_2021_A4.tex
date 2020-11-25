@@ -119,12 +119,27 @@ We want an explicit equation for $f$ and a graph (feel free to use Desmos, for e
 
 \includegraphics[scale=0.4]{a4}
 
-We want to define function f as $sin(2^x)$, g is a \emph{quasi-inverse} of $f$.
+
+We want to define function f as $\sin(2^x)$ of $f$.
 We can easily proof (or just observe the picture) that the domain of $f$ is $\R$ and $f$ is differentiable.
 
-For the property(c), since $f$ oscillate faster as x increase, from the definition of derivative, we know that
-$\forall b \in \R, \exists x > 0, f(x) = 0 \land f'(x) > b$ and $f'(x) \neq 0$ , using the theorem of derivative of the inverse of a function $(f^{-1})'(y) = \frac{1}{f'(x)}$, 
-we can assume that $\forall c > 0, \exists x > 0, 0 < g'(x) < c$.
+For the property(c), let $c>0.$
+
+When $f$ is increasing or decreasing on a specific interval we know this interval is one-to-one.
+
+Since we want to find $g \mbox{ which is } quasi-inverse$ of $f$. By using theorem of derivative of the inverse of a function $(f^{-1})'(f(x)) = \frac{1}{f'(x)}$, we know $g'(0)=\frac{1}{f'(x)}$ and $f(x)=0.$ From $f(x)=\sin(2^x)$ and $0<g'(0)<c,$ we know that $g'(0)=\frac{1}{f'(x)}=\frac{1}{2^x\ln(2)\cos(2^x)}<c.$
+\begin{align*}
+    \frac{1}{2^x\ln(2)\cos(2^x)}&<c\\
+    \frac{1}{2^x\ln(2)}&<c\quad(\sin(2^x)=0\implies\cos(2^x)=1)\\
+    \frac{1}{2^x}&<c\ln(2)\quad(\ln(2)>0)\\
+    2^x&>\frac{1}{c\ln(2)}\quad(2^x>0\mbox{ and }c\ln(2)>0)\\
+    \log_2(2^x)&>\log_2(\frac{1}{c\ln(2)})\quad(x_1>x_2\iff \log x_1>\log x_2)\\
+    x&>\log_2(\frac{1}{c\ln(2)})
+\end{align*}
+
+So by graph we take $x>\log_2(\frac{1}{c\ln(2)})$, and we look at the right of this point to choose the interval $I$ where $f$ is increasing or decreasing and $\exists a\in I$ such that $f(a)=0$. Then we find $g(x)$ as \emph{quasi-inverse} of $f$ is $\log_2(\arcsin(x)).$
+
+Since $\forall x\in\R, \frac{1}{2^x\ln(2)\cos(2^x)}=\frac{1}{2^x\ln(2)}>0\quad(2^x>0)$, We have proven $g$ is differentiable at 0 and $0 < g'(0) < c$.
 
 \vv
 
