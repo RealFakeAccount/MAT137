@@ -31,6 +31,7 @@
 
 \pagestyle{empty}
 
+\graphicspath{ {./} }
 
 %============================================
 %137 COLOUR PALETTE
@@ -134,14 +135,16 @@ We need a new definition.  We say that a function $f$ is \emph{faithful} when
 
 
 	Since $g$ and $h$ are functions with domain $\R$ and codomain $\R$, $\exists g, h, S.T. \quad \forall x \in \R, g(x) = x_1 \mbox{ and } h(x) = x_2$.
-	Take such $g$ and $h$. Then, $g \neq h$ because $\exists x \in \R, g(x) \neq h(x)$ and $\forall x \in \R, f(g(x)) = f(h(x))$.
+	Take such $g$ and $h$. Then, $g \neq h$ because $\exists y \in \R, g(y) \neq h(y)$ and $\forall x \in \R, f(g(x)) = f(h(x))$.
 
 
-	Combining, we can get $\exists g, h, \forall x \in \R, f(g(x)) = f(h(x)) \land (\exists y \in \R,~ g(y) \neq h(y))$, which is what we want to show. $\qquad \blacksquare$ 
+	Combining, we can get $\exists g, h, (\forall x \in \R, f(g(x)) = f(h(x))) \land (\exists y \in \R,~ g(y) \neq h(y))$, which is what we want to show. $\qquad \blacksquare$ 
 }
 	\end{enumerate}
 
 \vv
+\newpage
+
 \newpage
 
 \item   Given two functions $f$ and $g$, we say that $g$ is a \emph{quasi-inverse} of $f$ when
@@ -158,6 +161,39 @@ Construct a function $f$ that satisfies all the following properties at once:
 	\end{enumerate}
 
 We want an explicit equation for $f$ and a graph (feel free to use Desmos, for example).  Once you have the function, you may use the graph to help justify why it satisfies property (c), rather than proving it entirely algebraically.  Use your judgement to decide how much of an explanation you need.
+
+\includegraphics[scale=0.4]{a4}
+
+
+We want to define function $f$ as $\sin(2^x)$ of $f$.
+
+The domain of $f(x)=\sin(2^x)$ is $x\in\R.$
+
+Since we know $\sin(x) \land 2^x$ are both differentiable, $\frac{d}{dx}[f(x)]=\frac{d}{dx}[\sin(2^x)]$, by using the Chain Rule:
+\begin{align*}
+    \frac{d}{dx}[f(x)]&=\frac{d}{dx}[\sin(2^x)]\\
+    f'(x)&=\cos(2^x)\cdot(2^x)'\quad(\frac{d}{dx}[\sin(x)]=\cos(x))\\
+    f'(x)&=\cos(2^x)\cdot[2^x\cdot\ln(2)]\quad(\frac{d}{dx}[a^x]=a^x\cdot\ln(a))\\
+    f'(x)&=2^x\ln(2)\cos(2^x)
+\end{align*}
+
+For the property(c), let $c>0.$
+
+When $f$ is increasing or decreasing on a specific interval we know this interval is one-to-one.
+
+Since we want to find $g \mbox{ which is } \emph{quasi-inverse}$ of $f$. By using theorem of derivative of the inverse of a function $(f^{-1})'(f(x)) = \frac{1}{f'(x)}$, we know $g'(0)=\frac{1}{f'(x)}$ and $f(x)=0.$ From $f(x)=\sin(2^x)$ and $0<g'(0)<c,$ we know that $g'(0)=\frac{1}{f'(x)}=\frac{1}{2^x\ln(2)\cos(2^x)}<c.$
+\begin{align*}
+    \frac{1}{2^x\ln(2)\cos(2^x)}&<c\\
+    \frac{1}{2^x\ln(2)}&<c\quad(\sin(2^x)=0\implies\cos(2^x)=1)\\
+    \frac{1}{2^x}&<c\ln(2)\quad(\ln(2)>0)\\
+    2^x&>\frac{1}{c\ln(2)}\quad(2^x>0\mbox{ and }c\ln(2)>0)\\
+    \log_2(2^x)&>\log_2(\frac{1}{c\ln(2)})\quad(x_1>x_2\iff \log x_1>\log x_2)\\
+    x&>\log_2(\frac{1}{c\ln(2)})
+\end{align*}
+
+So by graph we take $x>\log_2(\frac{1}{c\ln(2)})$, and we look at the right of this point to choose the interval $I$ where $f$ is increasing or decreasing and $\exists a\in I$ such that $f(a)=0$. Then we find $g(x)$ as \emph{quasi-inverse} of $f$ is $\log_2(\arcsin(x)).$
+
+Since $\forall x\in\R, \frac{1}{2^x\ln(2)\cos(2^x)}=\frac{1}{2^x\ln(2)}>0\quad(2^x>0)$, We have proven $g$ is differentiable at 0 and $0 < g'(0) < c$.
 
 \vv
 \newpage
