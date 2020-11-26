@@ -179,19 +179,21 @@ Since we know $\sin(x) \land 2^x$ are both differentiable, $\frac{d}{dx}[f(x)]=\
 
 For the property(c), let $c>0.$
 
-When $f$ is increasing or decreasing on a specific interval we know this interval is one-to-one.
+When $f$ is increasing or decreasing on a specific interval we know this interval is one-to-one. Here we choose the interval that $f(x)=\sin(2^x)$ is increasing. We need to suppose this increasing interval $I$ fulfills $2^x\in(-\frac{\pi}{2}+2k\pi,\frac{\pi}{2}+2k\pi)$ for some $k\in \Z$.
+
+In this interval $I$, $\sin(2^x)\in(-1,1).$ There exist $x_0$ such that $f(x_0)=\sin(2^{x_0})=0.$ Then in this interval $\cos(2^{x_0})=1.$
 
 Since we want to find $g \mbox{ which is } \emph{quasi-inverse}$ of $f$. By using theorem of derivative of the inverse of a function $(f^{-1})'(f(x)) = \frac{1}{f'(x)}$, we know $g'(0)=\frac{1}{f'(x)}$ and $f(x)=0.$ From $f(x)=\sin(2^x)$ and $0<g'(0)<c,$ we know that $g'(0)=\frac{1}{f'(x)}=\frac{1}{2^x\ln(2)\cos(2^x)}<c.$
 \begin{align*}
     \frac{1}{2^x\ln(2)\cos(2^x)}&<c\\
-    \frac{1}{2^x\ln(2)}&<c\quad(\sin(2^x)=0\implies\cos(2^x)=1)\\
+    \frac{1}{2^x\ln(2)}&<c\\(\sin(2^x)=0&\implies\cos(2^x)=1\mbox{ when } 2^x\in (-\frac{\pi}{2}+2k\pi,\frac{\pi}{2}+2k\pi) \mbox{ for some }k\in \Z)\\
     \frac{1}{2^x}&<c\ln(2)\quad(\ln(2)>0)\\
     2^x&>\frac{1}{c\ln(2)}\quad(2^x>0\mbox{ and }c\ln(2)>0)\\
     \log_2(2^x)&>\log_2(\frac{1}{c\ln(2)})\quad(x_1>x_2\iff \log x_1>\log x_2)\\
     x&>\log_2(\frac{1}{c\ln(2)})
 \end{align*}
 
-So by graph we take $x>\log_2(\frac{1}{c\ln(2)})$, and we look at the right of this point to choose the interval $I$ where $f$ is increasing or decreasing and $\exists a\in I$ such that $f(a)=0$. Then we find $g(x)$ as \emph{quasi-inverse} of $f$ is $\log_2(\arcsin(x)).$
+So by graph we take $x>\log_2(\frac{1}{c\ln(2)})$, and we look at the right of this point to choose the interval $I$ fulfills $2^x\in(-\frac{\pi}{2}+2k\pi,\frac{\pi}{2}+2k\pi)$ for some $k\in \Z$. Then we find $g(x)$ as \emph{quasi-inverse} of $f$ is $\log_2(\arcsin(x)).$
 
 Since $\forall x\in\R, \frac{1}{2^x\ln(2)\cos(2^x)}=\frac{1}{2^x\ln(2)}>0\quad(2^x>0)$, We have proven $g$ is differentiable at 0 and $0 < g'(0) < c$.
 
