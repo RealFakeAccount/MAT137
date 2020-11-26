@@ -127,8 +127,8 @@ The domain of $f(x)=\sin(2^x)$ is $x\in\R.$
 Since we know $\sin(x) \land 2^x$ are both differentiable, $\frac{d}{dx}[f(x)]=\frac{d}{dx}[\sin(2^x)]$, by using the Chain Rule:
 \begin{align*}
     \frac{d}{dx}[f(x)]&=\frac{d}{dx}[\sin(2^x)]\\
-    f'(x)&=\cos(2^x)\cdot(2^x)'\\
-    f'(x)&=\cos(2^x)\cdot[2^x\cdot\ln(2)]\\
+    f'(x)&=\cos(2^x)\cdot(2^x)'\quad(\frac{d}{dx}[\sin(x)]=\cos(x))\\
+    f'(x)&=\cos(2^x)\cdot[2^x\cdot\ln(2)]\quad(\frac{d}{dx}[a^x]=a^x\cdot\ln(a))\\
     f'(x)&=2^x\ln(2)\cos(2^x)
 \end{align*}
 
