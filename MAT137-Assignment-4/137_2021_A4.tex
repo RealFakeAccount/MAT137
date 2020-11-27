@@ -176,26 +176,35 @@ Since we know $\sin(x) \land 2^x$ are both differentiable, $\frac{d}{dx}[f(x)]=\
     f'(x)&=\cos(2^x)\cdot[2^x\cdot\ln(2)]\quad(\frac{d}{dx}[a^x]=a^x\cdot\ln(a))\\
     f'(x)&=2^x\ln(2)\cos(2^x)
 \end{align*}
+Since for any $x\in\R$, the derivative exists. So this function $f$ is differentiable.
 
 For the property(c), let $c>0.$
 
-When $f$ is increasing or decreasing on a specific interval we know this interval is one-to-one. Here we choose the interval that $f(x)=\sin(2^x)$ is increasing. We need to suppose this increasing interval $I$ fulfills $2^x\in(-\frac{\pi}{2}+2k\pi,\frac{\pi}{2}+2k\pi)$ for some $k\in \Z$.
+Suppose this interval $I$ is $x\in(\log_2(-\frac{\pi}{2}+2k\pi),\log_2(\frac{\pi}{2}+2k\pi))$ for some $k\in \Z^+$.
 
-In this interval $I$, $\sin(2^x)\in(-1,1).$ There exist $x_0$ such that $f(x_0)=\sin(2^{x_0})=0.$ Then in this interval $\cos(2^{x_0})=1.$
+$\forall x \in I,$ we have $f'(x)=2^x\ln(2)\cos(2^x).$ Since $\cos(2^x)\in(0,1]$ in $I$, $2^x\ln(2)\cos(2^x)>0$, this function $f$ is increasing in this interval $I.$
 
-Since we want to find $g \mbox{ which is } \emph{quasi-inverse}$ of $f$. By using theorem of derivative of the inverse of a function $(f^{-1})'(f(x)) = \frac{1}{f'(x)}$, we know $g'(0)=\frac{1}{f'(x)}$ and $f(x)=0.$ From $f(x)=\sin(2^x)$ and $0<g'(0)<c,$ we know that $g'(0)=\frac{1}{f'(x)}=\frac{1}{2^x\ln(2)\cos(2^x)}<c.$
+Since $\sin(-\frac{\pi}{2}+2k\pi)=-1, \sin(\frac{\pi}{2}+2k\pi)=1$ and $f$ is increasing in $I$, on the graph, we can find out that this increasing interval is one-to-one.
+
+In this interval $I$, $\sin(2^x)\in(-1,1).$ There only exists one zero point of $f$ in $I$, $x_0=\log_2(2k\pi)$ such that $f(x_0)=\sin(2^{x_0})=0.$ Then in this interval $\cos(2^{x_0})=1.$
+
+Take $k=\lceil\frac{1}{2\ln(2)\pi c}\rceil+1.$ Then $I=(\log_2(-\frac{\pi}{2}+2(\lceil\frac{1}{2\ln(2)\pi c}\rceil+1)\pi),\log_2(\frac{\pi}{2}+2(\lceil\frac{1}{2\ln(2)\pi c}\rceil+1)\pi))=(\log_2(\frac{3\pi}{2}+2\lceil\frac{1}{2\ln(2)\pi c}\rceil\pi),\log_2(\frac{5\pi}{2}+2\lceil\frac{1}{2\ln(2)\pi c}\rceil\pi))$
+
+Then we find $g \mbox{ which is } \emph{quasi-inverse}$ of $f$ on $I$. By using theorem of derivative of the inverse of a function $(f^{-1})'(f(x)) = \frac{1}{f'(x)}$, we know $g'(0)=\frac{1}{f'(x_0)}$, $f(x_0)=0$ and $f'(x)>0$ on $I.$ We want to find $g'(0)=\frac{1}{f'(x_0)}=\frac{1}{2^{x_0}\ln(2)\cos(2^{x_0})}<c,$
 \begin{align*}
-    \frac{1}{2^x\ln(2)\cos(2^x)}&<c\\
-    \frac{1}{2^x\ln(2)}&<c\\(\sin(2^x)=0&\implies\cos(2^x)=1\mbox{ when } 2^x\in (-\frac{\pi}{2}+2k\pi,\frac{\pi}{2}+2k\pi) \mbox{ for some }k\in \Z)\\
-    \frac{1}{2^x}&<c\ln(2)\quad(\ln(2)>0)\\
-    2^x&>\frac{1}{c\ln(2)}\quad(2^x>0\mbox{ and }c\ln(2)>0)\\
-    \log_2(2^x)&>\log_2(\frac{1}{c\ln(2)})\quad(x_1>x_2\iff \log x_1>\log x_2)\\
-    x&>\log_2(\frac{1}{c\ln(2)})
+    \frac{1}{2^{x_0}\ln(2)\cos(2^{x_0})}&<c\\
+    \frac{1}{2^{x_0}\ln(2)}&<c\quad(\cos(2^{x_0})=1)\\
+    \frac{1}{2^{x_0}}&<c\ln(2)\quad(\ln(2)>0)\\
+    2^{x_0}&>\frac{1}{c\ln(2)}\quad(2^{x_0}>0\mbox{ and }c\ln(2)>0)\\
+    2^{\log_2(2k\pi)}&>\frac{1}{c\ln(2)}\quad(x_0=\log_2(2k\pi))\\
+    2k\pi&>\frac{1}{c\ln(2)}\\
+    k&>\frac{1}{2\ln(2)\pi c}\\
+    \lceil\frac{1}{2\ln(2)\pi c}\rceil+1&>\frac{1}{2\ln(2)\pi c}\quad(k=\lceil\frac{1}{2\ln(2)\pi c}\rceil+1)\\
 \end{align*}
 
-So by graph we take $x>\log_2(\frac{1}{c\ln(2)})$, and we look at the right of this point to choose the interval $I$ fulfills $2^x\in(-\frac{\pi}{2}+2k\pi,\frac{\pi}{2}+2k\pi)$ for some $k\in \Z$. Then we find $g(x)$ as \emph{quasi-inverse} of $f$ is $\log_2(\arcsin(x)).$
+Now we have proven $g'(0)<c$. Since $\forall x\in I, g'(x)= \frac{1}{2^x\ln(2)\cos(2^x)}>0\quad(2^x>0\land cos(2^x)\in(0,1])$.
 
-Since $\forall x\in\R, \frac{1}{2^x\ln(2)\cos(2^x)}=\frac{1}{2^x\ln(2)}>0\quad(2^x>0)$, We have proven $g$ is differentiable at 0 and $0 < g'(0) < c$.
+We have proven $g$ is differentiable at 0 and $0 < g'(0) < c$.
 
 \vv
 \newpage
