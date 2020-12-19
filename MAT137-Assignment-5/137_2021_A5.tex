@@ -208,7 +208,7 @@ Consider the following two claims:
 		Then we can get equation:
 		\begin{align*}
 		    \lim_{x \to \infty} \frac{f(x)}{x}&=\lim_{x \to \infty}(\frac{x+\cos{x}}{x})\\
-		    &=\lim_{x \to \infty}(\frac{x}{x})+\lim_{x \to \infty}(\frac{\cos{x}}{x})\quad(\mbox{By Limit Law of Sum})
+		    &=\lim_{x \to \infty}(\frac{x}{x}+\frac{\cos{x}}{x})
 		\end{align*}
 		
 		Since
@@ -217,7 +217,7 @@ Consider the following two claims:
 		    -\frac{1}{x}\leq&\frac{\cos{x}}{x}\leq\frac{1}{x}
 		\end{align*}
 		
-		We can calculate that $\lim_{x \to \infty}-\frac{1}{x}=\lim_{x \to \infty}\frac{1}{x}=0$. By Squeeze Theorem, we know that $\lim_{x \to \infty}(\frac{\cos{x}}{x})=0$. Thus,
+		We can calculate that $\lim_{x \to \infty}-\frac{1}{x}=\lim_{x \to \infty}\frac{1}{x}=0$. By Squeeze Theorem, we know that $\lim_{x \to \infty}(\frac{\cos{x}}{x})=0$. Thus by Limit Law of Sum,
 		$$
 		    \lim_{x \to \infty} \frac{f(x)}{x}=\lim_{x \to \infty}(\frac{x}{x})+\lim_{x \to \infty}(\frac{\cos{x}}{x})=1+0=1
 		$$
@@ -285,6 +285,76 @@ Consider the following two claims:
 			Explain the  error in the proof.
 			
 			Then prove that the claim is false with a counterexample.
+			
+			\vv
+			
+			\emph{Problem:}
+			
+			\vv
+			
+			The error in this question is obvious; The author of this faulty proof uses L'H\^{o}pital's Rule without showing the preconditions for L'H\^{o}pital's Rule.
+			
+			Here is L'H\^{o}pital's Rule in Video 6.6:
+			
+			IF
+			\begin{itemize}
+			    \item i. $f$ and $g$ are differentiable as $x \to a$.
+			    \item ii. $g$ and $g'$ are never $0$ as $x \to a$.
+			    \item iii. The limit $\lim_{x \to a}\frac{f(x)}{g(x)}$ is an indeterminate form of type $\frac{0}{0}$ or $\frac{\pm\infty}{\pm\infty}$
+			    \item iv. The limit $\lim_{x \to a}\frac{f'(x)}{g'(x)}$ exists or is $\infty$ or $-\infty$
+			    
+			\end{itemize}
+			THEN
+			$$
+			    \lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f'(x)}{g'(x)}.
+			$$
+			
+			In his proof, we do not know what the value of $f$ is or exists when the limit tends to infinity. This leads to it may not satisfy the iii) and iv) of L'H\^{o}pital's Rule assumptions. Then we can't apply L'H\^{o}pital's Rule.
+			
+			\emph{Counterexample:}
+			
+			Let $f(x)=x+\sin{x}$.
+			
+			We know $f(x)$ is diffrentiable on $\R$.
+			And $\lim_{x \to \infty}(x+\sin{x})=\infty$ needs to be proven by Squeeze Theorem as
+			\begin{align*}
+			    -1\leq&\sin{x}\leq 1\\
+			    x-1\leq&\x+sin{x}\leq x+1
+			\end{align*}
+			We know $\lim_{x \to \infty}(x-1)=\lim_{x \to \infty}(x+1)=\infty$, then we have proven $\lim_{x \to \infty}(x+\sin{x})=\infty$ \circled{6}
+			
+			When $\lim_{x \to \infty}\frac{f(x)}{g(x)}=\lim_{x \to \infty}\frac{x+\sin{x}}{x}$, we will find out that,
+			$$
+			    \lim_{x \to \infty}(x+\sin{x})'=\lim_{x \to \infty}(1+\cos{x})\quad(\sin'(x)=\cos{x})
+			$$
+			We know that $\lim_{x \to \infty}1$ is a constant and $\lim_{x \to \infty}\cos{x}$ doesn't exist \circled{7}. So we can't use L'H\^{o}pital's Rule.
+			
+			\emph{Proof:}
+			
+			Also take $f(x)=x+\sin{x}$ as counterexample.
+			We know $f(x)$ is diffrentiable on $\R$ and $\lim_{x \to \infty}(x+\sin{x})=\infty$. \circled{6}
+			\begin{align*}
+			    \lim_{x \to \infty}\frac{f(x)}{x}&=\lim_{x \to \infty}\frac{x+\sin{x}}{x}\quad(f(x)=x+\sin{x})\\
+			    &=\lim_{x \to \infty}(1+\frac{\sin{x}}{x})
+			\end{align*}
+			Since
+		    \begin{align*}
+		        -1\leq&\sin{x}\leq1\\
+		        -\frac{1}{x}\leq&\frac{\sin{x}}{x}\leq\frac{1}{x}
+		     \end{align*}
+		
+		    We can calculate that $\lim_{x \to \infty}-\frac{1}{x}=\lim_{x \to \infty}\frac{1}{x}=0$. By Squeeze Theorem, we know that $\lim_{x \to \infty}(\frac{\sin{x}}{x})=0$. Thus by     Limit Law of Sum,
+		    $$
+		        \lim_{x \to \infty} \frac{f(x)}{x}=\lim_{x \to \infty}(1)+\lim_{x \to \infty}(\frac{\sin{x}}{x})=1+0=1
+		    $$
+		    We now get the assumption $\lim_{x \to \infty}$ exists. By Implicit differentiation, take $f'(x)=(x+\sin{x})'=1+\cos{x}$.
+		    
+		    Then $\lim_{x \to \infty}f'(x)=\lim_{x \to \infty}(1+\cos{x})$ as we proven previously at \circled{7} doesn't exist which raises a contradiction of
+		    $$
+		        \lim_{x \to \infty} \frac{f(x)}{x} \mbox{ exists} \quad \iff \quad \lim_{x \to \infty} f'(x) \mbox{ exists }
+		    $$
+		    Thus, we have proven Claim C is flase $\qquad\blacksquare$
+		    
 	\end{enumerate}
 
 \end{enumerate}
