@@ -194,7 +194,75 @@ Consider the following two claims:
 		\newpage
 		
 		\item Prove that Claim B is false.
-
+		
+		\vv
+		
+		\emph{Proof:}
+		
+		\vv
+		
+		Since we need to prove the Claim B is false, I will give a counterexample. Let $f(x)=x+\cos{x}.$
+		Then we can get equation:
+		\begin{align*}
+		    \lim_{x \to \infty} \frac{f(x)}{x}&=\lim_{x \to \infty}(\frac{x+\cos{x}}{x})\\
+		    &=\lim_{x \to \infty}(\frac{x}{x})+\lim_{x \to \infty}(\frac{\cos{x}}{x})\quad(\mbox{By Limit Law of Sum})
+		\end{align*}
+		
+		Since
+		\begin{align*}
+		    -1\leq&\cos{x}\leq1\\
+		    -\frac{1}{x}\leq&\frac{\cos{x}}{x}\leq\frac{1}{x}
+		\end{align*}
+		
+		We can calculate that $\lim_{x \to \infty}-\frac{1}{x}=\lim_{x \to \infty}\frac{1}{x}=0$. By Squeeze Theorem, we know that $\lim_{x \to \infty}(\frac{\cos{x}}{x})=0$. Thus,
+		$$
+		    \lim_{x \to \infty} \frac{f(x)}{x}=\lim_{x \to \infty}(\frac{x}{x})+\lim_{x \to \infty}(\frac{\cos{x}}{x})=1+0=1
+		$$
+		We now get the assumption $\lim_{x \to \infty}$ exists. Then we need to prove $f$ doesn't have an asymptote as $x \to \infty$.
+		
+		WTS:$\forall m,b\in\R,\lim_{x \to \infty}[f(x)-(mx+b)]\neq0.$
+		
+		Let $m,b\in\R.$
+		
+		Cases:
+		\begin{itemize}
+		    \item When $m=1$, we can get:
+		    \begin{align*}
+		        \lim_{x \to \infty}[f(x)-(mx+b)]&=\lim_{x \to \infty}[x+\cos{x}-x-b]\quad(f(x)=x+\cos{x})\\
+		        &=\lim_{x \to \infty}[\cos{x}-b]
+		    \end{align*}
+		    Since $\lim_{x \to \infty}\cos{x}$ did not exists and $\lim_{x \to \infty}b$ is a constant, the answer of whole equation is D.N.E.
+		    \item When $m\neq1$, we can get:
+		    \begin{align*}
+		        \lim_{x \to \infty}[f(x)-(mx+b)]&=\lim_{x \to \infty}[x+\cos{x}-mx-b]\quad(f(x)=x+\cos{x})\\
+		        &=\lim_{x \to \infty}[(1-m)x+\cos{x}-b]\\
+		        &=\lim_{x \to \infty}[x\cdot(1-m+\frac{\cos{x}}{x}-\frac{b}{x})] \quad\circled{5}
+		    \end{align*}
+		    By the Limit Law of Sum,
+		    \begin{align*}
+		        \lim_{x \to \infty}(1-m+\frac{\cos{x}}{x}-\frac{b}{x})&=\lim_{x \to \infty}(1-m)+\lim_{x \to \infty}(\frac{\cos{x}}{x})-\lim_{x \to \infty}(\frac{b}{x})\\
+		        &=1-m+0+0\quad(\lim_{x \to \infty}(\frac{\cos{x}}{x})=0\mbox{ and }\lim_{x \to \infty}(\frac{b}{x})=0)\\
+		        &=1-m
+		    \end{align*}
+		    We know that when $m\neq1$, it can imply $1-m\neq1+(-1)=0$. 
+		    
+		    Back to \circled{5}, we now know $\lim_{x \to \infty}x=\infty$ and $\lim_{x \to \infty}(1-m+\frac{\cos{x}}{x}-\frac{b}{x})$ is non-zero, then...
+		    
+		    When $m<1$, $\lim_{x \to \infty}(1-m+\frac{\cos{x}}{x}-\frac{b}{x})=1-m>0$, we can get:
+		    \begin{align*}
+		        \lim_{x \to \infty}[f(x)-(mx+b)]&=\lim_{x \to \infty}[x\cdot(1-m+\frac{\cos{x}}{x}-\frac{b}{x})]\\
+		        &=\infty\quad(\mbox{Limit Law of Product})
+		    \end{align*}
+		    When $m>1$, $\lim_{x \to \infty}(1-m+\frac{\cos{x}}{x}-\frac{b}{x})=1-m<0$, we can get:
+		    \begin{align*}
+		         \lim_{x \to \infty}[f(x)-(mx+b)]&=\lim_{x \to \infty}[x\cdot(1-m+\frac{\cos{x}}{x}-\frac{b}{x})]\\
+		        &=-\infty\quad(\mbox{Limit Law of Product})
+		    \end{align*}
+		\end{itemize}
+		We have proven that $\lim_{x \to \infty}[f(x)-(mx+b)]\neq0$ as needed. $\qquad\blacksquare$
+		
+		\newpage
+		
 		\item  Here is one more false claim and a bad proof.
 			\begin{quotation}
 				\noindent
