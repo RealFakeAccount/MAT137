@@ -333,6 +333,8 @@ Consider the following two claims:
 			We know that $\lim_{x \to \infty}1$ is a constant and $\lim_{x \to \infty}\cos{x}$ doesn't exist \circled{7}. So we can't use L'H\^{o}pital's Rule.
 			
 			\emph{Proof:}
+
+			WTS: $\exists f, \lim_{x \to \infty} \frac{f(x)}{x} \mbox{ exists} \quad \land \quad \lim_{x \to \infty} f'(x) \mbox{ does not exists }$
 			
 			Also take $f(x)=x+\sin{x}$ as counterexample.
 			We know $f(x)$ is diffrentiable on $\R$ and $\lim_{x \to \infty}(x+\sin{x})=\infty$. \circled{6}
@@ -350,13 +352,17 @@ Consider the following two claims:
 		    $$
 		        \lim_{x \to \infty} \frac{f(x)}{x}=\lim_{x \to \infty}(1)+\lim_{x \to \infty}(\frac{\sin{x}}{x})=1+0=1
 		    $$
-		    We now get the assumption $\lim_{x \to \infty}$ exists. By Implicit differentiation, take $f'(x)=(x+\sin{x})'=1+\cos{x}$.
+			We have proven that $\lim_{x \to \infty} \frac{f(x)}{x}$ exists.
+			
+			Let's inspect $f'$ next. By Implicit differentiation, $f'(x)=(x+\sin{x})'=1+\cos{x}$.
 		    
-		    Then $\lim_{x \to \infty}f'(x)=\lim_{x \to \infty}(1+\cos{x})$ as we proven previously at \circled{7} doesn't exist which raises a contradiction of
+			The limit of $f'$, $\lim_{x \to \infty}f'(x)=\lim_{x \to \infty}(1+\cos{x})$, as we proven previously at \circled{7}, doesn't exist.
+			
+			To conclude:
 		    $$
-		        \lim_{x \to \infty} \frac{f(x)}{x} \mbox{ exists} \quad \iff \quad \lim_{x \to \infty} f'(x) \mbox{ exists }
+				\exists f, \lim_{x \to \infty} \frac{f(x)}{x} \mbox{ exists} \quad \land \quad \lim_{x \to \infty} f'(x) \mbox{ does not exists }
 		    $$
-		    Thus, we have proven Claim C is flase $\qquad\blacksquare$
+		    Thus, we have proven Claim C is false. $\qquad\blacksquare$
 		    
 	\end{enumerate}
 
