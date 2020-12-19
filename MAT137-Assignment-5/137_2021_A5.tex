@@ -165,6 +165,34 @@ Consider the following two claims:
 			\end{center}
 	\begin{enumerate}
 		\item Prove that Claim A is true.
+		
+		\vv
+		
+		\emph{Proof:}
+		
+		\vv
+		
+		We assume that $f$ has an asymptote as $x \to \infty$. This means $\exists m,b\in\R$ such that:
+		$$
+		    \lim_{x \to \infty} \left[ f(x) - \left( mx + b \right) \right] \; = \; 0 \quad\circled{4}
+		$$
+		We can find out that:
+		\begin{align*}
+		    \lim_{x \to \infty} \frac{f(x)}{x}
+		    &=\lim_{x \to \infty} (\frac{f(x)-mx+mx-b+b}{x})\\
+		    &=\lim_{x \to \infty} (\frac{f(x)-mx-b}{x}+m+\frac{b}{x})\\
+		    &=\lim_{x \to \infty}(\frac{f(x)-mx-b}{x})+m+\lim_{x \to \infty}(\frac{b}{x}) \quad(\mbox{By Limit Law of Sum})\\
+		    &=\lim_{x \to \infty}(\frac{f(x)-mx-b}{x})+m+0\quad(\lim_{x \to \infty}(\frac{b}{x})=0)\\
+		    &=\lim_{x \to \infty}[\frac{f(x)-(mx+b)}{x}]+m
+		\end{align*}
+		As we know that $\lim_{x \to \infty}x=\infty$ and $\circled{4}$ is True, we can then continue to calculate the limit. The equation now is:
+		$$
+		    \lim_{x \to \infty} \frac{f(x)}{x}=\frac{\lim_{x \to \infty}[f(x)-(mx+b)]}{\lim_{x \to \infty}x}+m=\frac{0}{\infty}+m=m
+		$$
+		So, $\lim_{x \to \infty} \frac{f(x)}{x}$ exists and equals to $m$. Thus we have proven that Claim A.$\quad\blacksquare$
+		
+		\newpage
+		
 		\item Prove that Claim B is false.
 
 		\item  Here is one more false claim and a bad proof.
