@@ -11,6 +11,9 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt, 
+        minimum height=12pt] (char) {#1};}}
 
 \usepackage{framed}
 
@@ -169,10 +172,10 @@ Then the average length represented by $f$ of the trip is:
 \begin{align*}
     f(x)&=\frac{AP+PC+BC+AP+PB}{2}\\
     &=\frac{\sqrt{(\frac{L}{2})^2+x^2}+(b-x)+\sqrt{b^2+(\frac{L}{2})^2}+2\sqrt{(\frac{L}{2})^2+x^2}}{2} \quad\mbox{Total length is }\mbox{\circled{1} and \circled{2}}\\
-    &=\frac{3\sqrt{(\frac{L}{2})^2+x^2}}{2}+\frac{b-x}{2}+\frac{\sqrt{b^2+(\frac{L}{2})^2}}{2} \quad \mbox{ for some } x\in[0,b] \circled{3}
+    &=\frac{3\sqrt{(\frac{L}{2})^2+x^2}}{2}+\frac{b-x}{2}+\frac{\sqrt{b^2+(\frac{L}{2})^2}}{2} \quad\circled{3}
 \end{align*}
 
-Since the terms under square root are equal to or bigger than $0$, so $f$ are strictly positive and continuous on $[0,b]$. By Extreme Value Theorem, we know $f$ has a minimum on $[0,b]$, which we know must be a critical point or at an endpoint of the domain. $f$ is differentiable on $[0,b]$ and by implicit differentiation and \circled{3}, we want to find critical point:
+Since the terms under square root are equal to or bigger than $0$, so $f$ are strictly positive and continuous on $[0,b]$. By Extreme Value Theorem, we know $f$ has a minimum on $[0,b]$, which we know must be a critical point or at an endpoint of the domain. $f$ is differentiable on $(0,b)\subseteq[0,b]$ and by implicit differentiation and \circled{3}, we want to find critical point:
 \begin{align*}
     f'(x)
     &=\frac{3}{2}\cdot\frac{2x}{2\sqrt{(\frac{L}{2})^2+x^2}}-\frac{1}{2} \quad(\mbox{Chain Rule and Implicit Differentiation})\\
@@ -184,6 +187,26 @@ Since the terms under square root are equal to or bigger than $0$, so $f$ are st
     8x^2&=(\frac{L}{2})^2\\
     x&=\frac{\sqrt{2}}{8}L
 \end{align*}
+
+The only critical point is $x=\frac{\sqrt{2}}{8}L$.
+
+The table shows that $f$ is decreasing on the left side of critical point and $f$ is increasing on the right side of critical point. So $x=\frac{\sqrt{2}}{8}L$ is a local minimum.
+
+\begin{tabular}{l|l|l|l}
+\hline
+$x$     & $0$            & $\frac{\sqrt{2}}{8}L$ & $L$                               \\
+\hline
+$f'(x)$ & $-\frac{1}{2}$ & $0$                   & $\frac{3\sqrt{5}}{5}-\frac{1}{2}$
+\end{tabular}
+
+However we know $x\in[0,b]$, we don't know the relationship between $L$ and $b$.
+
+Cases:
+\begin{itemize}
+    \item If $x=\frac{\sqrt{2}}{8}L\in [0,b]$, then point $P$ is $\frac{\sqrt{2}}{8}L$ up or down of point $H$.
+    \item If $x=\frac{\sqrt{2}}{8}L>b$, since $f$ is decreasing when $x=\frac{\sqrt{2}}{8}L$, the minimum then is at $x=b$ as point $P$ is at $C$ or $D$.
+    \item $x=\frac{\sqrt{2}}{8}L$ will never less than $0$ since $L>0$.
+\end{itemize}
 
 \newpage
 
