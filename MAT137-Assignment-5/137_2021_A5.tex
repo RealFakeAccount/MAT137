@@ -183,14 +183,16 @@ Consider the following two claims:
 		\begin{align*}
 		    \lim_{x \to \infty} \frac{f(x)}{x}
 		    &=\lim_{x \to \infty} (\frac{f(x)-mx+mx-b+b}{x})\\
-		    &=\lim_{x \to \infty} (\frac{f(x)-mx-b}{x}+m+\frac{b}{x})\\
+		    &=\lim_{x \to \infty} (\frac{f(x)-mx-b}{x}+m+\frac{b}{x}) \quad (x \to \infty \implies x \neq 0)\\
 		    &=\lim_{x \to \infty}(\frac{f(x)-mx-b}{x})+m+\lim_{x \to \infty}(\frac{b}{x}) \quad(\mbox{By Limit Law of Sum})\\
 		    &=\lim_{x \to \infty}(\frac{f(x)-mx-b}{x})+m+0\quad(\lim_{x \to \infty}(\frac{b}{x})=0)\\
-		    &=\lim_{x \to \infty}[\frac{f(x)-(mx+b)}{x}]+m
+		    &=\lim_{x \to \infty}[\frac{f(x)-(mx+b)}{x}]+m \quad \circled{*}
 		\end{align*}
-		As we know that $\lim_{x \to \infty}x=\infty$ and $\circled{4}$ is True, we can then continue to calculate the limit. The equation now is:
+		As we know that $\lim_{x \to \infty}x=\infty$ and $\circled{*}$ is True, we can then continue to calculate the limit. 
+		
+		Using limit law of quotient, we can write $\circled{*}$ as:
 		$$
-		    \lim_{x \to \infty} \frac{f(x)}{x}=\frac{\lim_{x \to \infty}[f(x)-(mx+b)]}{\lim_{x \to \infty}x}+m=\frac{0}{\infty}+m=m
+		    \lim_{x \to \infty} \frac{f(x)}{x}=\frac{\lim_{x \to \infty}[f(x)-(mx+b)]}{\lim_{x \to \infty}x}+m=0+m=m
 		$$
 		So, $\lim_{x \to \infty} \frac{f(x)}{x}$ exists and equals to $m$. Thus we have proven that Claim A.$\quad\blacksquare$
 		
@@ -207,8 +209,8 @@ Consider the following two claims:
 		Since we need to prove the Claim B is false, I will give a counterexample. Let $f(x)=x+\cos{x}.$
 		Then we can get equation:
 		\begin{align*}
-		    \lim_{x \to \infty} \frac{f(x)}{x}&=\lim_{x \to \infty}(\frac{x+\cos{x}}{x})\\
-		    &=\lim_{x \to \infty}(\frac{x}{x}+\frac{\cos{x}}{x})
+		    \lim_{x \to \infty} \frac{f(x)}{x}&=\lim_{x \to \infty}(\frac{x+\cos{x}}{x}) \\
+		    &=\lim_{x \to \infty}(\frac{x}{x}+\frac{\cos{x}}{x})\quad (x \to \infty \implies x \neq 0)
 		\end{align*}
 		
 		Since
@@ -234,7 +236,7 @@ Consider the following two claims:
 		        \lim_{x \to \infty}[f(x)-(mx+b)]&=\lim_{x \to \infty}[x+\cos{x}-x-b]\quad(f(x)=x+\cos{x})\\
 		        &=\lim_{x \to \infty}[\cos{x}-b]
 		    \end{align*}
-		    Since $\lim_{x \to \infty}\cos{x}$ did not exists and $\lim_{x \to \infty}b$ is a constant, the answer of whole equation is D.N.E.
+		    Since $\lim_{x \to \infty}\cos{x}$ did not exists and $\lim_{x \to \infty}b$ is a constant, by limit law of sum, the answer of whole equation is D.N.E.
 		    \item When $m\neq1$, we can get:
 		    \begin{align*}
 		        \lim_{x \to \infty}[f(x)-(mx+b)]&=\lim_{x \to \infty}[x+\cos{x}-mx-b]\quad(f(x)=x+\cos{x})\\
@@ -243,7 +245,8 @@ Consider the following two claims:
 		    \end{align*}
 		    By the Limit Law of Sum,
 		    \begin{align*}
-		        \lim_{x \to \infty}(1-m+\frac{\cos{x}}{x}-\frac{b}{x})&=\lim_{x \to \infty}(1-m)+\lim_{x \to \infty}(\frac{\cos{x}}{x})-\lim_{x \to \infty}(\frac{b}{x})\\
+				&\lim_{x \to \infty}(1-m+\frac{\cos{x}}{x}-\frac{b}{x})\\
+				&=\lim_{x \to \infty}(1-m)+\lim_{x \to \infty}(\frac{\cos{x}}{x})-\lim_{x \to \infty}(\frac{b}{x}) \quad (x \to \infty \implies x \neq 0)\\
 		        &=1-m+0+0\quad(\lim_{x \to \infty}(\frac{\cos{x}}{x})=0\mbox{ and }\lim_{x \to \infty}(\frac{b}{x})=0)\\
 		        &=1-m
 		    \end{align*}
@@ -309,14 +312,14 @@ Consider the following two claims:
 			    \lim_{x \to a}\frac{f(x)}{g(x)}=\lim_{x \to a}\frac{f'(x)}{g'(x)}.
 			$$
 			
-			In his proof, we do not know what the value of $f$ is or exists when the limit tends to infinity. This leads to it may not satisfy the iii) and iv) of L'H\^{o}pital's Rule assumptions. Then we can't apply L'H\^{o}pital's Rule.
+			In his proof, we do not know what the value of $f$ and the existence of $f'$  when the limit tends to infinity. This leads to it may not satisfy the iii) and iv) of L'H\^{o}pital's Rule assumptions. Then we can't apply L'H\^{o}pital's Rule.
 			
 			\emph{Counterexample:}
 			
 			Let $f(x)=x+\sin{x}$.
 			
 			We know $f(x)$ is diffrentiable on $\R$.
-			And $\lim_{x \to \infty}(x+\sin{x})=\infty$ needs to be proven by Squeeze Theorem as
+			And $\lim_{x \to \infty}(x+\sin{x})=\infty$ can to be proven by Squeeze Theorem as
 			\begin{align*}
 			    -1\leq&\sin{x}\leq 1\\
 			    x-1\leq&x+\sin{x}\leq x+1
