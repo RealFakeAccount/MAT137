@@ -152,11 +152,34 @@ The fence has length $2b$ --  it extends for a distance $b$ on each side of the 
 
 WTS: $f$ is concave up on $I \implies f$ is cave up on $I$
 
+\begin{tikzpicture}
+
+	\draw[gray, very thick] (-2, 2) .. controls (-1,0) and (1,0) .. (2, 2);
+	\filldraw[black] (2, 2) circle (0.1pt) node[anchor=west] {f};
+	\filldraw[blue] (-1.5, 1.25) circle (1pt) node[anchor=east, black] {P};
+	\filldraw[blue] (0, 0.51) circle (1pt) node[anchor=south, black] {Q};
+	\filldraw[blue] (1.5, 1.25) circle (1pt) node[anchor=west, black] {R};
+	\draw (-1.5, 1.25) -- (0, 0.51);
+	\draw (0, 0.51) -- (1.5, 1.25);
+
+	\draw[gray, very thick] (-2, -0.5) -- (2, -0.5);
+	\draw[red, dotted] (-1.5, 1.25) -- (-1.5, -0.5);
+	\draw[red, dotted] (0, 0.51) -- (0, -0.5);
+	\draw[red, dotted] (1.5, 1.25) -- (1.5, -0.5);
+
+	\filldraw[blue] (-1.5, -0.5) circle (1pt) node[anchor=north, black] {p};
+	\filldraw[blue] (0, -0.5) circle (1pt) node[anchor=north, black] {q};
+	\filldraw[blue] (1.5, -0.5) circle (1pt) node[anchor=north, black] {r};
+
+\end{tikzpicture}
+
+
 We assume function $f$ is concave up on an interval $I$.
 
-Let $p,q,r\in I$. We need to show that $m_{P,Q}=\frac{f(q)-f(p)}{q-p}<m_{Q,R}=\frac{f(r)-f(q)}{r-q}$.
+Let $P, Q, R$ on the graph of $f$. Assume $P$ is to the left of $Q$, and $Q$ is to the left of $R$ Assume $p, q, r \in I$ represent the x-coordinates of $P, Q, R$.
+We need to show that $m_{P,Q}=\frac{f(q)-f(p)}{q-p}<m_{Q,R}=\frac{f(r)-f(q)}{r-q}$.
 
-By the definition of `$f$ is concave up on $I$ `, we know that $f$ is differentiable on $I$ and then implies $f$ is continuous on $I$.
+By the definition of "$f$ is concave up on $I$ ", we know that $f$ is differentiable on $I$ and then implies $f$ is continuous on $I$.
 
 We know that $(p,q)\subseteq I \land [p,q]\subseteq I$, then we can get $f$ is continuous on $[p,q]$ and differentiable on $(p,q)$.
 
