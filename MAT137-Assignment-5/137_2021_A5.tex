@@ -460,6 +460,63 @@ We have found polynomials $P$ and $Q$ by our result from Q2b as needed. $\qquad\
 
 \vv
 
+\emph{Proof:}
+
+\vv
+
+WTS: $f$ is concave up on $I \implies f$ is cave up on $I$
+
+\begin{tikzpicture}
+
+	\draw[gray, very thick] (-2, 2) .. controls (-1,0) and (1,0) .. (2, 2);
+	\filldraw[black] (2, 2) circle (0.1pt) node[anchor=west] {f};
+	\filldraw[blue] (-1.5, 1.25) circle (1pt) node[anchor=east, black] {P};
+	\filldraw[blue] (0, 0.51) circle (1pt) node[anchor=south, black] {Q};
+	\filldraw[blue] (1.5, 1.25) circle (1pt) node[anchor=west, black] {R};
+	\draw (-1.5, 1.25) -- (0, 0.51);
+	\draw (0, 0.51) -- (1.5, 1.25);
+
+	\draw[gray, very thick] (-2, -0.5) -- (2, -0.5);
+	\draw[red, dotted] (-1.5, 1.25) -- (-1.5, -0.5);
+	\draw[red, dotted] (0, 0.51) -- (0, -0.5);
+	\draw[red, dotted] (1.5, 1.25) -- (1.5, -0.5);
+
+	\filldraw[blue] (-1.5, -0.5) circle (1pt) node[anchor=north, black] {p};
+	\filldraw[blue] (0, -0.5) circle (1pt) node[anchor=north, black] {q};
+	\filldraw[blue] (1.5, -0.5) circle (1pt) node[anchor=north, black] {r};
+
+\end{tikzpicture}
+
+
+We assume function $f$ is concave up on an interval $I$.
+
+Let $P, Q, R$ on the graph of $f$. Assume $P$ is to the left of $Q$, and $Q$ is to the left of $R$ Assume $p, q, r \in I$ represent the x-coordinates of $P, Q, R$.
+We need to show that $m_{P,Q}=\frac{f(q)-f(p)}{q-p}<m_{Q,R}=\frac{f(r)-f(q)}{r-q}$.
+
+By the definition of "$f$ is concave up on $I$ ", we know that $f$ is differentiable on $I$ and then implies $f$ is continuous on $I$.
+
+We know that $(p,q)\subseteq I \land [p,q]\subseteq I$, then we can get $f$ is continuous on $[p,q]$ and differentiable on $(p,q)$.
+
+By Mean Value Theorem, we know that $\exists m_1\in(p,q)$ s.t.
+$$
+    f'(m_1)=\frac{f(q)-f(p)}{q-p}
+$$
+
+We also know that $(q,r)\subseteq I \land [q,r]\subseteq I$, then we can get $f$ is continuous on $[q,r]$ and differentiable on $(q,r)$.
+
+By Mean Value Theorem, we know that $\exists m_2\in(q,r)$ s.t.
+$$
+    f'(m_2)=\frac{f(r)-f(q)}{r-q}
+$$
+
+It's very easy to know that $m_1\in(p,q)$ and $m_2\in(q,r)$ can imply $p<m_1<q$ and $q<m_2<r$. Then we can get the conclusion that $m_1<q<m_2$.
+
+By the definition of "$f$ is concave up on $I$ ", we know that $f'$ is increasing on $I$. By the definition of increasing: '$\forall x_1, x_2\in I, x_1<x_2 \implies f(x_1)<f(x_2)$', let $x_1=m_1 \land x_2=m_2 \land x_1=m_1<m_2=x_2$, we can imply that $f'(m_1)<f'(m_2)$.
+
+We have proven that $m_{P,Q}=f'(m_1)=\frac{f(q)-f(p)}{q-p} < \frac{f(r)-f(q)}{r-q}=f'(m_2)=m_{Q,R}. \qquad\blacksquare$
+
+\newpage
+
 \item  Let's recall the definition of horizontal/slant asymptote.  Let $f$ be a function defined at least on an interval $(c,\infty)$ for some $c \in \R$.
 We say that $f$ has an asymptote as $x \to \infty$ when there exist numbers $m, b \in \R$ such that
 	$$	
