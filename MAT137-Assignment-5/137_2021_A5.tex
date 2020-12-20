@@ -11,6 +11,9 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt, 
+        minimum height=12pt] (char) {#1};}}
 
 \usepackage{framed}
 
@@ -117,8 +120,88 @@ The fence has length $2b$ --  it extends for a distance $b$ on each side of the 
 			\end{equation}	
 			
 			\emph{Note:} In your answer, $A$, $B$ and $C$ will depend on values of $f$ and its derivatives.  We are asking for \emph{all} possible answers.  We want you to prove that your choices of $A$, $B$, and $C$ satisfy \eqref{eq:ABC}, and that there are no other choices that satisfy \eqref{eq:ABC}.
+
+			We want $\lim_{x \to 0} \frac{f(x) - (Ax^2 + Bx + C)}{x^2} = 0 \circled{1}$. 
+
+			Since $\lim_{x \to 0} x^2 =0$, the only form possible is indeterminate form ($\lim_{x \to 0} f(x) - (Ax^2 + Bx + C) = 0$).
+			Otherwise, this limit does not exist.
+
+			Since $f$ has derivatives of every order, we can proof it is valid to use L'Hôpital's Rule. 
+			Using L'Hôpital's Rule, we get:
+
+			$$
+				\lim_{x \to 0} \frac{f'(x) - (2Ax + B)}{2x} = 0 \circled{2}
+			$$
+
+			Same as above, we can use L'Hôpital's Rule and get:
+
+			$$
+				\lim_{x \to 0} \frac{f''(x) - 2A}{2} = 0 \circled{3}
+			$$
+
+			Since $f$ has derivatives of every order, f is continuous on every order. 
+			Thus, $\lim_{x \to 0} f''(x) = f''(0)$
+
+			We can and only can take $A = \frac{f''(0)}{2}$ to satisfy the equation $\circled{3}$.
+
+			Take the A back to $\circled{2}$, we get:
+
+			$$
+				\lim_{x \to 0} \frac{f'(x) - (2Ax + B)}{2x} = 0
+			$$
+
+			We have proven that $\lim_{x \to 0} f'(x) - (2Ax + B) = 0$. 
+			Using limit laws, we can get $\lim_{x \to 0} f'(x) - \lim_{x \to 0} 2Ax - \lim_{x \to 0}B = 0$.
+
+			Same as above, $\lim_{x \to 0} f'(x) = f'(0)$. Since $\lim_{x \to 0} 2Ax = 0$, 
+			we can and only can take $B = f'(x)$.
+
+			We have proven that $\lim_{x \to 0} f(x) - (Ax^2 + Bx + C) = 0$.
+			Using limit laws, we can get $\lim_{x \to 0} f(x) - \lim_{x \to 0}Ax^2 - \lim_{x \to 0}Bx - \lim_{x \to 0}C = 0$.
 			
+			Same as above, $\lim_{x \to 0} f(x) = f(0)$. Since $\lim_{x \to 0}Ax^2 = 0$ and $\lim_{x \to 0}Bx = 0$, 
+			we can and only can take $C = f(x)$.
+
+			We have shown that $A = \frac{f''(0)}{2}, B = f'(x), C = f(x)$ can satisfy (1), and that there are no other choice that satisfy (1).
+			% \begin{align*}
+			% 	&\lim_{x \to 0} \frac{f(x) - (Ax^2 + Bx + C)}{x^2} \\
+			% 	=&\lim_{x \to 0} \frac{f(x) - C - (Ax^2 + Bx)}{x^2} \\
+			% 	=&\lim_{x \to 0} \frac{f(x) - C}{x^2} - \lim_{x \to 0} \frac{Ax^2}{x^2} + \lim_{x \to 0} \frac{Bx}{x^2} \\
+			% \end{align*}
+
+			% Thus we can conclude that
+			% %%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% %%need more details here?%%
+			% %%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% $$
+			% 	\lim_{x \to 0} \frac{Ax^2}{x^2} =  A\lim_{x \to 0} \frac{x^2}{x^2} = 0
+			% $$
+			% % $$
+			% % 	\lim_{x \to 0} \frac{Bx}{x^2} = B\lim_{x \to 0} \frac{x}{x^2} = 0
+			% % $$
+
+			% \begin{align*}
+			% 	\lim_{x \to 0} f'(x) -2Ax-B &= 0\\
+			% 	\lim_{x \to 0} \frac{f'(x)}{2x} - \lim_{x \to 0} \frac{f''(0)x}{2x} - \lim_{x \to 0} \frac{B}{2x} &= 0
+			% \end{align*}
+
+
+			% $\lim_{x \to 0} \frac{Ax^2}{x^2}$ %and $\lim_{x \to 0} \frac{Bx}{x^2}$ 
+			% always equal to 0 for all $A, B \in \R$.
+
+			% Since we want the original equation equals to 0, the equation can be rewritten as:
+
+			% \begin{align*}
+			% 	0=&\lim_{x \to 0} \frac{f(x) - C}{x^2} - \lim_{x \to 0} \frac{Ax^2}{x^2} + \lim_{x \to 0} \frac{Bx}{x^2}\\
+			% 	0=&\lim_{x \to 0} \frac{f(x) - C}{x^2} - \lim_{x \to 0} \frac{Bx}{x^2} + 0\\
+			% 	%0=&\lim_{x \to 0} \frac{f(x)}{x^2} - \lim_{x \to 0} \frac{C}{x^2} \\
+			% \end{align*}
 			
+			% Because $f$ has derivatives of every order, $\lim_{x \to 0} f(x) = f(0)$. 
+			% Thus we can get $C=f(0)$.
+
+			
+
 		\item  Let $f$ be a function with domain $\R$.  Assume $f$ has derivatives of every order.   Let $N$ be a positive integer.  Find a polynomial \DS{P_N} such that
 			$$
 				\lim_{x \to 0} \frac{f(x) - P_N(x)}{x^N} = 0
