@@ -180,15 +180,17 @@ Since the terms under square root are equal to or bigger than $0$, so $f$ are st
     f'(x)
     &=\frac{3}{2}\cdot\frac{2x}{2\sqrt{(\frac{L}{2})^2+x^2}}-\frac{1}{2} \quad(\mbox{Chain Rule and Implicit Differentiation})\\
     &=\frac{3x}{2\sqrt{(\frac{L}{2})^2+x^2}}-\frac{1}{2}\\
-    &=0\\
-    \implies \frac{3x}{2\sqrt{(\frac{L}{2})^2+x^2}}&=\frac{1}{2}\\
+\end{align*}
+We want to find critical point, so we should let $f'(x) = 0$, which implies:
+\begin{align*}
+    \frac{3x}{2\sqrt{(\frac{L}{2})^2+x^2}}&=\frac{1}{2}\\
     3x&=\sqrt{(\frac{L}{2})^2+x^2}\\
     9x^2&=(\frac{L}{2})^2+x^2\\
     8x^2&=(\frac{L}{2})^2\\
     x&=\frac{\sqrt{2}}{8}L
 \end{align*}
 
-The only critical point is $x=\frac{\sqrt{2}}{8}L$.
+Since $x > 0$, the only critical point is $x=\frac{\sqrt{2}}{8}L$.
 
 The table shows that $f$ is decreasing on the left side of critical point and $f$ is increasing on the right side of critical point. So $x=\frac{\sqrt{2}}{8}L$ is a local minimum.
 
@@ -201,7 +203,7 @@ $f'(x)$ & $-\frac{1}{2}$ & $0$                   & $\frac{3\sqrt{5}}{5}-\frac{1}
 
 However we know $x\in[0,b]$, we don't know the relationship between $L$ and $b$.
 
-Cases:
+The answer should be splitted in to cases:
 \begin{itemize}
     \item If $x=\frac{\sqrt{2}}{8}L\in [0,b]$, then point $P$ is $\frac{\sqrt{2}}{8}L$ up or down of point $H$.
     \item If $x=\frac{\sqrt{2}}{8}L>b$, since $f$ is decreasing when $x=\frac{\sqrt{2}}{8}L$, the minimum then is at $x=b$ as point $P$ is at $C$ or $D$.
