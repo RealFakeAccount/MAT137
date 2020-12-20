@@ -135,7 +135,8 @@ The fence has length $2b$ --  it extends for a distance $b$ on each side of the 
 				\lim_{x \to 0} \frac{f'(x) - (2Ax + B)}{2x} = 0 \circled{2}
 			$$
 
-			Same as above, we can use L'Hôpital's Rule and get:
+			Same as above, $\lim_{x \to 0} 2x =0$, the only form possible is indeterminate form ($\lim_{x \to 0} f'(x) - (2Ax + B) = 0$).
+			Otherwise, this limit does not exist. we can use L'Hôpital's Rule and get:
 
 			$$
 				\lim_{x \to 0} \frac{f''(x) - 2A}{2} = 0 \circled{3}
@@ -272,7 +273,7 @@ The fence has length $2b$ --  it extends for a distance $b$ on each side of the 
 			\end{itemize}
 
 			And we can use L'H\^{o}pital's Rule $N + 1$ times.
-			The highest power of $\sum_{k = 1}^{N} \frac{f^k(0)x^k}{k!}$ is $N$, and $N \leq N + 1$.
+			The highest power of $\sum_{k = 1}^{N} \frac{f^k(0)x^k}{k!}$ is $N$, and $N < N + 1$.
 			So after $N + 1$ times of calculating derivatives, $\sum_{k = 1}^{N} \frac{f^k(0)x^k}{k!}$ becomes 0.
 			$f(0)$ becomes 0 in the first calculating.
 
