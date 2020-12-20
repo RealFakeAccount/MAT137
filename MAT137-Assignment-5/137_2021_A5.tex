@@ -211,7 +211,7 @@ The fence has length $2b$ --  it extends for a distance $b$ on each side of the 
 			\emph{proof:}
 
 			$$
-			P_N = (\sum_{k = 1}^{n}\frac{f^k(0)}{k!}x^k) + f(0)
+			P_N = (\sum_{k = 1}^{N}\frac{f^k(0)}{k!}x^k) + f(0)
 			$$
 
 			I'll proof it using induction.
@@ -250,10 +250,44 @@ The fence has length $2b$ --  it extends for a distance $b$ on each side of the 
 
 			\textbf{Induction step:}
 			
-			Assume $P_N$ satisfy $\lim_{x \to 0} \frac{f(x) - P_N(x)}{x^N} = 0$.
+			Assume $P_N$ satisfy $$\lim_{x \to 0} \frac{f(x) - P_N(x)}{x^N} = 0$$
 
-			\emph{WTS:} $\lim_{x \to 0} \frac{f(x) - P_{N+1}(x)}{x^{N+1}} = 0$ 
+			\emph{WTS:} $$\lim_{x \to 0} \frac{f(x) - P_{N+1}(x)}{x^{N+1}} = 0$$ 
 			
+			We can expand $P_{N+1}$, so the left hand side of the equation can be written as:
+
+			\begin{align*}
+				&\lim_{x \to 0} \frac{f(x) - \sum_{k = 1}^{N + 1} \frac{f^k(0)x^k}{k!} - f(0)}{x^{N + 1}} \\
+				=& \lim_{x \to 0} \frac{f(x) - \sum_{k = 1}^{N} \frac{f^k(0)x^k}{k!} - f(0) - \frac{f^{N + 1}(0)x^{N + 1}}{(N + 1)!}}{x^{N + 1}} \\
+			\end{align*}
+
+			We know that
+			\begin{itemize}
+				\item $\lim_{x \to 0} f(x) = 0$
+				\item $\lim_{x \to 0} \sum_{k = 1}^{N} \frac{f^k(0)x^k}{k!} = 0$
+				\item $\lim_{x \to 0} f(0) = 0$
+				\item $\lim_{x \to 0} \frac{f^{N + 1}(0)x^{N + 1}}{(N + 1)!} = 0$
+			\end{itemize}
+
+			And we can use L'H\^{o}pital's Rule $N + 1$ times.
+			The highest power of $\sum_{k = 1}^{N} \frac{f^k(0)x^k}{k!}$ is $N$, and $N \leq N + 1$.
+			So after $N + 1$ times of calculating derivatives, $\sum_{k = 1}^{N} \frac{f^k(0)x^k}{k!}$ becomes 0.
+			$f(0)$ becomes 0 in the first calculating.
+
+			$\lim_{x \to 0} \frac{f^{N + 1}(0)x^{N + 1}}{(N + 1)!} = 0$ after $N + 1$ times of calculating derivatives, 
+			is $f^{N + 1}(0)$.
+
+			the equation, after $N + 1$ times of calculating derivatives, is:
+
+			$$
+				\lim_{x \to 0} \frac{f^{N + 1}(x) - f^{N + 1}(0)}{(N + 1)!}
+			$$
+
+			Since $f$ has derivatives of every order, f is continuous on every order. 
+			Thus, $\lim_{x \to 0} f^{N + 1}(x) = f^{N + 1}(0)$. 
+
+			This means $\lim_{x \to 0} f^{N + 1}(x) - f^{N + 1}(0) = 0$, which indicates that 
+			$$\lim_{x \to 0} \frac{f(x) - P_{N+1}(x)}{x^{N+1}} = 0$$
 			
 
 		\item  Using your new result, find polynomials $P$  and $Q$ such that
