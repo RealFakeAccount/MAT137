@@ -1,0 +1,162 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ifthen}
+\usepackage{geometry}
+\noprintanswers
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+
+\usepackage{framed}
+
+\addtolength{\textheight}{3.5cm}
+\addtolength{\topmargin}{-0.8cm}
+\addtolength{\textwidth}{2.5cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\setlength\parindent{0pt}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+\newcommand{\vv}{\vspace{.1cm}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+\pagestyle{empty}
+
+
+%============================================
+%137 COLOUR PALETTE
+%============================================
+
+\definecolor{137cp1}{RGB}{13, 33, 161}
+\definecolor{137cp2}{RGB}{51, 161, 253}
+\definecolor{137cp3}{RGB}{255, 67, 101}
+\definecolor{137cp4}{RGB}{232, 144, 5}
+
+% to use colours easily
+\newcommand{\azul}[1]{{\color{blue} #1}}
+\newcommand{\rojo}[1]{{\color{red} #1}}
+ 
+% box in red and blue in math and outside of math
+\newcommand{\cajar}[1]{\boxed{\mbox{\rojo{ #1}}}}
+\newcommand{\majar}[1]{\boxed{\rojo{ #1}}}
+\newcommand{\cajab}[1]{\boxed{\mbox{\azul{ #1}}}}
+\newcommand{\majab}[1]{\boxed{\azul{ #1}}}
+
+%============================================
+%HYPERLINKS
+%============================================
+
+\usepackage{hyperref}
+\hypersetup{colorlinks}
+\hypersetup{urlcolor=137cp3, linkcolor=137cp1}
+
+%============================================
+%Commands used only for this file
+%============================================
+
+\newcommand{\e}{\varepsilon}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+{\large
+	\begin{center}
+		{\bf MAT 137Y: Calculus with proofs}\\
+		{\bf Assignment 6} \\
+		{\bf Due on Thursday, January 28 by 11:59pm via Crowdmark}
+	\end{center}
+}
+
+\vv
+
+\begin{quotation}
+{\bf Instructions:}
+	\begin{itemize}
+		\item	 You will need to submit your solutions electronically via Crowdmark.   \href{https://www.math.toronto.edu/~alfonso/137/PS/137_CM.html}{See MAT137 Crowdmark help page for instructions}.  Make sure you understand how to submit and that you try the system ahead of time.  If you leave it for the last minute and you run into technical problems, you will be late.  There are no extensions for any reason.
+		\item You may submit individually or as a team of two students.  See the link above for more details.
+		\item  You will need to submit your answer to each question separately.
+		\item  This problem set is about Unit 7.
+	\end{itemize}
+\end{quotation}
+
+\
+
+
+The goal of this assignment is to prove the following result from the definition of integral:
+	\begin{quotation}
+	\noindent {\bf Theorem 1:}  
+	Let $a<b$.  \; Let $f$ and $g$ be bounded functions on $[a,b]$.  Let $h = f+g$.
+	\begin{itemize}
+		\item  IF $f$ and $g$ are integrable on $[a,b]$
+		\item  THEN $h$ is integrable on $[a,b]$ and
+			$$
+				\int_a^b h(x) dx \; = \;  \int_a^b f(x) dx \; + \; \int_a^b g(x) dx
+			$$
+	\end{itemize}
+	\end{quotation}
+
+We will break the proof into pieces and guide you through them.  In mathematical terms, you will be proving a few ``lemmas" before you prove Theorem 1.  For all the questions, let $a<b$ and let $f$ and $g$ bounded functions on $[a,b]$.  We won't repeat this every time.  {\bf Do not assume that any of the functions is integrable, unless specified}: many of the intermediate results hold for non-integrable functions as well.    In many of the questions, you will need to use the results of one or various previous questions in your proof.
+
+\
+
+
+\begin{enumerate}
+
+\item  \begin{enumerate}
+	\item It is NOT necessarily true that for every partition $P$ of $[a,b]$
+		\begin{equation} \label{eq:Lfgh}
+			L_{P}(f) \; + \; L_P(g) \; = \; L_P(h).
+		\end{equation}
+	Show it with a counterexample.
+	\item 	However, if we turn the equality into an inequality in \eqref{eq:Lfgh}, then it becomes true.  Which inequality?  Prove it.
+	\end{enumerate}
+	
+\item   {\bf [Do not submit]}  Prove that for every $\e>0$, there exists a partition $P$ of $[a,b]$ such that 
+	$$
+		\underline{I_a^b}(f) - \e \; < \;  L_P(f). 
+	$$
+	\emph{Note:}  This is a very, very short proof if you understand the definition of lower integral as supremum.  You may even have learned something similar in class.  You do not need to submit your answer to this question, but we want to make sure you think about it before trying the harder (and related) next question.
+
+\item  Prove that for every $\e>0$, there exists a partition $P$ of $[a,b]$ such that
+	$$
+		\underline{I_a^b}(f) \, + \, \underline{I_a^b}(g) \, - \, \e \; < L_P(f) \, + \, L_P(g).
+	$$
+	\emph{Hint:}  This will feel a bit like those ``$\e$-$\delta$" proofs you learned in Unit 2.
+\item Prove that
+	$$
+		\underline{I_a^b}(f) \; + \; \underline{I_a^b}(g) \; \leq \;  \underline{I_a^b}(h).
+	$$
+
+	\emph{Note:}  If, at this moment, you think you have proven a strict inequality instead of a non-strict inequality, then your argument is probably wrong.
+
+\item  This question is irrelevant to the proof of Theorem 1, but it is also interesting.  Is it always true that 
+	$$
+		\underline{I_a^b}(f) \; + \; \underline{I_a^b}(g) \; = \; \underline{I_a^b}(h)  ?
+	$$
+	Prove it.
+	
+\item {\bf [Do not submit]}  Repeat the steps from the previous questions (with upper rather than lower sums and integrals) to prove that
+	$$
+		\overline{I_a^b}(h) \; \leq \; \overline{I_a^b}(f) \; + \; \overline{I_a^b}(g).
+	$$
+
+\item Prove Theorem 1.
+
+\end{enumerate}
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+	
