@@ -1,0 +1,149 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ifthen}
+\usepackage{geometry}
+\noprintanswers
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds}
+
+\usepackage{framed}
+
+\addtolength{\textheight}{6cm}
+\addtolength{\topmargin}{-2cm}
+\addtolength{\textwidth}{3cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+\addtolength{\evensidemargin}{-1.5cm}
+\setlength\parindent{0pt}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+\newcommand{\vv}{\vspace{.1cm}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+
+\pagestyle{empty}
+
+\graphicspath{ {./} }
+
+%============================================
+%137 COLOUR PALETTE
+%============================================
+
+\definecolor{137cp1}{RGB}{13, 33, 161}
+\definecolor{137cp2}{RGB}{51, 161, 253}
+\definecolor{137cp3}{RGB}{255, 67, 101}
+\definecolor{137cp4}{RGB}{232, 144, 5}
+
+
+%============================================
+%HYPERLINKS
+%============================================
+
+\usepackage{hyperref}
+\hypersetup{colorlinks}
+\hypersetup{urlcolor=137cp3, linkcolor=137cp1}
+
+%============================================
+%Commands used only for this file
+%============================================
+
+\DeclareMathOperator{\arccot}{arccot}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+{\large
+	\begin{center}
+		{\bf MAT 137Y: Calculus with proofs}\\
+		{\bf Test 3} \\
+	\end{center}
+}
+
+\begin{enumerate}
+	\item My example is 
+	
+	Let $n \in R$. 
+	$\lim_{x \to \infty} x\frac{n}{x}$
+
+	Using limit law to split them, the original equation equals to:  
+	$$
+	\lim_{x \to \infty} x \cdot  \lim_{x \to \infty} \frac{n}{x} = \infty \cdot 0
+	$$
+
+
+	This is an indeterminate forms because we can't draw conclusion from $0 \cdot \infty$
+
+	However, by simplify it, we can get:
+
+	$$
+	\lim_{x \to \infty} x\frac{n}{x} = \lim_{x \to \infty} n = n \; \mbox{ (Property of limits)}
+	$$
+	
+	By definition, n could be any real number. $\qquad \blacksquare$
+
+% \newpage
+
+	\item
+
+	Draw from definition that 
+	
+	\begin{itemize}
+		\item Let f be a bounded function on [a, b]
+		\item Let $P = \{x_0,x_1,...,x_N\}$ be a partition of [a, b]
+		\item For each $i = 1,...,N$, Let
+		\begin{itemize}
+			\item $m_i$ be the infimum of f on [$x_{i - 1}$, $x_i$]
+			\item $M_i$ be the supremum of f on [$x_{i - 1}$, $x_i$]
+			\item $\Delta x_i = x_i - x_{i - 1}$
+		\end{itemize}
+	\end{itemize}
+
+	
+	Then $L_P (f) = \sum_{i = 1}^{N} m_i \cdot \Delta x_i$ 
+
+	Since $f$ is bounded on [a, b], it has a supremum on [a, b]
+	We define $l$ be such supremum.
+
+	From definition, we know that $m_i$ be the infimum of f on [$x_{i - 1}$, $x_i$]
+
+	So, $\forall P. \forall m_i \; \mbox{defined by} \; P. m_i \leq l$.
+	take this back to the definition of $L_P$:
+
+	$$
+	\forall P. L_P(f) \leq \sum_{i = 1}^{N}l \cdot \Delta x_i = \sum_{i = 1}^{N}l \cdot \sum_{i = 1}^{N} \Delta x_i = \sum_{i = 1}^{N}l \cdot (b - a)
+	$$
+
+	Which match the definition of supremum.
+
+	So $\{L_P(f) | P$ is a partition of $[a, b]\}$ has a supremum. $\qquad \blacksquare$
+
+\item 
+
+we can rewrite the following equation as :
+
+\begin{align*}
+	& \lim_{x \to 0} \int_{0}^{x} \frac{(x - t)(f(t))}{x^2} dt \\
+	= & \lim_{x \to 0} \frac{\int_{0}^{x} (x - t) f(t) dt}{x^2} \; \mbox{ (Property of integral)} \\
+	= & \lim_{x \to 0} \frac{(x - x) f(x)}{2x} \; \mbox{(using L'Hôpital's rule) } \\
+	= & 0 \quad \blacksquare
+\end{align*}
+
+\end{enumerate}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
