@@ -223,6 +223,82 @@ where $p, q \in \N$, $a \in \R$, $a \neq 0$.
 
 \vv
 
+\begin{enumerate}
+    \item \emph{Proof:}
+		
+		Let $p, q\in\N$, $a\in\R$ and $a \neq 0$.
+		
+		Let $u=at$, so that $du=adt$ since $a$ is a constant. When $t=1$, it can imply that $u=a$. When $t=x$, it can imply that $u=ax$. By substitution of $u$, then we have
+		\begin{align*}
+		    \int_1^x t^p\ e^{at}\ dt&=\int_a^{ax} (\frac{u}{a})^p\ e^{u}\ \frac{1}{a}du\qquad(\mbox{By Substitution and }\frac{u}{a}=t)\\
+		    &=\frac{1}{a^{p+1}}\cdot\int_a^{ax} u^p\ e^{u}\ du\qquad(\mbox{Property of Integral})\\
+		    &=\frac{1}{a^{p+1}}\cdot(\int_0^{ax} u^p\ e^{u}\ du\ +\int_a^{0} u^p\ e^{u}\ du)\qquad(\mbox{Property of Integral})\\
+		    &=\frac{1}{a^{p+1}}\cdot(\int_0^{ax} u^p\ e^{u}\ du\ -\int_0^{a} u^p\ e^{u}\ du)\qquad(\mbox{Property of Integral})\\
+		    &=\frac{1}{a^{p+1}}\cdot(F_p(ax) - F_p(a))\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})\qquad\blacksquare
+		\end{align*}
+		
+		\newpage
+    \item \emph{Proof:}
+    
+        Let $p, q\in\N$, $a\in\R$ and $a \neq 0$.
+        
+        Let $t=-x^2$, so that $x^2=-t$ and $-2x\ dx=1\ dt$ which implies $x\ dx=\frac{-1}{2}dt$. By substitution of $t$, then we have
+        
+        \begin{align*}
+            \int x^{2p+1} \ e^{-x^2} \ dx &= \int (x^2)^p \ e^{-x^2}\cdot x\ dx\qquad(x^{2p+1}=x^{2p}\cdot x=(x^2)^p\cdot x)\\
+            &=\int (-t)^p \ e^t\cdot \frac{-1}{2}dt\qquad(\mbox{By Substitution})\\
+            &=(-1)\frac{-1}{2}\int t^p \ e^t\ dt\qquad(\mbox{Property of Integral})\\
+            &=\frac{1}{2}\int t^p \ e^t\ dt\\
+            &=\frac{1}{2}F_p(x)+C\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})
+        \end{align*}
+        Since this is an Indefinite Integral, $C$ represents a constant in Indefinite Integral.$\qquad\blacksquare$
+        
+        \newpage
+    \item \emph{Proof:}
+        
+        Let $p, q\in\N$, $a\in\R$ and $a \neq 0$.
+        
+        Let $u=\ln t$, so that $du=\frac{1}{t}dt$ which imply $t\ du=dt$ and also we can get:
+        \begin{align*}
+            u&=\ln t\\
+            e^u&=e^{\ln t}\\
+            e^u&=t
+        \end{align*}
+        Then $t\ du=dt\iff e^u\ du=dt$. When $t=1$, it can imply that $u=\ln 1=0$. When $t=x$, it can imply that $u=\ln x$.
+        
+        Let $x>0$. By substitution of $u$, then we have
+        \begin{align*}
+            \int_1^x t^{p} \left( \ln t \right)^{q} dt&=\int_0^{\ln x} (e^u)^{p}u^{q}e^u du\qquad(\mbox{By Substitution and }e^u=t)\\
+            &=\int_0^{\ln x} e^{u(p+1)}u^{q}du
+        \end{align*}
+        Let $u(p+1)=k$, so that $dk=(p+1)du$ since $(p+1)$ is a constant. When $u=0$, it can imply that $k=0\cdot(p+1)=0$. When $u=\ln x$, it can imply that $k=(p+1)\ln x$. By substitution of $k$, then we have
+        \begin{align*}
+            \int_0^{\ln x} e^{u(p+1)}u^{q}du&=\int_0^{(p+1)\ln x} e^k(\frac{k}{p+1})^{q}\frac{1}{p+1}dk\quad(\mbox{By Substitution and $u=\frac{k}{p+1}$ and $du=\frac{1}{p+1}dk$})\\
+            &=(\frac{1}{p+1})^{q+1}\int_0^{(p+1)\ln x} e^kk^{q}dk\qquad(\mbox{Property of Integral})\\
+            &=(\frac{1}{p+1})^{q+1}F_q((p+1)\ln x)\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})\qquad\blacksquare
+        \end{align*}
+        
+        \newpage
+    \item \emph{Proof:}
+    
+        Let $p, q\in\N$, $a\in\R$ and $a \neq 0$.
+        
+        Let $t=\sin x$, so that $dt=\cos x\ dx$ which imply $dx=\frac{1}{\cos x}dt$. By trigonometry property, we know that $\sin^2 x+\cos^2 x=1$, then $t^2+\cos^2 x=1$, then $\cos^2 x=1-t^2$.
+        
+        By substitution of $t$, then we have
+        \begin{align*}
+            \int (\sin^p x) ( \cos^3 x)  e^{\sin x}\ dx&=\int (\sin^p x) \cos^2 x\ e^{\sin x}\ \cos x\ dx\qquad(\cos^3 x=\cos^2 x\cdot\cos x)\\
+            &=\int t^p (1 - t^2)\ e^t\ dt\qquad(\mbox{By Substitution})\\
+            &=\int t^p\ e^t\ dt\ - \int t^p\cdot t^2\ e^t\ dt\qquad(\mbox{Property of Integral})\\
+            &=\int t^p\ e^t\ dt\ - \int t^{p+2}\ e^t\ dt\\
+            &=F_p(x)-F_{p+2}(x)+C\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})
+        \end{align*}
+        
+        Since this is an Indefinite Integral, $C$ represents a constant in Indefinite Integral.$\qquad\blacksquare$
+        
+        \newpage
+\end{enumerate}
+
 \item Before you attempt this question, work on the Practice Problems for Unit 10 (specifically the sections on Mass Density and Center of Mass).  Otherwise the question won't make sense.
 
 Every time we have two point masses in a closed space, they generate something called ``macguffin".  If we have a mass $m_1$ at point $P_1$ and a mass $m_2$ at point $P_2$, then they generate a macguffin with value $G$ given by
@@ -239,7 +315,32 @@ If we have more than two masses, every pair of masses generates a macguffin.  Fo
 	\end{itemize}
 \begin{enumerate}
 	\item  Assume we have $N$ masses on $N$ different positions on the $x$-axis: a mass $m_1$ at $x_1$, a mass $m_2$ at $x_2$, ..., a mass $m_N$ at $x_N$.  Obtain a formula for the total macguffin generated by the masses using sigma notation. 
+	
+	\emph{Solution:}
+	
+	By assumption, we have $N$ masses on $N$ different positions on the $x$-axis : a mass $m_1$ at $x_1$, a mass $m_2$ at $x_2$, ..., a mass $m_N$ at $x_N$. We know the macguffin cannot be generated by mass itself and we cannot count the macguffin twice of two masses.
+	
+	Let $i\in [1, N]$ and then let $j\in [i+1, N]$. We define that each mass $m_i$ should calculate with $m_j$ then it will not count the macguffin pair twice and count the macguffin of mass itself twice as pair except $i=N \And j=N$ since they can consider as their distance is $0$, which will not affect the total macguffin. Also the distance of $m_i$ and $m_j$ can be expressed as $|x_i-x_j|$, since $m_i$ is at $x_i$ and $m_j$ is at $x_j$. We know that $(x_i-x_j)^2=|x_i-x_j|^2$ by property of absolute value.
+	
+	Also by this method, we will count all the pair of masses to calculate total macguffin by equation:
+	$$
+	    G_{total}=\sum_{i=1}^{N}\sum_{j=i+1}^{N}m_im_j(x_i-x_j)^2
+	$$
+	
+	\newpage
+	
 	\item  Assume that instead of a collection of point masses we have continuous masses (which is more realistic).  Specifically, we have a bar on the $x$-axis, from $x=a$ to $x=b$, whose mass density at the point $x$ is given by $\mu(x)$.  Assume $\mu$ is a continuous function.  Obtain a formula for the total macguffin generated by the bar using integrals.
+	
+	\emph{Solution:}
+	
+	By assumption, we know $\mu(x)$ is continuous on $[a, b]$, which means that the density may be different at each point. Since we have a bar on the $x$-axis, we know that the integral of $\mu(x)$ density is mass. We can express $m$ as total mass of the bar that $m=\int_a^b\mu(x)dx$. We want to express the sigma notation we get in Q3a as integrals. Then we suppose first sigma is a integral related to $i$ and second sigma notation is a integral related to $j$. Now $|i-j|$ can be considered as the distance and $(i-j)^2=|i-j|^2$ by property of absolute value.
+	Then we can total macguffin by equation as:
+	\begin{align*}
+	    G_{total}&=\sum_{i=1}^{N}\sum_{j=i+1}^{N}m_im_j(x_i-x_j)^2\\
+	    &=\int_a^b(\int_i^b\mu(i)\mu(j)(i-j)^2dj)di\\
+	    &=\int_a^b\int_i^b\mu(i)\mu(j)(i-j)^2dj\ di
+	\end{align*}
+	
 \end{enumerate}
 
 
@@ -248,3 +349,4 @@ If we have more than two masses, every pair of masses generates a macguffin.  Fo
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
