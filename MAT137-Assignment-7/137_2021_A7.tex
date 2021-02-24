@@ -1,3 +1,4 @@
+  
 \documentclass[12pt]{exam}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -8,6 +9,10 @@
 \usepackage{ifthen}
 \usepackage{geometry}
 \noprintanswers
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle, draw, inner sep=1pt, 
+        minimum height=12pt] (char) {#1};}}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds}
@@ -98,6 +103,20 @@
 	\begin{enumerate}
 		\item \label{qu:parts} Use integration by parts to write $F_{n}$ in terms of $F_{n-1}$ for $n \geq 1$.  
 				
+				\emph{Proof:}
+				
+				We let $u=t^n$ and $dv=e^tdt$, then $v=e^t$.
+				
+				Using integration by parts:
+				\begin{align*}
+				    F_n(x) &= \int_0^x t^n e^t dt\\
+				    &= t^n e^t |_0^x - \int_0^x n\cdot t^{n-1} e^t dt\qquad(\int uv'=uv-\int u'v\mbox{ and }du=n\cdot t^{n-1})\\
+				    &= x^ne^x - n \cdot \int_0^x t^{n-1} e^t dt\qquad(t^n e^t |_0^x=x^n e^x - 0^n e^0=x^n e^x - 0=x^n e^x)\\
+				    &= x^ne^x - n \cdot F_{n-1}(x)\qquad(F_{n-1}(x)=\int_0^x t^{n-1} e^t dt)\circled{1}\qquad\blacksquare
+				\end{align*}
+				
+				\newpage
+				
 		\item \label{qu:lemma} Prove the following theorem by induction, using your result from Question \ref{qu:parts}:
 			\begin{quotation}
 				\noindent
@@ -105,9 +124,87 @@
 					\forall x \in \R, \quad F_n(x) \;  = \; e^x P_n(x)  \; + \; \lambda_n
 				\end{equation*}  
 			\end{quotation}
+			
+			\emph{Proof:}
+			
+			Base Case:
+			
+			When $n=0$, we can substitute $n=0$ to get:
+			\begin{align*}
+			    F_n(x) &= F_0(x) \\
+			    &= \int_0^x t^0 e^t dt\qquad(\mbox{Substituting $n=0$ into (1)})\\
+			    &= \int_0^x e^t dt\qquad \circled{2}\\
+			    &= e^t |_0^x\qquad(\int e^t dt=e^t+C)\\
+			    &= e^x - e^0\\
+			    &= e^x - 1\qquad(e^0=1)\circled{3}
+			\end{align*}
+			Then we take $P_0=1$ and $\lambda_0=-1\in\R$. Let $x\in\R$. By \circled{3}, We find that
+			$$
+			    \forall x \in \R, \quad F_0(x) \;  = \; e^x P_0(x)  \; + \; \lambda_0
+			$$
+			
+			When $n=1$, we can substitute $n=1$ and let $u=t$ and $dv=e^tdt$, then $v=e^t$ to get:
+			\begin{align*}
+			    F_n(x) &= F_1(x) \\
+			    &= \int_0^x t^1 e^t dt\qquad(\mbox{Substituting $n=1$ into (1)})\\
+			    &= t e^t |_0^x - \int_0^x e^t dt\qquad(\int uv'=uv-\int u'v\mbox{ and }du=1)\\
+			    &= xe^x - 0e^0 - (e^x -1)\qquad(\mbox{By \circled{2}, }\int_0^x e^t dt = e^x - 1)\\
+			    &= e^x(x-1) + 1\qquad(\mbox{Combining terms})\circled{4}
+			\end{align*}
+			Then we take $P_1=(x-1)$ and $\lambda_1=1\in\R$. Let $x\in\R$. By \circled{4}, We find that
+			$$
+			    \forall x \in \R, \quad F_1(x) \;  = \; e^x P_1(x)  \; + \; \lambda_n
+			$$
+			
+			Induction Step:
+			
+			Let $n\in\N$. We then know that $n+1\geq1$.
+			
+			Assume $F_n(x) \;  = \; e^x P_n(x)  \; + \; \lambda_n$.
+			
+			From Q1a \circled{1}, we know that $F_k(x)=x^ke^x - k \cdot F_{k-1}(x)$ for $k\geq1$.
+			
+			Since $n+1\geq1$, by substituting $n+1$ as $k$ we can get:
+			\begin{align*}
+			    F_{n+1}(x)&=x^{n+1}e^x - (n+1) \cdot F_{n}(x)\qquad(\mbox{By Q1a \circled{1}})\\
+			    &=x^{n+1}e^x - (n+1)[e^x P_n(x) + \lambda_n]\qquad(\mbox{By Assumption})\\
+			    &=e^x[x^{n+1}-(n+1)P_n(x)] - (n+1)\lambda_n\qquad(\mbox{Combining terms})\circled{5}
+			\end{align*}
+			Then we take $P_{n+1}=[x^{n+1}-(n+1)P_n(x)]$ and $\lambda_{n+1}=-(n+1)\lambda_n\in\R$. Let $x\in\R$. By \circled{5}, We find that
+			$$
+			    \forall x \in \R, \quad F_{n+1}(x) \;  = \; e^x P_{n+1}(x)  \; + \; \lambda_{n+1}\qquad \blacksquare
+			$$
+			
+			\newpage
+			
 		\item   Find (and prove) an explicit formula for $\lambda_n$, as defined in Question \ref{qu:lemma}.
 		
 			\emph{Hint:}  First find $\lambda_0$ by direct calculation.  Then use the previous questions.
+			
+			\emph{Proof:}
+			
+			When $n=0$, we can substitute $n=0$ to get:
+			\begin{align*}
+			    F_n(x) &= F_0(x) \\
+			    &= \int_0^x t^0 e^t dt\qquad(\mbox{Substituting $n=0$ into (1)})\\
+			    &= \int_0^x e^t dt\\
+			    &= e^t |_0^x\qquad(\int e^t dt=e^t+C)\\
+			    &= e^x - e^0\\
+			    &= e^x - 1\qquad(e^0=1)
+			\end{align*}
+			Then we know that $\lambda_0=-1\in\R$. From Q1b, we can know that $\lambda_{n+1}=-(n+1)\lambda_n$. Then we will get $\lambda_1=-1\lambda_0=1$, $\lambda_2=-2\lambda_1=-2$,$\lambda_3=-3\lambda_2=6$,$\cdots$
+			
+			Finally, we can summarize the pattern to get
+			\begin{align*}
+			    \lambda_n&=(-1)\cdot n\cdot\lambda_{n-1}\\
+			    &=(-1)^2\cdot n\cdot (n-1)\cdot\lambda_{n-2}\\
+			    &=(-1)^{n}\cdot n!\cdot\lambda_{n-n}\\
+			    &=(-1)^{n}\cdot n!\cdot\lambda_0\\
+			    &=(-1)^{n}\cdot n!\cdot(-1)\qquad(\lambda_0=-1)\\
+			    &=(-1)^{(n+1)}n!\qquad\blacksquare
+			\end{align*}.
+			
+			\newpage
 	\end{enumerate}
 
 \vv
@@ -253,7 +350,3 @@ If we have more than two masses, every pair of masses generates a macguffin.  Fo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-	
