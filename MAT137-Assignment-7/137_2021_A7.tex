@@ -258,9 +258,9 @@ where $p, q \in \N$, $a \in \R$, $a \neq 0$.
         \begin{align*}
             \int x^{2p+1} \ e^{-x^2} \ dx &= \int (x^2)^p \ e^{-x^2}\cdot x\ dx\qquad(x^{2p+1}=x^{2p}\cdot x=(x^2)^p\cdot x)\\
             &=\int (-t)^p \ e^t\cdot \frac{-1}{2}dt\qquad(\mbox{By Substitution})\\
-            &=(-1)\frac{-1}{2}\int t^p \ e^t\ dt\qquad(\mbox{Property of Integral})\\
-            &=\frac{1}{2}\int t^p \ e^t\ dt\\
-            &=\frac{1}{2}F_p(x)+C\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})
+            &=(-1)^p\frac{-1}{2}\int t^p \ e^t\ dt\qquad(\mbox{Property of Integral})\\
+            &=\frac{(-1)^{p+1}}{2}\int t^p \ e^t\ dt\\
+            &=\frac{(-1)^{p+1}}{2}F_p(x)+C\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})
         \end{align*}
         Since this is an Indefinite Integral, $C$ represents a constant in Indefinite Integral.$\qquad\blacksquare$
         
@@ -333,9 +333,14 @@ If we have more than two masses, every pair of masses generates a macguffin.  Fo
 	
 	Let $i\in [1, N]$ and then let $j\in [i+1, N]$. We define that each mass $m_i$ should calculate with $m_j$ then it will not count the macguffin pair twice and count the macguffin of mass itself twice as pair except $i=N \And j=N$ since they can consider as their distance is $0$, which will not affect the total macguffin. Also the distance of $m_i$ and $m_j$ can be expressed as $|x_i-x_j|$, since $m_i$ is at $x_i$ and $m_j$ is at $x_j$. We know that $(x_i-x_j)^2=|x_i-x_j|^2$ by property of absolute value.
 	
-	Also by this method, we will count all the pair of masses to calculate total macguffin by equation:
+	By this method, for any $i\in [1, N]$ and $j\in [i+1, N]$, we can get a pair of macguffin at two position $x_i$ and $x_j$ with $m_i$ and $m_j$ respectively as:
 	$$
-	    G_{total}=\sum_{i=1}^{N}\sum_{j=i+1}^{N}m_im_j(x_i-x_j)^2
+	    G_{x_ix_j}=m_im_j(x_i-x_j)^2
+	$$
+	
+	Also by this method, we will count all the pairs of masses to calculate total macguffin by equation:
+	$$
+	    G_{total}=\sum_{i=1}^{N}\sum_{j=i+1}^{N}G_{x_ix_j}=\sum_{i=1}^{N}\sum_{j=i+1}^{N}m_im_j(x_i-x_j)^2
 	$$
 	
 	\newpage
