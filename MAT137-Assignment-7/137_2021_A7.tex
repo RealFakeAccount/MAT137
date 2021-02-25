@@ -344,12 +344,23 @@ If we have more than two masses, every pair of masses generates a macguffin.  Fo
 	
 	\emph{Solution:}
 	
-	By assumption, we know $\mu(x)$ is continuous on $[a, b]$, which means that the density may be different at each point. Since we have a bar on the $x$-axis, we know that the integral of $\mu(x)$ density is mass. We can express $m$ as total mass of the bar that $m=\int_a^b\mu(x)dx$. We want to express the sigma notation we get in Q3a as integrals. Then we suppose first sigma is a integral related to $i$ and second sigma notation is a integral related to $j$. Now $|i-j|$ can be considered as the distance and $(i-j)^2=|i-j|^2$ by property of absolute value.
+	By assumption, we know $\mu(x)$ is continuous on $[a, b]$, which means that the density may be different at each point and is bounded.
+	
+	We want $N \to \infty$ in order to divide $[a,b]$.
+	
+	Let $P=\{x_0,x_1,x_2,\cdots,x_N\}$ be a partition of $[a,b]$ and satisfies $\lim_{N\to\infty}||P||=0$
+	
+	For each $i=1,2,\cdots,N$, let $\Delta x_i=x_i-x_{i-1}=\frac{b-a}{N}$. Then $m_i=\mu(x_i)\Delta x_i$.
+	
+	Let $j\in\N$ satisfies $j\geq i+1$ and $j\leq N$. Then $x_j\in P$ and $x_j=x_j-x_{j-1}=\frac{b-a}{N}$. Then $m_j=\mu(x_j)\Delta x_j$.
+	
+	
 	Then we can total macguffin by equation as:
 	\begin{align*}
-	    G_{total}&=\sum_{i=1}^{N}\sum_{j=i+1}^{N}m_im_j(x_i-x_j)^2\\
-	    &=\int_a^b(\int_i^b\mu(i)\mu(j)(i-j)^2dj)di\\
-	    &=\int_a^b\int_i^b\mu(i)\mu(j)(i-j)^2dj\ di
+	    G_{total}&=\sum_{i=1}^{N}\sum_{j=i+1}^{N}m_im_j(x_i-x_j)^2\qquad(\mbox{From Q3a})\\
+	    &=\lim_{N\to \infty }[\sum_{i=1}^{N}\sum_{j=i+1}^{N}\mu(x_i)\Delta x_i\ \mu(x_j)\Delta x_j(x_i-x_j)^2]\\
+	    &=\int_a^b(\int_k^b\mu(k)\mu(l)(k-l)^2dl)dk\qquad(\mbox{Riemman Sum})\\
+	    &=\int_a^b\int_k^b\mu(k)\mu(l)(k-l)^2dl\ dk
 	\end{align*}
 	
 \end{enumerate}
