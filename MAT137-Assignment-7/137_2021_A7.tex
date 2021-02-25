@@ -160,7 +160,7 @@
 			
 			Let $n\in\N$. We then know that $n+1\geq1$.
 			
-			Assume $F_n(x) \;  = \; e^x P_n(x)  \; + \; \lambda_n$.
+			Assume $P_n$ is a polynomial and $\lambda_n$ is a real number such that $F_n(x) \;  = \; e^x P_n(x)  \; + \; \lambda_n$.
 			
 			From Q1a \circled{1}, we know that $F_k(x)=x^ke^x - k \cdot F_{k-1}(x)$ for $k\geq1$.
 			
@@ -170,7 +170,9 @@
 			    &=x^{n+1}e^x - (n+1)[e^x P_n(x) + \lambda_n]\qquad(\mbox{By Assumption})\\
 			    &=e^x[x^{n+1}-(n+1)P_n(x)] - (n+1)\lambda_n\qquad(\mbox{Combining terms})\circled{5}
 			\end{align*}
-			Then we take $P_{n+1}=[x^{n+1}-(n+1)P_n(x)]$ and $\lambda_{n+1}=-(n+1)\lambda_n\in\R$\circled{6}. Let $x\in\R$. By \circled{5}, We find that
+			Then we take $P_{n+1}=[x^{n+1}-(n+1)P_n(x)]$ and $\lambda_{n+1}=-(n+1)\lambda_n\in\R$\circled{6}.
+			
+			We then know $P_{n+1}$ is a polynomial and $\lambda_{n+1}$ is a real number. Let $x\in\R$. By \circled{5}, We find that
 			$$
 			    \forall x \in \R, \quad F_{n+1}(x) \;  = \; e^x P_{n+1}(x)  \; + \; \lambda_{n+1}\qquad \blacksquare
 			$$
@@ -260,7 +262,7 @@ where $p, q \in \N$, $a \in \R$, $a \neq 0$.
             &=\int (-t)^p \ e^t\cdot \frac{-1}{2}dt\qquad(\mbox{By Substitution})\\
             &=(-1)^p\frac{-1}{2}\int t^p \ e^t\ dt\qquad(\mbox{Property of Integral})\\
             &=\frac{(-1)^{p+1}}{2}\int t^p \ e^t\ dt\\
-            &=\frac{(-1)^{p+1}}{2}F_p(x)+C\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})
+            &=\frac{(-1)^{p+1}}{2}F_p(-x^2)+C\qquad(\mbox{Definition of Equation \eqref{eq:Fn} and }t=-x^2)
         \end{align*}
         Since this is an Indefinite Integral, $C$ represents a constant in Indefinite Integral.$\qquad\blacksquare$
         
@@ -302,7 +304,7 @@ where $p, q \in \N$, $a \in \R$, $a \neq 0$.
             &=\int t^p (1 - t^2)\ e^t\ dt\qquad(\mbox{By Substitution})\\
             &=\int t^p\ e^t\ dt\ - \int t^p\cdot t^2\ e^t\ dt\qquad(\mbox{Property of Integral})\\
             &=\int t^p\ e^t\ dt\ - \int t^{p+2}\ e^t\ dt\\
-            &=F_p(x)-F_{p+2}(x)+C\qquad(\mbox{Definition of Equation \eqref{eq:Fn}})
+            &=F_p(\sin x)-F_{p+2}(\sin x)+C\qquad(\mbox{Definition of \eqref{eq:Fn} and }t=\sin x)
         \end{align*}
         
         Since this is an Indefinite Integral, $C$ represents a constant in Indefinite Integral.$\qquad\blacksquare$
