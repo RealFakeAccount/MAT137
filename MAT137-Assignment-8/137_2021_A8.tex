@@ -112,6 +112,29 @@
 
 \vv
 
+Since \DS{\left\{E_n\right\}_{n=1}^{\infty}} and \DS{\left\{O_n\right\}_{n=1}^{\infty}} is convergent to the same limit, then
+
+There exists $L \in \R$ such that
+
+$$
+	\forall \epsilon > 0. \exists n_0 \in \Z^+. s.t. \forall n \in \Z^+. n \geq n_0 \implies | x_{2n} - L | < \epsilon
+$$
+$$
+	\forall \epsilon > 0. \exists n_1 \in \Z^+. s.t. \forall n \in \Z^+. n \geq n_1 \implies | x_{2n-1} - L | < \epsilon
+$$
+
+Let's take $n_3 = max\{n_0, n_1\}$.
+We can get:
+$$
+\forall \epsilon > 0. \forall n \in \Z^+. n \geq n_3 \implies | x_{2n} - L | < \epsilon \mbox{ AND } | x_{2n-1} - L | < \epsilon
+$$
+
+This equals to
+$$
+\forall \epsilon > 0. \forall n \in \Z^+. n \geq n_3 \implies | x_n - L | < \epsilon
+$$
+which means \DS{\left\{x_n\right\}_{n=1}^{\infty}} is convergent.
+
 \item Let \DS{\left\{a_n\right\}_{n=1}^{\infty}} be a \emph{decreasing} sequence of positive numbers with limit $0$.  I define a new sequence \DS{\left\{x_n\right\}_{n=1}^{\infty}} as follows:
 	$$
 	\begin{aligned}
