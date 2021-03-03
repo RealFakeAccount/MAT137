@@ -112,6 +112,8 @@
 
 \vv
 
+\emph{Proof:}
+
 Since \DS{\left\{E_n\right\}_{n=1}^{\infty}} and \DS{\left\{O_n\right\}_{n=1}^{\infty}} is convergent to the same limit, then
 
 There exists $L \in \R$ such that
@@ -123,17 +125,23 @@ $$
 	\forall \epsilon > 0. \exists n_1 \in \Z^+. s.t. \forall n \in \Z^+. n \geq n_1 \implies | x_{2n-1} - L | < \epsilon
 $$
 
-Let's take $n_3 = max\{n_0, n_1\}$.
+Let $\epsilon >0$. Let's take $n_2 = max\{2n_0, 2n_1-1\}$.
+
 We can get:
-$$
-\forall \epsilon > 0. \forall n \in \Z^+. n \geq n_3 \implies | x_{2n} - L | < \epsilon \mbox{ AND } | x_{2n-1} - L | < \epsilon
-$$
+\begin{align*}
+    \forall n\geq n_2. (\exists k\in\Z^+.n=2k \implies x_n=x_{2k}=E_k) \mbox{ AND } (\exists k\in\Z^+ n=2k-1 \implies x_n=x_{2k-1}=O_k)
+\end{align*}
+If $n=2k$, we know $n=2k\geq n_2\geq 2n_0$, which implies $k\geq n_0$ which satisfies limit definition then we can get $|x_{2k}-L|<\epsilon$ which is equivalent to $|x_n-L|<\epsilon$.
+
+If $n=2k-1$, we know $n=2k-1\geq n_2\geq 2n_1-1$, which implies $k\geq n_1$ which satisfies limit definition then we can get $|x_{2k-1}-L|<\epsilon$ which is equivalent to $|x_n-L|<\epsilon$.
 
 This equals to
 $$
-\forall \epsilon > 0. \forall n \in \Z^+. n \geq n_3 \implies | x_n - L | < \epsilon
+\forall \epsilon > 0. \exists n^2\in\Z^+.\forall n \in \Z^+. n \geq n_2 \implies | x_n - L | < \epsilon
 $$
 which means \DS{\left\{x_n\right\}_{n=1}^{\infty}} is convergent.
+
+\newpage
 
 \item Let \DS{\left\{a_n\right\}_{n=1}^{\infty}} be a \emph{decreasing} sequence of positive numbers with limit $0$.  I define a new sequence \DS{\left\{x_n\right\}_{n=1}^{\infty}} as follows:
 	$$
