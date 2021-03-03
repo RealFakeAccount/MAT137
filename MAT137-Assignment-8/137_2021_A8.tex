@@ -133,7 +133,44 @@
 	For each one of the following claims, decide whether they are always true, always false, or sometimes true and sometimes false (depending on the specific sequences).  Prove it.
 	\begin{enumerate}
 		\item \DS{x_n << \frac{x_n+y_n}{2}}
+		
+		\emph{Proof:}
+		
+		Assume $x_n << y_n$. By definition of $<<$, it means $\lim_{n\to\infty}\frac{x_n}{y_n}=0$.
+		
+		Since \DS{\left\{x_n\right\}_{n=1}^{\infty}} and \DS{\left\{y_n\right\}_{n=1}^{\infty}} are two sequences of positive numbers, then $x_n>0$ and $y_n>0$. We can then get $\frac{x_n}{x_n+y_n}>0$ and implies $\frac{x_n}{x_n+y_n}\geq0$. We also know that $\frac{x_n}{y_n}>\frac{x_n}{x_n+y_n}$ and implies $\frac{x_n}{y_n}\geq\frac{x_n}{x_n+y_n}$.
+		
+		Since $\lim_{n\to\infty}0=0$ and $\lim_{n\to\infty}\frac{x_n}{y_n}=0$, also $0\leq\frac{x_n}{x_n+y_n}\leq\frac{x_n}{y_n}$, by Squeeze Theorem, $\lim_{n\to\infty}\frac{x_n}{(x_n+y_n)}=0$
+		
+		We want to calculate the limit $\lim_{n\to\infty}\frac{x_n}{\frac{x_n+y_n}{2}}$:
+		\begin{align*}
+		    \lim_{n\to\infty}\frac{x_n}{\frac{x_n+y_n}{2}}&=\lim_{n\to\infty}\frac{x_n}{\frac{1}{2}(x_n+y_n)}\\
+		    &=\lim_{n\to\infty}2\cdot\frac{x_n}{(x_n+y_n)}\\
+		    &=2\cdot\lim_{n\to\infty}\frac{x_n}{(x_n+y_n)}\qquad(\mbox{Limit Law})\\
+		    &=2\cdot0\qquad(\lim_{n\to\infty}\frac{x_n}{(x_n+y_n)}=0)\\
+		    &=0
+		\end{align*}
+		Then we have proven that \DS{x_n << \frac{x_n+y_n}{2}} is always true.\qquad$\blacksquare$
+		\newpage
+		
 		\item \DS{\frac{x_n+y_n}{2} << y_n}
+		
+		\emph{Proof:}
+		
+		Assume $x_n << y_n$. By definition of $<<$, it means $\lim_{n\to\infty}\frac{x_n}{y_n}=0$.
+		
+		We know that $\lim_{n\to\infty}\frac{1}{2}=\frac{1}{2}$. Then by limit law, $\lim_{n\to\infty}\frac{1}{2}\cdot\frac{x_n}{y_n}=\frac{1}{2}\cdot0=0$
+		
+		We want to calculate the limit $\lim_{n\to\infty}\frac{\frac{x_n+y_n}{2}}{y_n}$:
+		\begin{align*}
+		    \lim_{n\to\infty}\frac{\frac{x_n+y_n}{2}}{y_n}&=\lim_{n\to\infty}\frac{\frac{1}{2}(x_n+y_n)}{y_n}\\
+		    &=\lim_{n\to\infty}\frac{1}{2}\cdot\frac{(x_n+y_n)}{y_n}\\
+		    &=\lim_{n\to\infty}\frac{1}{2}\cdot[1+\frac{x_n}{y_n}]\\
+		    &=\lim_{n\to\infty}\frac{1}{2}+\frac{1}{2}\cdot\frac{x_n}{y_n}\\
+		    &=\frac{1}{2}+0\qquad(\mbox{Limit Law})\\
+		    &=\frac{1}{2}
+		\end{align*}
+		Then we have proven that \DS{\frac{x_n+y_n}{2} << y_n} is always false\qquad$\blacksquare$
 	\end{enumerate}
 
 \end{enumerate}
