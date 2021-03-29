@@ -93,6 +93,72 @@
 
 \emph{Note:}  This should go without saying, but it is not enough to write down the power series: you also need to \emph{prove} that its interval of convergence \emph{is} \DS{[0,3].}
 
+Let's take power series $$f(x) = \sum_{n = 1}^{\infty} \frac{(2x-3)^n}{n^2 3^n}$$
+
+I will now proof that the interval of convregence of this power series is [0, 3]
+
+\emph{proof:}
+
+Assume $t = 2x - 3$. Then the power series could be rewritten as:
+
+$$f(t) = \sum_{n = 1}^{\infty} \frac{t^n}{n^2 3^n}$$
+
+In order to use ratio test, let's call $a_n =  \frac{t^n}{n^2 3^n}$
+
+\begin{align*}
+	L &= \lim_{n \to \infty} \frac{|a_{n + 1}|}{|a_n|} \mbox{ (Ratio Test) } \\
+	&= \lim_{n \to \infty} \frac{|\frac{t^{n + 1}}{(n + 1)^2 3^{n + 1}}|}{|\frac{t^n}{n^2 3^n}|} \mbox{ (definition of } a_n ) \\
+	&= \lim_{n \to \infty} \frac{|t^{n + 1}| n^2 3^n}{ t^n(n + 1)^2 3^{n + 1}} \mbox{( arithmetic operation )} \\
+	&= \frac{|t|}{3} ( \mbox{Since } n \to \infty \mbox{ and by definition of limit})
+\end{align*}
+
+\begin{itemize}
+	\item if $|t| < 3$, then $L = \frac{|t|}{3} < 1$.
+
+	By Ratio Test, $f(t)$ is convergent.
+
+	\item if $|t| > 3$, then $L = \frac{|t|}{3} > 1$.
+
+	By Ratio Test, $f(t)$ is divergent.
+
+	\item if $|t| = 3$:
+
+	\begin{itemize}
+		\item when t = 3:
+
+		\begin{align*}
+			f(3) 
+			=& \sum_{n = 1}^{\infty} \frac{3^n}{n^2 3^n} \\
+			=& \sum_{n = 1}^{\infty} \frac{1}{n^2}
+		\end{align*}
+		By P-series test, since $2 > 1$, this is convergent.
+		
+		\item when t = -3:
+
+		\begin{align*}
+			f(-3) 
+			=& \sum_{n = 1}^{\infty} \frac{(-3)^n}{n^2 3^n} \\
+			=& \sum_{n = 1}^{\infty} \frac{(-1)^n}{n^2} \\
+			=& \sum_{n = 1}^{\infty} (-1)^n \frac{1}{n^2}
+		\end{align*}
+
+		In order to use Alternating Series Test, we denote $b_n = \frac{1}{n^2}$. It is known that:
+		\begin{itemize}
+			\item $b_n > 0, \forall n$.
+			\item $\{b_n\}$ is decreasing.
+			\item $\lim_{n \to \infty} b_n = 0$.
+		\end{itemize}
+
+		Therefore, $\sum_{n = 1}^{\infty} (-1)^n \frac{1}{n^2}$ is convergent.
+	\end{itemize}
+\end{itemize}
+
+Therefore, $f(t)$ is convergent when $|t| \leq 3$.
+
+Let's take back x. Then, $f(x)$ is convergent when $|2x - 3| \leq 3$. Solve it, we can get $x \in [0, 3] \blacksquare$
+
+\newpage
+
 \item Is it possible for a power series to be conditionally convergent at two different points?  Prove it.
 
 \item Let \DS{f(x) = x^{100} e^{2x^5} \cos ( x^2) }.  Calculate \DS{f^{(137)}(0)}.   
