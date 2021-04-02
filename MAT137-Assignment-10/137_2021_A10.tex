@@ -105,6 +105,34 @@ Notice that this is just an example, not the actual answer.
 
 \emph{Hint:}  Use Taylor series.  
 
+\emph{Proof:}
+
+Since we want to find $f^{(137)}(0)$, we let $a=0\in\R$.
+
+Let $f(x) = x^{100} e^{2x^5} \cos ( x^2)$.
+
+We know $f$ is analytic, since $f$ is the product of a polynomial, a composition of $e$ and a polynomial, and a composition of $\cos$ and a polynomial. Using definition of Maclaurin series as ``Taylor series at $0$":
+$$
+    f(x)=\sum_{n=0}^\infty \frac{f^{(n)}}{n!}x^n \qquad\circled{1}
+$$
+
+We know from four main Maclaurin series that:
+\begin{align*}
+    e^x &= \sum_{n=0}^\infty \frac{x^n}{n!}\quad\mbox{for all }x\\
+    \cos x &= \sum_{n=0}^\infty  (-1)^n\frac{x^{2n}}{(2n)!}\quad\mbox{for all }x
+\end{align*}
+Then we express $f(x)$ as new form:
+\begin{align*}
+    f(x) &= x^{100}\sum_{n=0}^\infty \frac{(2x^5)^n}{n!}\sum_{n=0}^\infty  (-1)^n\frac{(x^2)^{2n}}{(2n)!} \\
+    &= x^{100}\sum_{n=0}^\infty \frac{2^n\cdot x^{5n}}{n!}\sum_{n=0}^\infty  (-1)^n\frac{x^{4n}}{(2n)!} \qquad\circled{2}
+\end{align*}
+Since the Maclaurin series of $f$ is unique, so two equation \circled{1} and \circled{2} must be the same. Then we will have the same coefficient of $x^{137}$ in both \circled{1} and \circled{2} and we can get two new equation:
+\begin{align*}
+    \frac{f^{(137)}}{137!}=\frac{2n_1}{n_1!}\cdot\frac{(-1)^{n_2}}{(2n_2)!}\\
+    5n_1+4n_2=137-100
+\end{align*}
+
+\newpage
 
 \item  Let $I$ be an open interval.    Let $f$ be a function defined on $I$.  Let $a \in I$.  Assume $f$ is $C^2$ on $I$.   Assume $f'(a) = 0$.   As you know, $a$ is a candidate for a local extremum for $f$.  The ``2nd Derivative Test" says that, under these circumstances:
 	\begin{itemize}
