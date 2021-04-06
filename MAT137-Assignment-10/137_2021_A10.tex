@@ -119,12 +119,16 @@ Notice that this is just an example, not the actual answer.
 			
 			\emph{Note:}  We are not asking for a proof yet.  Rather, we are asking for a short, simple, handwavy argument that would convince an average student that this result ``makes sense" and ``seems true".
 			
-						\emph{Solution}:
+			\emph{Solution}:
 			
-			Let $a \in I$.
+			Let $a \in I\subseteq\R$.
+			
 			Let $n=2\in\N$.
-			Let $f$ is $C^2$ on $I$.
+			
+			Assume $f$ is $C^2$ on $I$.
+			
 			Then $f$ is $C^2$ at $a$.
+			
 			By 3-rd definition of Taylor polynomials, we have
 			$$
 			    P_2(x)=\sum_{k=0}^2 \frac{f^{(k)(a)}}{k!}(x-a)^k=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2
@@ -158,6 +162,94 @@ Notice that this is just an example, not the actual answer.
 		\item  \label{qu:pf} Now write an actual, rigorous proof for the 2nd Derivative Test.  You will need to use the first definition of Taylor polynomial (the one in terms of the limit), the definition of limit, and the definition of local extremum.
 				
 			\emph{Note:}  There are many other ways to prove the 2nd Derivative Test, but we want you to do it specifically this way. It will help with the next questions.
+			
+			\emph{Proof:}
+			
+			Let $a \in I\subseteq\R$.
+			
+			Let $n=2\in\N$.
+			
+		    Assume $f$ is $C^2$ on $I$.
+		    
+		    By definition of $C^2$, A function $f$ is called $C^2$ when $f'$ and $f''$ exist and are continuous.
+			
+			Then $f$ is $C^2$ at $a$ which shows $f$ is a continuous function defined at and near $a$.
+			
+			By 1-st definition of Taylor polynomials, we have
+			$$
+			    \lim_{x\to a}\frac{f(x)-P_n(x)}{(x-a)^n}=\lim_{x\to a}\frac{f(x)-P_2(x)}{(x-a)^2}=0\qquad\circled{3}
+			$$
+			Assume $f'(a) = 0$. From Q4a, we have shown
+			$$
+			    P_2(x)=f(a)+\frac{f''(a)}{2}(x-a)^2
+			$$
+			and use this $P_2(x)$ in \circled{3}, we have:
+			\begin{align*}
+			    \lim_{x\to a}\frac{f(x)-P_2(x)}{(x-a)^2}
+			    &=\lim_{x\to a}\frac{f(x)-[f(a)+\frac{f''(a)}{2}(x-a)^2]}{(x-a)^2}\\
+			    &=\lim_{x\to a}[\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}]\\
+			    &=0
+			\end{align*}
+			By definition of limits, we can change
+			$$
+			    \lim_{x\to a}[\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}]=0
+			$$
+			into formal definition as:
+			$$
+			    \forall\epsilon>0, \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta\implies\vert{\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}}\vert<\epsilon
+			$$
+			\begin{itemize}
+			    \item Case One - $f''(a)>0$:
+			        
+			        Take $\epsilon=\frac{f''(a)}{2}>0$.
+			        
+			        Then by formal definition of Taylor polynomial we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta&\implies\vert{\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}}\vert<\frac{f''(a)}{2}\\
+			            &\implies\frac{-f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}<\frac{f''(a)}{2}\\
+			            &\implies\frac{-f''(a)}{2}+\frac{f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}<\frac{f''(a)}{2}+\frac{f''(a)}{2}\\
+			            &\implies0<\frac{f(x)-f(a)}{(x-a)^2}<f''(a)
+			        \end{align*}
+			        Since we know $(x-a)^2>0$, we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta
+			            &\implies\frac{f(x)-f(a)}{(x-a)^2}>0\\
+			            &\implies f(x)-f(a)>0\qquad((x-a)^2>0)\\
+			            &\implies f(x)>f(a)\\
+			            &\implies f(x)\geq f(a)
+			        \end{align*}
+			        Thus by definition of local minimum as
+			        $$
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta\implies f(x)\geq f(a)
+			        $$
+			        I've showed $f$ has a local minimum at $a$.
+			    \item Case Two - $f''(a)<0$:
+			    
+			        Take $\epsilon=\frac{-f''(a)}{2}>0$.
+			        
+			        Then by formal definition of Taylor polynomial we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta&\implies\vert{\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}}\vert<\frac{-f''(a)}{2}\\
+			            &\implies\frac{f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}<\frac{-f''(a)}{2}\\
+			            &\implies\frac{f''(a)}{2}+\frac{f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}<\frac{-f''(a)}{2}+\frac{f''(a)}{2}\\
+			            &\implies f''(a)<\frac{f(x)-f(a)}{(x-a)^2}<0
+			        \end{align*}
+			        Since $(x-a)^2>0$, we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta
+			            &\implies\frac{f(x)-f(a)}{(x-a)^2}<0\\
+			            &\implies f(x)-f(a)<0\qquad((x-a)^2>0)\\
+			            &\implies f(x)<f(a)\\
+			            &\implies f(x)\leq f(a)
+			        \end{align*}
+			        Thus by definition of local maximum as
+			        $$
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta\implies f(x)\leq f(a)
+			        $$
+			        I've showed $f$ has a local maximum at $a$.\qquad $\blacksquare$
+			\end{itemize}
+			
+			\newpage
 	
 		\item \label{qu:conj} What happens if $f''(a)=0$?     In that case, we look at $f^{(3)}(a)$;  if it is also $0$, then we look at $f^{(4)}(a)$, and we keep looking till we find one derivative that is not $0$ at $a$.   
 		
