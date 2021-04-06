@@ -117,7 +117,7 @@ Let $f(x) = x^{100} e^{2x^5} \cos ( x^2)$.
 
 We know $f$ is analytic, since $f$ is the product of a polynomial, a composition of $e$ and a polynomial, and a composition of $\cos$ and a polynomial. Using definition of Maclaurin series as ``Taylor series at $0$":
 $$
-    f(x)=\sum_{n=0}^\infty \frac{f^{(n)}}{n!}x^n \qquad\circled{1}
+    f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}x^n \qquad\circled{1}
 $$
 
 We know from four main Maclaurin series that:
@@ -130,10 +130,30 @@ Then we express $f(x)$ as new form:
     f(x) &= x^{100}\sum_{n=0}^\infty \frac{(2x^5)^n}{n!}\sum_{n=0}^\infty  (-1)^n\frac{(x^2)^{2n}}{(2n)!} \\
     &= x^{100}\sum_{n=0}^\infty \frac{2^n\cdot x^{5n}}{n!}\sum_{n=0}^\infty  (-1)^n\frac{x^{4n}}{(2n)!} \qquad\circled{2}
 \end{align*}
-Since the Maclaurin series of $f$ is unique, so two equation \circled{1} and \circled{2} must be the same. Then we will have the same coefficient of $x^{137}$ in both \circled{1} and \circled{2} and we use $n_1$ to replace $n$ in $\sum_{n=0}^\infty \frac{2^n\cdot x^{5n}}{n!}$ and we use $n_2$ to replace $n$ in $\sum_{n=0}^\infty  (-1)^n\frac{x^{4n}}{(2n)!}$ then we can get two new equation:
+Since the Maclaurin series of $f$ is unique, so two equation \circled{1} and \circled{2} must be the same. Then we will have the same coefficient of $x^{137}$ in both \circled{1} and \circled{2} and we use $n_1$ to replace $n$ in $\sum_{n=0}^\infty \frac{2^n\cdot x^{5n}}{n!}$ and we use $n_2$ to replace $n$ in $\sum_{n=0}^\infty  (-1)^n\frac{x^{4n}}{(2n)!}$ then we can get one new equation:
 \begin{align*}
-    \frac{f^{(137)}}{137!}=\frac{2n_1}{n_1!}\cdot\frac{(-1)^{n_2}}{(2n_2)!}\\
-    5n_1+4n_2=137-100
+    5n_1+4n_2&=137-100
+\end{align*}
+The only natural number solution to $5n_1+4n_2=137-100=37$ are $n_1=1,n_2=8$ and $n_1=5,n_2=3$
+\begin{itemize}
+    \item When $n_1=1,n_2=8$:
+    
+    We solve coefficient for $x^{137}$ in \circled{2}:
+    $$
+        x^{100}\cdot\frac{2^1}{1!}x^{5}\cdot\frac{(-1)^8}{(2\cdot8)!}x^{32}=2\cdot\frac{1}{16!}x^{(100+5+32)}=\frac{2}{16!}x^{137}
+    $$
+    \item When $n_1=5,n_2=3$:
+    
+    We solve coefficient for $x^{137}$ in \circled{2}:
+    $$
+        x^{100}\cdot\frac{2^5}{5!}x^{25}\cdot\frac{(-1)^3}{(2\cdot3)!}x^{12}=\frac{2^5}{5!}\cdot\frac{-1}{6!}x^{(100+25+12)}=\frac{-2^5}{5!\cdot6!}x^{137}
+    $$
+\end{itemize}
+The coefficient of $x^{137}$ are sum of different combinations as:
+\begin{align*}
+    \frac{f^{(137)}(0)}{137!}&=\frac{2}{16!}+\frac{-2^5}{5!\cdot6!}\\
+    f^{(137)}(0)&=137![\frac{2}{16!}+\frac{-2^5}{5!\cdot6!}]\\
+    f^{(137)}(0)&=\frac{2\cdot137!}{16!}-\frac{2^5\cdot137!}{4!\cdot6!}\qquad\blacksquare
 \end{align*}
 
 \newpage
