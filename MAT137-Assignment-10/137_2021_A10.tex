@@ -131,7 +131,7 @@ Notice that this is just an example, not the actual answer.
 			
 			By 3-rd definition of Taylor polynomials, we have
 			$$
-			    P_2(x)=\sum_{k=0}^2 \frac{f^{(k)(a)}}{k!}(x-a)^k=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2
+			    P_2(x)=\sum_{k=0}^2 \frac{f^{(k)}(a)}{k!}(x-a)^k=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2
 			$$
 			Since we assume $f'(a) = 0$, we then have
 			$$
@@ -262,7 +262,67 @@ Notice that this is just an example, not the actual answer.
 				\item  IF ..., THEN $f$ does not have a local extremum at $a$.
 			\end{itemize}
 		When you complete this, you will have come up with a new theorem.  Let's call it the ``Beyond-the-2nd-derivative Test".   Make sure your theorem takes care of all possible cases.  
-		\item \label{qu:thm}  {\bf [Do not submit.]}  Imitate the proof in \ref{qu:pf} to prove the Beyond-the-2nd-derivative Test.		
+		
+		\emph{Solution:}
+		    \begin{itemize}
+				\item  IF $n$ is even and $f^{(n)}(a)>0$, THEN $f$ has a local minimum at $a$.
+				\item  IF $n$ is even and $f^{(n)}(a)<0$, THEN $f$ has a local maximum at $a$.
+				\item  IF $n$ is odd, THEN $f$ does not have a local extremum at $a$.
+			\end{itemize}
+		    Let $a \in I\subseteq\R$.
+			
+			Let $n\geq2\in\N$.
+			
+			Assume $f$ is $C^n$ on $I$.
+			
+			By 3-rd definition of Taylor polynomials, we have
+			\begin{align*}
+			    P_n(x)&=\sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k\\
+			    &=f(a)+f^{(1)}(a)(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1}+\frac{f^{(n)}(a)}{n!}(x-a)^n
+			\end{align*}
+			Since we assume $f^{(1)}(a)=0,f^{(2)}(a)=0,\cdots,f^{(n-1)}(a)=0$, we then have:
+			$$
+			    P_n(x)=f(a)+0\cdot(x-a)+\cdots+0\cdot(x-a)^{n-1}+\frac{f^{(n)}(a)}{n!}(x-a)^n=f(a)+\frac{f^{(n)}(a)}{n!}(x-a)^n
+			$$
+			Then we can seen $f(a)$ as constant, $\frac{f^{(n)}(a)}{n!}$ as coefficient of $x^n$ and the shape of $P_n(x)$ needed to be discussed based on $n$ is even or odd.
+			\begin{itemize}
+			    \item When $n$ is even and $f^{(n)}(a)>0$, the function $P_n(x)$ face upward as:
+			        \begin{center}
+			            \includegraphics[scale=0.75]{Upward-n}
+			    
+			            (Red line represents $P_n(x)$)
+			        \end{center}
+			        Graphically, we have shown that $f$ has a local minimum at $a$.
+			
+			    \item When $n$ is even and $f^{(n)}(a)<0$, the function $P_n(x)$ face downward as:
+			        \begin{center}
+			            \includegraphics[scale=0.75]{Downward-n}
+			    
+			            (Red line represents $P_n(x)$)
+			        \end{center}
+			        Graphically, we have shown that $f$ has a local maximum at $a$.
+			     
+		        \item When $n$ is odd and $f^{(n)}(a)>0$, the function $P_n(x)$ shape will be like:
+		            \begin{itemize}
+		                \item When $f^{(n)}(a)>0$, the function $P_n(x)$ shape will be like:
+		                    \begin{center}
+			                    \includegraphics[scale=0.75]{Odd-Positive}
+			    
+			                    (Red line represents $P_n(x)$)
+			                \end{center}
+		                \item When $f^{(n)}(a)<0$, the function $P_n(x)$ shape will be like:
+		                    \begin{center}
+			                    \includegraphics[scale=0.75]{Odd-Negative}
+			    
+			                    (Red line represents $P_n(x)$)
+			                \end{center}
+		            \end{itemize}
+		            Graphically, we have shown that $f$ does not have a local extremum at $a$.
+			\end{itemize}
+		
+		\newpage
+		
+		\item \label{qu:thm}  {\bf [Do not submit.]}  Imitate the proof in \ref{qu:pf} to prove the Beyond-the-2nd-derivative Test. 	
 	\end{enumerate}
 
 \emph{Note:}  Why did we ask you to write both a ``simple, intuitive explanation" and a ``formal proof"?  Because that is how research in mathematics often happens.  The intuitive explanation is how we come up with conjectures and discover new theorems (as in Questions \ref{qu:int} and \ref{qu:conj}).   After that, the formal proof is how we make sure the conjecture is not merely a conjecture but a true theorem (as in Questions \ref{qu:pf} and \ref{qu:thm}).   We need both.
