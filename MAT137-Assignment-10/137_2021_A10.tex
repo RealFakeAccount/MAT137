@@ -119,6 +119,42 @@ Notice that this is just an example, not the actual answer.
 			
 			\emph{Note:}  We are not asking for a proof yet.  Rather, we are asking for a short, simple, handwavy argument that would convince an average student that this result ``makes sense" and ``seems true".
 			
+						\emph{Solution}:
+			
+			Let $a \in I$.
+			Let $n=2\in\N$.
+			Let $f$ is $C^2$ on $I$.
+			Then $f$ is $C^2$ at $a$.
+			By 3-rd definition of Taylor polynomials, we have
+			$$
+			    P_2(x)=\sum_{k=0}^2 \frac{f^{(k)(a)}}{k!}(x-a)^k=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2
+			$$
+			Since we assume $f'(a) = 0$, we then have
+			$$
+			    P_2(x)=f(a)+0\cdot(x-a)+\frac{f''(a)}{2}(x-a)^2=f(a)+\frac{f''(a)}{2}(x-a)^2
+			$$
+			Then we can seen $f(a)$ as constant, $\frac{f''(a)}{2}$ as coefficient of $x^2$ and $P_2(x)$ is a quadratic function.
+			
+			When $f''(a)>0$, the quadratic function face upward as:
+			\begin{center}
+			    \includegraphics[scale=0.75]{Upward}
+			    
+			    (Red line represents $P_2(x)$)
+			\end{center}
+			Graphically, we have shown that $f$ has a local minimum at $a$.
+			
+			\newpage
+			
+			When $f''(a)<0$, the quadratic function face downward as:
+			\begin{center}
+			    \includegraphics[scale=0.75]{Downward}
+			    
+			    (Red line represents $P_2(x)$)
+			\end{center}
+			Graphically, we have shown that $f$ has a local maximum at $a$.
+			
+			\newpage
+			
 		\item  \label{qu:pf} Now write an actual, rigorous proof for the 2nd Derivative Test.  You will need to use the first definition of Taylor polynomial (the one in terms of the limit), the definition of limit, and the definition of local extremum.
 				
 			\emph{Note:}  There are many other ways to prove the 2nd Derivative Test, but we want you to do it specifically this way. It will help with the next questions.
