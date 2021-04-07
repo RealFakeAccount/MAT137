@@ -64,6 +64,10 @@
 %Commands used only for this file
 %============================================
 
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -183,7 +187,7 @@ Notice that this is just an example, not the actual answer.
 			$$
 			    P_2(x)=f(a)+\frac{f''(a)}{2}(x-a)^2
 			$$
-			and use this $P_2(x)$ in \circled{3}, we have:
+			and use this $P_2(x)$ in $\circled{3}$, we have:
 			\begin{align*}
 			    \lim_{x\to a}\frac{f(x)-P_2(x)}{(x-a)^2}
 			    &=\lim_{x\to a}\frac{f(x)-[f(a)+\frac{f''(a)}{2}(x-a)^2]}{(x-a)^2}\\
