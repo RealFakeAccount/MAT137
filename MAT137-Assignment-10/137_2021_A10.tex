@@ -99,38 +99,39 @@
 
 WTS: There exists a power series to be conditionally convergent at two different points.
 
-Let's take power series $$h(x) = \sum_{n = 1}^{\infty} \frac{(-1)^n}{n}x^{2n}$$
+Let's take power series $$h(x) = \sum_{n = 1}^{\infty} \frac{(-1)^n\cdot x^{2n}}{3^{2n}\cdot n}= \sum_{n = 1}^{\infty} \frac{(-1)^n}{n}(\frac{x}{3})^{2n}$$
 
-I will now proof that this power series to be conditionally convergent at $x=1$ and $x=-1$.
+I will now proof that this power series to be conditionally convergent at $x=3$ and $x=-3$.
 
 \emph{Proof:}
 
-In order to use ratio test, let's call $a_n =  \frac{(-1)^n}{n}x^{2n}$
+In order to use ratio test, let's call $a_n =  \frac{(-1)^n}{n}(\frac{x}{3})^{2n}$
 
 \begin{align*}
 	L &= \lim_{n \to \infty} \frac{|a_{n + 1}|}{|a_n|} \qquad\mbox{ (Ratio Test) } \\
-	&= \lim_{n \to \infty} \frac{|\frac{(-1)^{n+1}}{(n+1)}x^{2(n+1)}|}{|\frac{(-1)^n}{n}x^{2n}|} \qquad\mbox{ (Definition of } a_n ) \\
-	&= \lim_{n \to \infty} \frac{|(-1)^{n+1}n|x^{2n+2}}{|(-1)^n(n+1)|x^{2n}} \qquad\mbox{(Arithmetic Operation)} \\
-	&= \lim_{n \to \infty} \frac{n}{n+1}\cdot x^2 \qquad\mbox{(Arithmetic Operation)} \\
-	&= x^2 \qquad( \mbox{Since } n \to \infty \mbox{ and by definition of limit})
+	&= \lim_{n \to \infty} \frac{|\frac{(-1)^{n+1}}{(n+1)}(\frac{x}{3})^{2(n+1)}|}{|\frac{(-1)^n}{n}(\frac{x}{3})^{2n}|} \qquad\mbox{ (Definition of } a_n ) \\
+	&= \lim_{n \to \infty} \frac{|(-1)^{n+1}n|(\frac{x}{3})^{2n+2}}{|(-1)^n(n+1)|(\frac{x}{3})^{2n}} \qquad\mbox{(Arithmetic Operation)} \\
+	&= \lim_{n \to \infty} \frac{n}{n+1}\cdot (\frac{x}{3})^2 \qquad\mbox{(Arithmetic Operation)} \\
+	&= \frac{x^2}{9} \qquad( \mbox{Since } n \to \infty \mbox{ and by definition of limit})
 \end{align*}
 
 \begin{itemize}
-	\item If $|x| < 1$, then $L = x^2 < 1$.
+	\item If $|x| < 3$, then $L = \frac{x^2}{9} < 1$.
 
 	By Ratio Test, $h(x)$ is convergent.
 
-	\item If $|x| > 1$, then $L = x^2 > 1$.
+	\item If $|x| > 3$, then $L = \frac{x^2}{9} > 1$.
 
 	By Ratio Test, $h(x)$ is divergent.
 
-	\item If $|x| = 1$:
+	\item If $|x| = 3$:
 
 	\begin{itemize}
-		\item When $x = 1$:
+		\item When $x = 3$:
 
 		\begin{align*}
-			h(1)
+			h(3)
+			=& \sum_{n = 1}^{\infty} \frac{(-1)^n}{n}({\frac{3}{3}})^{2n}\\
 			=& \sum_{n = 1}^{\infty} \frac{(-1)^n}{n}1^{2n} \\
 			=& \sum_{n = 1}^{\infty} \frac{(-1)^n}{n} \\
 			=& \sum_{n = 1}^{\infty} (-1)^n\frac{1}{n}
@@ -144,10 +145,11 @@ In order to use ratio test, let's call $a_n =  \frac{(-1)^n}{n}x^{2n}$
 		
 		Therefore, $\sum_{n = 1}^{\infty} (-1)^n \frac{1}{n}$ is convergent.
 		
-		\item When $x = -1$:
+		\item When $x = -3$:
 
 		\begin{align*}
-			h(-1)
+			h(-3)
+			=& \sum_{n = 1}^{\infty} \frac{(-1)^n}{n}({\frac{-3}{3}})^{2n}\\
 			=& \sum_{n = 1}^{\infty} \frac{(-1)^n}{n}(-1)^{2n} \\
 			=& \sum_{n = 1}^{\infty} \frac{(-1)^n}{n}\cdot1^n \\
 			=& \sum_{n = 1}^{\infty} (-1)^n\frac{1}{n}
@@ -163,7 +165,7 @@ In order to use ratio test, let's call $a_n =  \frac{(-1)^n}{n}x^{2n}$
 
 		Therefore, $\sum_{n = 1}^{\infty} (-1)^n \frac{1}{n}$ is convergent.
 	\end{itemize}
-	\item Since when $x = 1$ and $x=-1$, $h(1)=h(-1)=\sum_{n = 1}^{\infty} (-1)^n\frac{1}{n}$ and it is convergent.
+	\item Since when $x = 3$ and $x=-3$, $h(3)=h(-3)=\sum_{n = 1}^{\infty} (-1)^n\frac{1}{n}$ and it is convergent.
 	\begin{itemize}
 	    \item We want to use definition of conditional convergent, it is known that:
 	    
@@ -171,7 +173,7 @@ In order to use ratio test, let's call $a_n =  \frac{(-1)^n}{n}x^{2n}$
 	    
 	    \item When we denote $a_n=(-1)^n\frac{1}{n}$:
 	    
-            We have shown $a_n$ is convergent when $x=1$ and $x=-1$.
+            We have shown $a_n$ is convergent when $x=3$ and $x=-3$.
         
         \item When add absolute value to $a_n$ as $\sum_{n=1}^\infty |a_n|$:
         \begin{align*}
@@ -184,7 +186,7 @@ In order to use ratio test, let's call $a_n =  \frac{(-1)^n}{n}x^{2n}$
 	Therefore, we have shown $\sum_{n = 1}^{\infty} (-1)^n\frac{1}{n}$ is conditionally convergent.
 \end{itemize}
 
-Therefore, $h(x)$ is convergent when $|x| \leq 1$ as $x\in[-1,1]$ and conditionally convergent for $x=1$ and $x=-1$ (two different points). $\blacksquare$
+Therefore, $h(x)$ is convergent when $|x| \leq 3$ as $x\in[-3,3]$ and conditionally convergent for $x=3$ and $x=-3$ (two different points). $\blacksquare$
 
 \newpage
 
