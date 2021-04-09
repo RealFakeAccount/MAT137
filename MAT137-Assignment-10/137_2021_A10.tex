@@ -335,9 +335,137 @@ The coefficient of $x^{137}$ are sum of different combinations as:
 			
 			\emph{Note:}  We are not asking for a proof yet.  Rather, we are asking for a short, simple, handwavy argument that would convince an average student that this result ``makes sense" and ``seems true".
 			
+			\emph{Solution}:
+			
+			Let $a \in I\subseteq\R$.
+			
+			Let $n=2\in\N$.
+			
+			Assume $f$ is $C^2$ on $I$.
+			
+			Then $f$ is $C^2$ at $a$.
+			
+			By 3-rd definition of Taylor polynomials, we have
+			$$
+			    P_2(x)=\sum_{k=0}^2 \frac{f^{(k)}(a)}{k!}(x-a)^k=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2
+			$$
+			Since we assume $f'(a) = 0$, we then have
+			$$
+			    P_2(x)=f(a)+0\cdot(x-a)+\frac{f''(a)}{2}(x-a)^2=f(a)+\frac{f''(a)}{2}(x-a)^2
+			$$
+			Then we can seen $f(a)$ as constant, $\frac{f''(a)}{2}$ as coefficient of $x^2$ and $P_2(x)$ is a quadratic function.
+			
+			When $f''(a)>0$, the quadratic function concave up as:
+			\begin{center}
+			    \includegraphics[scale=0.75]{Upward}
+			    
+			    (Red line represents $P_2(x)$)
+			\end{center}
+			Graphically, we have shown that $f$ has a local minimum at $a$.
+			
+			\newpage
+			
+			When $f''(a)<0$, the quadratic function concave down as:
+			\begin{center}
+			    \includegraphics[scale=0.75]{Downward}
+			    
+			    (Red line represents $P_2(x)$)
+			\end{center}
+			Graphically, we have shown that $f$ has a local maximum at $a$.
+			
+			\newpage
+			
 		\item  \label{qu:pf} Now write an actual, rigorous proof for the 2nd Derivative Test.  You will need to use the first definition of Taylor polynomial (the one in terms of the limit), the definition of limit, and the definition of local extremum.
 				
 			\emph{Note:}  There are many other ways to prove the 2nd Derivative Test, but we want you to do it specifically this way. It will help with the next questions.
+			
+			\emph{Proof:}
+			
+			Let $a \in I\subseteq\R$.
+			
+			Let $n=2\in\N$.
+			
+		    Assume $f$ is $C^2$ on $I$.
+		    
+		    By definition of $C^2$, A function $f$ is called $C^2$ when $f'$ and $f''$ exist and are continuous.
+			
+			Then $f$ is $C^2$ at $a$ which shows $f$ is a continuous function defined at and near $a$.
+			
+			By 1-st definition of Taylor polynomials, we have
+			$$
+			    \lim_{x\to a}\frac{f(x)-P_n(x)}{(x-a)^n}=\lim_{x\to a}\frac{f(x)-P_2(x)}{(x-a)^2}=0\qquad\circled{3}
+			$$
+			Assume $f'(a) = 0$. From Q4a, we have shown
+			$$
+			    P_2(x)=f(a)+\frac{f''(a)}{2}(x-a)^2
+			$$
+			and use this $P_2(x)$ in $\circled{3}$, we have:
+			\begin{align*}
+			    \lim_{x\to a}\frac{f(x)-P_2(x)}{(x-a)^2}
+			    &=\lim_{x\to a}\frac{f(x)-[f(a)+\frac{f''(a)}{2}(x-a)^2]}{(x-a)^2}\\
+			    &=\lim_{x\to a}[\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}]\\
+			    &=0
+			\end{align*}
+			By definition of limits, we can change
+			$$
+			    \lim_{x\to a}[\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}]=0
+			$$
+			into formal definition as:
+			$$
+			    \forall\epsilon>0, \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta\implies\vert{\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}}\vert<\epsilon
+			$$
+			\begin{itemize}
+			    \item Case One - $f''(a)>0$:
+			        
+			        Take $\epsilon=\frac{f''(a)}{2}>0$.
+			        
+			        Then by formal definition of Taylor polynomial we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta&\implies\vert{\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}}\vert<\frac{f''(a)}{2}\\
+			            &\implies\frac{-f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}<\frac{f''(a)}{2}\\
+			            &\implies\frac{-f''(a)}{2}+\frac{f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}<\frac{f''(a)}{2}+\frac{f''(a)}{2}\\
+			            &\implies0<\frac{f(x)-f(a)}{(x-a)^2}<f''(a)
+			        \end{align*}
+			        Since we know $(x-a)^2>0$, we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta
+			            &\implies\frac{f(x)-f(a)}{(x-a)^2}>0\\
+			            &\implies f(x)-f(a)>0\qquad((x-a)^2>0)\\
+			            &\implies f(x)>f(a)\\
+			            &\implies f(x)\geq f(a)
+			        \end{align*}
+			        Thus by definition of local minimum as
+			        $$
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta\implies f(x)\geq f(a)
+			        $$
+			        I've showed $f$ has a local minimum at $a$.
+			    \item Case Two - $f''(a)<0$:
+			    
+			        Take $\epsilon=\frac{-f''(a)}{2}>0$.
+			        
+			        Then by formal definition of Taylor polynomial we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta&\implies\vert{\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}}\vert<\frac{-f''(a)}{2}\\
+			            &\implies\frac{f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}-\frac{f''(a)}{2}<\frac{-f''(a)}{2}\\
+			            &\implies\frac{f''(a)}{2}+\frac{f''(a)}{2}<\frac{f(x)-f(a)}{(x-a)^2}<\frac{-f''(a)}{2}+\frac{f''(a)}{2}\\
+			            &\implies f''(a)<\frac{f(x)-f(a)}{(x-a)^2}<0
+			        \end{align*}
+			        Since $(x-a)^2>0$, we will have
+			        \begin{align*}
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta
+			            &\implies\frac{f(x)-f(a)}{(x-a)^2}<0\\
+			            &\implies f(x)-f(a)<0\qquad((x-a)^2>0)\\
+			            &\implies f(x)<f(a)\\
+			            &\implies f(x)\leq f(a)
+			        \end{align*}
+			        Thus by definition of local maximum as
+			        $$
+			            \exists\delta>0 \mbox{ s.t } 0<\vert{x-a}\vert<\delta\implies f(x)\leq f(a)
+			        $$
+			        I've showed $f$ has a local maximum at $a$.\qquad $\blacksquare$
+			\end{itemize}
+			
+			\newpage
 	
 		\item \label{qu:conj} What happens if $f''(a)=0$?     In that case, we look at $f^{(3)}(a)$;  if it is also $0$, then we look at $f^{(4)}(a)$, and we keep looking till we find one derivative that is not $0$ at $a$.   
 		
@@ -350,7 +478,67 @@ The coefficient of $x^{137}$ are sum of different combinations as:
 				\item  IF ..., THEN $f$ does not have a local extremum at $a$.
 			\end{itemize}
 		When you complete this, you will have come up with a new theorem.  Let's call it the ``Beyond-the-2nd-derivative Test".   Make sure your theorem takes care of all possible cases.  
-		\item \label{qu:thm}  {\bf [Do not submit.]}  Imitate the proof in \ref{qu:pf} to prove the Beyond-the-2nd-derivative Test.		
+		
+		\emph{Solution:}
+		    \begin{itemize}
+				\item  IF $n$ is even and $f^{(n)}(a)>0$, THEN $f$ has a local minimum at $a$.
+				\item  IF $n$ is even and $f^{(n)}(a)<0$, THEN $f$ has a local maximum at $a$.
+				\item  IF $n$ is odd, THEN $f$ does not have a local extremum at $a$.
+			\end{itemize}
+		    Let $a \in I\subseteq\R$.
+			
+			Let $n\geq2\in\N$.
+			
+			Assume $f$ is $C^n$ on $I$.
+			
+			By 3-rd definition of Taylor polynomials, we have
+			\begin{align*}
+			    P_n(x)&=\sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k\\
+			    &=f(a)+f^{(1)}(a)(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n-1)}(a)}{(n-1)!}(x-a)^{n-1}+\frac{f^{(n)}(a)}{n!}(x-a)^n
+			\end{align*}
+			Since we assume $f^{(1)}(a)=0,f^{(2)}(a)=0,\cdots,f^{(n-1)}(a)=0$, we then have:
+			$$
+			    P_n(x)=f(a)+0\cdot(x-a)+\cdots+0\cdot(x-a)^{n-1}+\frac{f^{(n)}(a)}{n!}(x-a)^n=f(a)+\frac{f^{(n)}(a)}{n!}(x-a)^n
+			$$
+			Then we can seen $f(a)$ as constant, $\frac{f^{(n)}(a)}{n!}$ as coefficient of $x^n$ and the shape of $P_n(x)$ needed to be discussed based on $n$ is even or odd.
+			\begin{itemize}
+			    \item When $n$ is even and $f^{(n)}(a)>0$, the function $P_n(x)$ concave up as:
+			        \begin{center}
+			            \includegraphics[scale=0.75]{Upward-n}
+			    
+			            (Red line represents $P_n(x)$)
+			        \end{center}
+			        Graphically, we have shown that $f$ has a local minimum at $a$.
+			
+			    \item When $n$ is even and $f^{(n)}(a)<0$, the function $P_n(x)$ concave down as:
+			        \begin{center}
+			            \includegraphics[scale=0.75]{Downward-n}
+			    
+			            (Red line represents $P_n(x)$)
+			        \end{center}
+			        Graphically, we have shown that $f$ has a local maximum at $a$.
+			     
+		        \item When $n$ is odd and $f^{(n)}(a)>0$, the function $P_n(x)$ shape will be like:
+		            \begin{itemize}
+		                \item When $f^{(n)}(a)>0$, the function $P_n(x)$ shape will be like:
+		                    \begin{center}
+			                    \includegraphics[scale=0.75]{Odd-Positive}
+			    
+			                    (Red line represents $P_n(x)$)
+			                \end{center}
+		                \item When $f^{(n)}(a)<0$, the function $P_n(x)$ shape will be like:
+		                    \begin{center}
+			                    \includegraphics[scale=0.75]{Odd-Negative}
+			    
+			                    (Red line represents $P_n(x)$)
+			                \end{center}
+		            \end{itemize}
+		            Graphically, we have shown that $f$ does not have a local extremum at $a$.
+			\end{itemize}
+		
+		\newpage
+		
+		\item \label{qu:thm}  {\bf [Do not submit.]}  Imitate the proof in \ref{qu:pf} to prove the Beyond-the-2nd-derivative Test. 	
 	\end{enumerate}
 
 \emph{Note:}  Why did we ask you to write both a ``simple, intuitive explanation" and a ``formal proof"?  Because that is how research in mathematics often happens.  The intuitive explanation is how we come up with conjectures and discover new theorems (as in Questions \ref{qu:int} and \ref{qu:conj}).   After that, the formal proof is how we make sure the conjecture is not merely a conjecture but a true theorem (as in Questions \ref{qu:pf} and \ref{qu:thm}).   We need both.
